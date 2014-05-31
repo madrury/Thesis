@@ -1,0 +1,142 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \Mamb{ \mathcal{M} }
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+\def \disk{ \mathbb{D} }
+\def \blde{ \mathbf{e} }
+\def \bldZ{ \mathbf{Z} }
+
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\subsection{ Some More Discussion of the Fubini Study Metric }
+
+We will now give another perspective on the Fubini-Study metric, and study its connection and curvature forms.
+
+Consider the normalization map $z_0 : \C^{n+1} - \{0\} \rightarrow S^{2n-1}$ defined by:
+%
+$$ z_0(z) = \frac{z}{|z|} $$
+%
+which is smooth on (since we have removed the origin).  Using the symbol $\cdot$ to denote the usual Hermitian inner product on $\C^{n+1}$, define a hermitian metric on $\C^{n+1} - \{0\}$ by:
+%
+$$ds^2 = d z_0 \cdot d z_0 - ( d z_0 \cdot z_0 )( z_0 \cdot d z_0 ) $$
+%
+Observe that this metric is invariant under the multiplicative action of $\C - \{0\}$ on $\C^{n+1}$, and it therefore induces a metric on the quotient space $\CP^{n}$.  We will prove that this is the Fubini-Study metric of constant holomorphic sectional curvature $4$.
+
+Let $p \in \CP^{n}$, and let $Z_0$ be a fixed unit vector in the fiber over $p$.  Then it is easy to see that the projection $\pi : \C^{n+1} - \{0\} \rightarrow \CP^{n}$ induces an isometry from the unitary complement of $Z_0$ equipped with the metric $ds^2$ to the tangent space $T_p \CP^{n}$ with the induced metric, since for vectors in the unitary complement we have $ d z_0 \cdot z_0 = 0 $.  Therefore, given a unitary frame $\blde = \{ e_1, \ldots, e_n \}$ for $T_p \C^n$, there is a unique unitary frame $ \{ Z_1, \ldots, Z_n \} $ for $Z_0^{\perp}$ mapping isometrically to $\blde$.  So suppose we have a local section of unit vectors $Z_0 : U \subset \CP^{n} \rightarrow  \C^{n+1} - \{0\}$ for the projection map, and a local unitary frame field for $TM^{+}$ (where $M = \CP^{n}$) over $U$.  Denoting the $k \times k$ unitary matrices by $U_k$, we can lift all this structure to map:
+%
+$$ \Phi : U \rightarrow U_{n+1} $$
+% 
+which is defined in our notation as:
+%
+$$ \Phi(p) = (Z_0, Z_1, \ldots, Z_n) $$
+
+Now each $d Z_i : U \rightarrow \C^{n+1}$ is a $\C^{n+1}$ valued 1-form, and hence can be expressed as:
+%
+$$ d Z_i = \phi^j_i Z_j $$
+%
+where the $\phi$'s are complex valued 1-forms on $U$.  We can write this definition succinctly as $ d \bldZ = \bldZ \phi$, where here we think of $\phi$ as a $M_{n}( \C )$ valued 1-form.  Clearly, these 1-forms can be expressed as:
+%
+$$ \phi^j_i = d Z_i \cdot Z_j $$
+%
+Since $d Z_0$ is an isometry from $T_p \CP^n$ to its image in $Z_0^{\perp}$, this immediately implies that:
+%
+$$ \phi^i_0 = d Z_0 \cdot Z_i = e^i $$
+%
+
+Differentiating the equation $ Z_i \cdot Z_j = \delta^i_j $ tells us that:
+%
+$$ \phi^j_i = - \bar{\phi}^i_j $$
+%
+that is, the matrix $\phi$ is skew hermitian. 
+
+We can also calculate the exterior derivative of $\phi$.  Let's write:
+%
+$$ Z_i = ( z_{i0}, z_{i1}, \ldots, z_{in} ) $$
+%
+then:
+%
+$$ d Z_i \cdot Z_j = \bar{z}_{jr} d z_{ir} $$
+%
+and hence, since $\bar{z}_{sr} z_{tr} = \delta^t_s$:
+%
+\begin{align*}
+d( d Z_i \cdot Z_j ) &= d \bar{z}_{jr} \wedge d z_{ir} \\
+&= ( \bar{\phi}^s_j \bar{z}_{sr} ) \wedge ( \phi^t_i z_{tr} ) \\
+&= \bar{\phi}^s_j \wedge \phi^t_i \bar{z}_{sr}  z_{tr} \\
+&= \bar{\phi}^s_j \wedge \phi^s_i \\
+&= - \phi^j_s \wedge \phi^s_i
+\end{align*}
+%
+which shows that $d \phi = - \phi \wedge \phi $.   
+
+Next, we relate the forms $\phi$ to the connection forms of the metric $ds^2$ on $\CP^n$.
+%
+\begin{lem}  Let $ \theta^j_i = \phi^j_i - \delta^j_i \phi^0_0 $, then $\theta$ is the connection form of the metric $ds^2$ with respect to the unitary frame $e_i$.
+\end{lem}
+%
+\begin{proof}  First observe that since $\phi$ is skew hermitian, so is $\theta$.  Therefore we only need to check that the torsion free equation is satisfied:
+%
+\begin{align*}
+d e^i &= d \phi^i_0 = - \phi^i_r \wedge \phi^r_0 \\
+&= - \phi^i_r \wedge e^r - \phi^i_0 \wedge \phi^0_0 \\
+&= ( - \phi^i_r + \delta^i_r \phi^0_0 ) \wedge e^r \\
+&= - \theta^i_r \wedge e^r
+\end{align*} 
+%
+so $d e + \theta \wedge e = 0$, as we wanted to show.
+%
+\end{proof}
+%
+\begin{prop} The metric induced on $\CP^n$ by $ds^2$ has constant holomorphic curvature equal to $4$, and hence is isometric to a Fubini-Study metric.
+\end{prop}
+%
+\begin{proof}
+%
+We calculate the curvature forms using the fundamental equation and the previous lemma:
+%
+\begin{align*}
+\Omega^j_i &= d \theta^j_i + \theta^j_r \wedge \theta^r_i \\
+&= d( \phi^j_i - \delta^j_i \phi^0_0 ) + ( \phi^j_r - \delta^j_r \phi^0_0 ) \wedge ( \phi^r_i - \delta^r_i \phi^0_0 ) \\
+%
+&= - \phi^j_0 \wedge \phi^0_i - \phi^j_r \wedge \phi^r_i + \delta^j_i \phi^0_0 \wedge \phi^0_0 + \delta^j_i \phi^0_r \wedge \phi^r_0 \\
+& \quad \phi^j_r \wedge \phi^r_i - \delta^r_i \phi^j_r \wedge \phi^0_0 - \delta^j_r \phi^0_0 \wedge \phi^r_i + \delta^j_r \delta^r_i \phi^0_0 \wedge \phi^0_0 \\
+%
+&= - \phi^j_0 \wedge \phi^0_i + \delta^j_i \phi^0_r \wedge \phi^r_0 \\
+&= e^j \wedge \bar{e}^i - \delta^j_i \bar{e}^r \wedge e^r \\
+&= \delta^j_i e^r \wedge \bar{e}^r + e^j \wedge \bar{e}^i 
+\end{align*}
+%
+Now note that since we are using a unitary frame, $h_{ij} = \delta^i_j$, and consequently:
+%
+$$ \omega = \frac{i}{2} e^r \wedge \bar{e}^r $$
+%
+and therefore we have:
+%
+$$ \Omega^j_i = - 2 i \delta^i_j \omega + e^j \wedge \bar{e}^i $$
+%
+which, from an earlier proposition, implies that the metric has constant holomorphic sectional curvature $4$.
+\end{proof}
+
+
+\end{document}

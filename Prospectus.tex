@@ -1,0 +1,55 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+\newtheorem{claim}{Claim}
+\newtheorem{case}{Case}
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+
+\def \la { \left\langle }
+\def \ra { \right\rangle }
+\def \C{ \mathbb{C} }
+\def \ric{ \text{ric} }
+\def \dim{ \text{dim} }
+\def \Hom{ \text{Hom} }
+\def \nablabar{ \bar{\nabla} }
+\def \TMp{ TM^{+} }
+\def \TMm{ TM^{-} }
+\def \NMp{ NM^+ }
+\def \NMm{ NM^- }
+\def \TMps{ T^{*}M^{+} }
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\title{Prospectus: Einstein Submanifolds of Complex Space Forms}
+\maketitle
+%
+The subject of Kahler geometry lies at the intersection of Riemannian Geometry and Complex Analysis.  
+%
+Riemannian Geometry is the subject that studies geometric spaces on which calculus can be done, and that are endowed with a concept of length.  More precisely, one starts with a differentiable manifold, a space on which differentiation and integration, the fundamental concepts of calculus, make sense.  On such a space, since functions can be differentiated, one can speak of the direction in which a given curve is moving.  The direction that a curve is moving in at a fixed point is encoded in the concept of the tangent vector to the curve at the point.  A Reimannian manifold is a refinement of the differentiable manifold concept.  On a Riemannian manifold one can actually measure the length of a tangent vector, and consequently, measure the length of curves (the measuring apparatus is called a Riemannian metric).  In fact, along with this simple geometric concept, one inherits many other useful constructs.  For one, on Riemannian manifolds we may take directional derivatives of tangent vectors (actually vector fields, but the distinction is technical and unimportant for this summary).  On a differentiable manifold lacking a Riemannian structure one can use the Lie derivative construction to differentiate tangent vectors, but this lacks the much desired linearity property with respect to the direction of differentiation.  On a Riemannian manifold on the other hand, after the concept of length has been introduced, we automatically inherit a way to take derivatives of vector fields that has all the natural properties a good concept of directional derivative should posses!  This is encoded in the Riemannian (or Levi-Civita) connection on a Riemannian manifold, which should be thought of as a directional derivative that is applied to vector fields.
+
+On the other hand, complex analysis is that subject which generalizes the concepts of calculus, not to higher dimensional spaces of various shapes, but to the complex numbers.  This results in many beautiful consequences, since the flexibility encountered in the real calculus is replaced with a rigidity in its complex analogue.  Analogous to the differentiable manifolds, we have the complex (differentiable) manifolds, which generalize the concepts in complex analysis to more varied geometric spaces.
+
+In Kahler geometry we start with a complex manifold, and endow it with a Riemannian metric, producing a highly structured geometric object.  The Riemannain structure gives us a connection, as before, and a Kahler manifold must posses an additional compatibility between the complex structure of the space and the Riemannian structure encoded in the connection.  To be slightly technical for a moment, a complex manifold has a natural notion of rotation by ninety degrees that applies to all its tangent vectors simultaneously.  The Kahler condition simply states that the differentiation inherited from the metric and the rotation inherited from the complex structure commute: rotate and then differentiate or differentiate and then rotate, one gets the same answer either way.
+
+In Riemannian geometry there is a fundamental notion of curvature for the underlying space.  The curvature encodes the local structure of a Riemannian manifold, and has a profound influence on the underlying topological (non metric) structure of the underlying space.  In an n-dimensional manifold, the curvature manifests itself as a mapping from all pairs of vectors (based at the same point), to the real numbers.  This should be thought of as measuring the amount and nature of bending inherit in the space in the directions of the plane spanned by the two given vectors.  One is then led to ask: are there manifolds that are bent in the same way, of the same magnitude, at all points and in all directions?  The answer is a wonderful yes, and following this path leads one led to the fundamental classification of spaces of constant curvature in Riemannian geometry.  
+
+In the land of Kahler manifolds there is also a natural notion of curvature.  Of course, a Kahler manifold is just a Riemannian one which is blessed with extra structure, so this statement is almost vacuous.  But remarkably, one can select a special set of planes in a Kahler manifold, those which are in some sense complex (unchanged by the rotation discussed above), and ask to what extent information about the curvature of these planes determines the curvature of the others.  The answer is, in fact, completely.  These special planes are called holomorphic planes, and the curvature restricted to them is called the holomorphic curvature.  Again one can ask, are there spaces of constant holomorphic curvature?  The answer is yes, and these are called the mainfolds of constant holomorphic curvature, or the complex space forms.
+
+This thesis studies what types of submanifolds can exist in the spaces of constant holomorphic curvature, and more specifically, what subspaces of a manifold of constant holomorphic curvature can have constant average holomorphic curvature (manifolds with this property are called Einstein after their special place in the Einstein field equations).  Two results here are known, that of Calabi on low dimensional submanifolds, and that of Chern on high dimensional submanifolds, both are complete classifications.  Though they deal with the same subject, and the results have a similar form, the proofs of Calabi and Chern are quite different.  In this thesis we succeed in deriving both Calabi's and Chern's theorems from the same framework, shedding light on the connections between these remarkable results.  Along the way we will derive many useful formulas for the second fundamental form of an Einstein sumbmanifold, including an all new formula for the third derivative of the second fundamental form.
+
+\end{document}
+

@@ -1,0 +1,564 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+
+\def \la { \left\langle }
+\def \ra { \right\rangle }
+\def \C{ \mathbb{C} }
+\def \ric{ \text{ric} }
+\def \dim{ \text{dim} }
+\def \Hom{ \text{Hom} }
+\def \nablaamb{ \tilde{\nabla} }
+\def \TMp{ TM^{+} }
+\def \TMm{ TM^{-} }
+\def \NMp{ NM^+ }
+\def \NMm{ NM^- }
+\def \TMps{ T^{*}M^{+} }
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\section{Chern's Theorem}
+
+We now turn to a more general situation.  Let $M$ be any complex manifold, holomorphically immersed in the space form $M_c$ so that the induced Kahler metric on $M$ is Einstein, with Einstein constant $\lambda$.  Suppose the dimension of $M$ is $n$, and the dimension of $M_c$ is $n+m$.  Let $\{ e_1, \ldots, e_{n+m} \}$ be a local unitary frame field for $TM_c^{+}$, chosen so that, when restricted to $M$, $\{ e_1, \ldots, e_n \}$ is a local unitary frame field for $\TMp$, and $\{ e_{n+1}, \ldots, e_{n+m} \}$ is a local unitary frame field for $\NMp$.  Let $\{ e^1, \ldots, e^{n+m} \}$ be the dual unitary frame field.  Again, we study the connection forms $\Theta$ and $\theta$ for $M_c$ and $M$.
+
+\begin{remark}  We make use of index conventions similar to those in the previous section.  Lower case Greek indices $\alpha, \beta, \gamma$ will have the range $1,2, \ldots, n+m$, lower case Roman indices $i,j,k,l,r,s,t$ will have the range $1,2, \ldots, n$, and the lower case Roman indices $a,b,c$ will have the range $n+1, n+2, \ldots, n+m$.  Note that repeated indices in a single term are automatically summed over their ranges, though we will occasionally drop this convention for the sake of clarity when convenient.
+
+Furthermore, every differential form in the subsequent calculation is always restricted to a form on $M$. In this context we have $e^a = 0$ for all $a$, and $\Theta^i_j = \theta^i_j$.
+
+Finally, since we are using a unitary frame field, the curvature forms satisfy the skew-hermitian properties $\bar{\Theta}^{\alpha}_{\beta} = - \Theta^{\beta}_{\alpha}$, and $\bar{\theta}^i_j = - \theta^j_i$.
+\end{remark}
+
+We begin by differentiating the equation $e^a = 0$ and using the torsion free property of the metric connection.  The result is:
+%
+\begin{align*}
+0 = d e^a = - \Theta^a_{\alpha} \wedge e^{\alpha} = - \Theta^a_i \wedge e^i
+\end{align*}
+%
+It follows that $\Theta^a_i$ is a $(1,0)$ form on $M$, so there are some locally defined functions $A^a_{ij}$ so that:
+%
+\begin{align}
+\Theta^a_i = A^a_{ij} e^j
+\end{align}
+
+\begin{lem} The second fundamental form of the immersion is locally expressed as:
+%
+\begin{align}
+B( e_i, e_j ) = A^a_{ij} e_a
+\end{align}
+%
+Consequently, the immersion is totally geodesic if and only if $A^a_{ij} = 0$ for all $a,i$ and $j$.
+%
+\end{lem}
+
+\begin{proof} We simply calculate:
+%
+\begin{align*}
+\la B(e_i, e_j), e_a \ra = \la \nablaamb_{e_i} e_j, e_a \ra = \la \Theta^{\alpha}_i (e_j) e_{\alpha}, e_a \ra = \Theta^a_i (e_j) = A^a_{ij}
+\end{align*}
+%
+Recalling that $B(e_i, \bar{e}_j) = 0$, and $B(\bar{e}_i, \bar{e}_j ) = \overline{ B(e_i, e_j ) }$, we see that the lemma immediately follows.
+%
+\end{proof}
+
+Since the second fundamental form is symmetric, an immediate consequence of the lemma above is that the symmetry condition $A^a_{ij} = A^a_{ji}$ holds for all $i,j$ and $a$.
+
+Now we consider the curvature forms $\omega$ and $\Omega$ for $M$ and $M_c$ respectively, which satisfy the usual fundamental equations.  In particular:
+%
+$$\omega^i_i = d \theta^i_i + \theta^i_k \wedge \theta^k_i$$ 
+%
+and:
+%
+$$\Omega^i_i = d \Theta^i_i + \Theta^i_{\alpha} \wedge \Theta^{\alpha}_i = d \theta^i_i + \Theta^i_{\alpha} \wedge \Theta^{\alpha}_i$$
+%
+Hence:
+%
+\begin{align*}
+\omega^i_i = \Omega^i_i - \Theta^i_a \wedge \Theta^a_i = \Omega^i_i - A^a_{ik} \bar{A}^a_{ij} e^k \wedge \bar{e}^j
+\end{align*}
+%
+Now, since the metric on $M$ is Einstein, we have:
+%
+\begin{align*}
+\omega^i_i = \frac{\lambda}{2} e^i \wedge \bar{e}^i
+\end{align*}
+%
+And since $M_c$ has constant holomorphic curvature $c$, we have:
+%
+\begin{align*}
+\Omega^i_i = \frac{(n+1)c}{4} e^i \wedge \bar{e}^i
+\end{align*}
+%
+Substituting these expressions in above yields:
+%
+\begin{align*}
+\frac{\lambda}{2} e^i \wedge \bar{e}^i = \frac{(n+1)c}{4} e^i \wedge \bar{e}^i - A^a_{ik} \bar{A}^a_{ij} e^k \wedge \bar{e}^j
+\end{align*}
+%
+So:
+%
+\begin{align*}
+A^a_{ik} \bar{A}^a_{ij} e^k \wedge \bar{e}^j = \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^i \wedge \bar{e}^i
+\end{align*}
+%
+Therefore, since the forms $e^k \wedge \bar{e}^j$ form a basis for the space of $(1,1)$ forms on $M$, we conclude that:
+%
+\begin{align}
+A^a_{ij} \bar{A}^a_{ik} = \delta^j_k \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)
+\end{align}
+
+\begin{cor}  The Einstein constant satisfies $\lambda \leq \frac{(n+1)c}{2}$, with equality if and only if $M$ is totally geodesic.  Furthermore, if $\lambda < \frac{(n+1)c}{2}$, then the linear map $\TMp \rightarrow \Hom ( \TMp, \NMp )$ defined by:
+%
+\begin{align*}
+X \mapsto ( Y \mapsto B(X, Y) )
+\end{align*}
+%
+is an injection.
+%
+\end{cor}
+
+\begin{proof} Using equation (10) with $j=k$ we get:
+%
+\begin{align*}
+0 \leq A^a_{ij} \bar{A}^a_{ij} = n \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)
+\end{align*}
+%
+So it must be the case that $\lambda \leq \frac{(n+1)c}{2}$.  Equality holds only when $A^a_{ij} = 0$ for all $a,i,j$, which by the previous lemma, is equivalent to $M$ being totally geodesic.
+
+Now, assume that $\lambda < \frac{(n+1)c}{2}$, and let $X = x_i e_i$ be a non-zero vector in $\TMp$.  We need to see that the linear map $Y \mapsto B(X,Y)$ is non-zero, so we calculate:
+%
+\begin{align*}
+\la B(X, e_i), B(X, e_i) \ra &= x_j \bar{x}_k \la B(e_i, e_j), B(e_i, e_k) \ra = x_j \bar{x}_k \delta^a_b A^a_{ij} \bar{A}^b_{ik} \\
+&= x_j \bar{x}_k A^a_{ij} \bar{A}^a_{jk} = x_j \bar{x}_k \delta^j_k \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \\
+&= x_j \bar{x}_j \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)
+\end{align*}
+%
+Which is positive when $\lambda < \frac{(n+1)c}{2}$.  Therefore, there must be some $j$ so that $B(X,e_j) \neq 0$, which completes the proof of the corollary.
+%
+\end{proof}
+
+To continue, we differentiate equation (8):
+%
+\begin{align*}
+d \Theta^a_i = d A^a_{ik} \wedge e^k + A^a_{ij} d e^j
+\end{align*}
+%
+The fundamental equation gives:
+%
+\begin{align*}
+d \Theta^a_i = \Omega^a_i - \Theta^a_{\alpha} \wedge \Theta^{\alpha}_i
+\end{align*}
+%
+And using the curvature formula for space forms, we get:
+%
+\begin{align*}
+\Omega^a_i = \frac{c}{4} e^a \wedge \bar{e}^i = 0
+\end{align*}
+%
+So:
+%
+\begin{align*}
+d \Theta^a_i &= - \Theta^a_{\alpha} \wedge \Theta^{\alpha}_i = - \Theta^a_j \wedge \Theta^j_i - \Theta^a_b \wedge \Theta^b_i = A^a_{jk} \theta^j_i \wedge e^k - A^b_{ik} \Theta^a_b \wedge e^k
+\end{align*}
+%
+On the other hand, the torsion free metric property gives:
+%
+\begin{align*}
+A^a_{ij} d e^j = - A^a_{ij} \theta^j_k \wedge e^k
+\end{align*}
+%
+Substituting all these ingredients in now yields:
+%
+\begin{align*}
+0 = \left( A^a_{jk} \theta^j_i - A^b_{ik} \Theta^a_b - d A^a_{ik} + A^a_{ij} \theta^j_k \right) \wedge e^k
+\end{align*}
+%
+Therefore, the form appearing as a coefficient of $e^k$ must be a $(1,0)$ form, and so there are some locally defined functions $B^a_{ijl}$ that satisfy:
+%
+\begin{align}
+B^a_{ijl} e^l = d A^a_{ij} + A^b_{ij} \Theta^a_b - A^a_{kj} \theta^k_i - A^a_{ik} \theta^k_j
+\end{align}
+
+\begin{lem}  The first covariant derivative of the second fundamental form has the local expression:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) = B^a_{ijl} e_a
+\end{align*}
+%
+Consequently, the second fundamental form is parellel if and only if $B^a_{ijl} = 0$ for all $a,i,j$ and $l$.
+%
+\end{lem}
+
+\begin{proof}  We use the definition of the covariant derivative to calculate:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) &= ( \nabla_{e_l} B )(e_i, e_j) \\
+&= \nabla^{\perp}_{e_l} \left( B( e_i, e_j) \right) - B( \nabla_{e_l} e_i, e_j ) - B( e_i, \nabla_{e_j} e_j ) \\
+&= \nabla^{\perp}_{e_l} \left( A^a_{ij} e_a \right) - B( \theta^k_i (e_l) e_k, e_j ) - B( e_i, \theta^k_j (e_j) e_k ) \\
+&= \left( d A^a_{ij} + A^b_{ij} \Theta^a_b - A^a_{kj} \theta^k_i - A^a_{ik} \theta^k_j \right)(e_l) e_a \\
+&= B^a_{ijl} e_a
+\end{align*}
+%
+which completes the proof.
+%
+\end{proof}
+
+\begin{cor}  The numbers $B^i_{ijl}$ are invariant with regards to all permutations of the lower three indicies.  That is, $B^a_{ijl} = B^a_{jil} = B^a_{ilj}$. 
+\end{cor}  
+%
+\begin{proof} The relation $B^a_{ijl} = B^a_{jil}$ is an easy consequence of the symmetry of $A^a_{ij}$ and equation (11). 
+
+Verifying the other symmetry relation is considerably more subtle.  By the previous lemma, it suffices to check the tensor equation:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) - \nabla B (e_i, e_l, e_j ) = 0
+\end{align*}
+%
+Fix a general point $p$ in $M$, and for the moment assume (for convenience) that the frame $\{ e_1, e_2, \ldots, e_{n+m} \}$ is parallel at $p$.  The following calculations are always evaluated at the point $p$.  We have:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) - \nabla B (e_i, e_l, e_j ) &= \nabla^{\perp}_{e_l}( B(e_i, e_j) ) - \nabla^{\perp}_{e_j}( B(e_i, e_l) )\\
+&= d A^a_{ij} (e_l) e_a - d A^a_{il} (e_j) e_a
+\end{align*}
+%
+Now since:
+%
+\begin{align*}
+A^a_{ij} = \Theta^a_i (e_j) = e^a( \nabla_{e_j} e_i ) = \la \nabla_{e_j} e_i, e_a \ra
+\end{align*}
+%
+compatability of the connection with the metric yields:
+%
+\begin{align*}
+d A^a_{ij} (e_l) = e_l \la \nabla_{e_j} e_i, e_a \ra = \la \nabla_{e_l} \nabla_{e_j} e_i, e_a \ra
+\end{align*}
+%
+where we have used that $\nabla_{e_l} e_{a} = 0$ at $p$.  Therefore:
+%
+\begin{align*}
+d A^a_{ij} (e_l) - d A^a_{il} (e_j) &= \la \nabla_{e_l} \nabla_{e_j} e_i, e_a \ra - \la \nabla_{e_j} \nabla_{e_l} e_i, e_a \ra \\
+&= \la R(e_l, e_j) e_i, e_a \ra \\
+&= 0
+\end{align*}
+%
+since $e_l$ and $e_j$ lie in $TM^{+}$.
+%
+\end{proof}
+
+We now want to find an orthogonality relation between the $A^a_{ij}$ and the $B^a_{ijl}$.  To begin, we differentiate equation (10):
+%
+\begin{align*}
+0 = \bar{A}^a_{ik} d A^a_{ij} + A^a_{ij} d \bar{A}^a_{ik}
+\end{align*}
+%
+To simplify these two terms we use equation (11), the results are:
+%
+\begin{align*}
+\bar{A}^a_{ik} d A^a_{ij} = \bar{A}^a_{ik} B^a_{ijl} e^l + \bar{A}^a_{ik} A^a_{il} \theta^l_j + \bar{A}^a_{ik} A^a_{lj} \theta^l_i - \bar{A}^a_{ik} A^b_{ij} \Theta^a_b
+\end{align*}
+%
+and:
+%
+\begin{align*}
+A^a_{ij} d \bar{A}^a_{ik} = A^a_{ij} \bar{B}^a_{ikl} \bar{e}^l - A^a_{ij} \bar{A}^a_{lk} \theta^i_l - A^a_{ij} \bar{A}^a_{il} \theta^k_l + A^a_{ij} \bar{A}^b_{ik} \Theta^b_a
+\end{align*}
+%
+Substituting in these two formula, we see, upon re-indexing, that two pairs of terms cancel, and we are left with:
+%
+\begin{align*}
+0 = \bar{A}^a_{ik} B^a_{ijl} e^l + A^a_{ij} \bar{B}^a_{ikl} \bar{e}^l + \bar{A}^a_{ik} A^a_{il} \theta^l_j - A^a_{ij} \bar{A}^a_{il} \theta^k_l
+\end{align*}
+%
+To deal with the last two terms here, we call upon formula (10), which yields:
+%
+\begin{align*}
+\bar{A}^a_{ik} A^a_{il} \theta^l_j - A^a_{ij} \bar{A}^a_{il} \theta^k_l &= \delta^k_l \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \theta^l_j - \delta^j_l \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \theta^k_l \\
+&= \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \theta^k_j - \theta^k_j \right) \\
+&= 0
+\end{align*}
+%
+Therefore:
+%
+\begin{align*}
+0 = \bar{A}^a_{ik} B^a_{ijl} e^l + A^a_{ij} \bar{B}^a_{ikl} \bar{e}^l
+\end{align*}
+%
+and we conclude the orthogonality relation:
+%
+\begin{align}
+\bar{A}^a_{ik} B^a_{ijl} = 0
+\end{align}
+%
+For all $k,j$ and $l$.
+
+For the next corollary, we denote by $\TMp \odot \TMp$ the space of symmetric 2-tensors on $\TMp$.  
+
+\begin{cor} The image of the linear map $\TMp \odot \TMp \rightarrow \Hom( \TMp, \NMp )$ defined by:
+%
+\begin{align*}
+X \odot Y \mapsto ( Z \mapsto( \nabla B )( X, Y, Z ) )
+\end{align*}
+%
+is orthogonal to the image of the map $\TMp \rightarrow \Hom( \TMp, \NMp )$. 
+%
+\end{cor}
+
+\begin{proof}  Let $X = x_j e_j$ and $Y = y_{rs} e_r \odot e_s$.  Then we have:
+%
+\begin{align*}
+\la B( X, e_i ), (\nabla_{e_i} B) ( Y ) \ra &= x_j \bar{y}_{rs} \la B(e_i, e_j), ( \nabla_{e_i} B )( e_r, e_s ) \ra \\
+&= x_j \bar{y}_{rs} \delta^a_b A^a_{ij} \bar{B}^b_{irs} = x_j \bar{y}_{rs} A^a_{ij} \bar{B}^a_{irs} \\
+&= 0
+\end{align*}
+%
+Which completes the proof.
+%
+\end{proof}
+
+We now want to get an expression for $B^a_{ijl} \bar{B}^a_{ijr}$.  To do so, we begin by differentiating the equation $\bar{A}^a_{ik} B^a_{ijl} e^l = 0$.  The result is:
+%
+\begin{align*}
+0 = B^a_{ijl} d \bar{A}^a_{ik} \wedge e^l + \bar{A}^a_{ik} d( B^a_{ijl} e^l ) 
+\end{align*}
+%
+Using equation (11) to substitute into the first term, and making use of the orthogonality relation (12), we get:
+%
+\begin{align*}
+B^a_{ijl} d \bar{A}^a_{ik} \wedge e^l= B^a_{ijl} \bar{B}^a_{ikr} \bar{e}^r \wedge e^l + \bar{A}^b_{ik} B^a_{ikl} \Theta^b_a \wedge e^l - \bar{A}^a_{rk} B^a_{ijl}  \theta^i_r \wedge e^l
+\end{align*}
+%
+For the second term, we differentiate equation (11) to get:
+%
+\begin{align*}
+\bar{A}^a_{ik} d( B^a_{ijl} e^l ) =& \bar{A}^a_{ik} d A^b_{ij} \wedge \Theta^a_b + \bar{A}^a_{ik} A^b_{ij} d \Theta^a_b - \bar{A}^a_{ik} d
+A^a_{rj} \wedge \theta^r_i \\
+&- \bar{A}^a_{ik} A^a_{rj} d \theta^r_i - \bar{A}^a_{ik} d A^a_{ir} \wedge \theta^r_j - \bar{A}^a_{ik} A^a_{ir} d \theta^r_j
+\end{align*}
+%
+We simplify these terms one by one, using always the orthogonality relations (11), (12), and the following remark:
+
+\begin{remark}  We take a look at the $d \Theta$ and $d \theta$ terms.  For instance, to calculate $d \Theta^a_b$, we apply the fundamental equation, and the formula for the curvature in a space form to get:
+%
+\begin{align*}
+d \Theta^a_b &= \Omega^a_b - \Theta^a_{\alpha} \wedge \Theta^{\alpha}_b \\
+&= \frac{c}{4}( \delta^a_b e^l \wedge \bar{e}^l + e^a \wedge \bar{e}^b ) - \Theta^a_l \wedge \Theta^l_b - \Theta^a_c \wedge \Theta^c_b \\
+&= \frac{c}{4} \delta^a_b e^l \wedge \bar{e}^l + A^a_{lr} \bar{A}^b_{ls} e^r \wedge \bar{e}^s - \Theta^a_c \wedge \Theta^c_b
+\end{align*}
+%
+Similar analysis yields:
+%
+\begin{align*}
+d \theta^r_i = \frac{c}{4} \delta^r_i e^l \wedge \bar{e}^l + \frac{c}{4} e^r \wedge \bar{e}^i - \theta^r_l \wedge \theta^l_i + \bar{A}^b_{rl} A^b_{is} \bar{e}^l \wedge e^s
+\end{align*}
+%
+and:
+%
+\begin{align*}
+d \theta^r_j = \frac{c}{4} \delta^r_j e^l \wedge \bar{e}^l + \frac{c}{4} e^r \wedge \bar{e}^j - \theta^r_l \wedge \theta^l_j + \bar{A}^b_{rl} A^b_{js} \bar{e}^l \wedge e^s
+\end{align*}
+%
+\end{remark}
+
+\bigskip
+
+Now, carefully simplifying each of the six terms yields:
+%
+\begin{align*}
+\bar{A}^a_{ik} d A^b_{ij} \wedge \Theta^a_b =& B^b_{ijl} \bar{A}^a_{ik} e^l \wedge \Theta^a_b - \bar{A}^a_{ik} A^c_{ij} \Theta^b_c \wedge \Theta^a_b\\
+&+ \bar{A}^a_{ik} A^b_{rj} \theta^r_i \wedge \Theta^a_b + \bar{A}^a_{ik} A^b_{ir} \theta^r_j \wedge \Theta^a_b
+\end{align*}
+%
+\begin{align*}
+\bar{A}^a_{ik} A^b_{ij} d \Theta^a_b = \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l + \bar{A}^a_{ik} \bar{A}^b_{ls} A^a_{lr} A^b_{ij} e^r \wedge \bar{e}^s - \bar{A}^a_{ik} A^b_{ij} \Theta^a_c \wedge \Theta^c_b
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} d A^a_{rj} \wedge \theta^r_i =& - \bar{A}^a_{ik} B^a_{rjl} e^l \wedge \theta^r_i + \bar{A}^a_{ik} A^b_{rj} \Theta^a_b \wedge \theta^r_i \\
+&- \bar{A}^a_{ik} A^a_{lj} \theta^l_r \wedge \theta^r_i - \bar{A}^a_{ik} A^a_{rl} \theta^l_j \wedge \theta^r_i
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} A^a_{rj} d \theta^r_i =& - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{rj} e^r \wedge \bar{e}^i \\
+&+ \bar{A}^a_{ik} A^a_{rj} \theta^r_l \wedge \theta^l_i - \bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{rj} A^b_{is} \bar{e}^l \wedge e^s
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} d A^a_{ir} \wedge \theta^r_j = \bar{A}^a_{ik} A^b_{ir} \Theta^a_b \wedge \theta^r_j - \bar{A}^a_{ik} A^a_{lr} \theta^l_i \wedge \theta^r_j - \bar{A}^a_{ik} A^a_{il} \theta^l_r \wedge \theta^r_j
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} A^a_{ir} d \theta^r_j =& - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{ir} e^r \wedge \bar{e}^j  \\
+&+ \bar{A}^a_{ik} A^a_{ir} \theta^r_l \wedge \theta^l_j - \bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ir} A^b_{js} \bar{e}^l \wedge e^s
+\end{align*}
+
+Substituting in all these results, we see that all the terms containing either a $\theta$ or a $\Theta$ cancel, and we are left with:
+%
+\begin{align*}
+0 =& B^a_{ijl} \bar{B}^a_{ikr} \bar{e}^e \wedge e^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{rj} e^r \wedge \bar{e}^i - \frac{c}{4} \bar{A}^a_{ik} A^a_{ir} e^r \wedge \bar{e}^j \\
+&+ \bar{A}^a_{ik} \bar{A}^b_{ls} A^a_{lr} A^b_{ij} e^r \wedge \bar{e}^s + \bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ij} A^b_{is}  e^s \wedge \bar{e}^l +
+\bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ir} A^b_{js} e^s \wedge \bar{e}^l
+\end{align*}
+%
+We can simplify three of these terms further by applying formula (10):
+%
+\begin{align*}
+ - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l &= - \frac{c}{4} \delta^j_k \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^l \wedge \bar{e}^l \\
+&= - \frac{c}{4} \delta^j_k \delta^r_s \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^s \wedge \bar{e}^r
+\end{align*}
+%
+\begin{align*}
+- \frac{c}{4} \bar{A}^a_{ik} A^a_{ir} e^r \wedge \bar{e}^j &= - \frac{c}{4} \delta^k_r \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^r \wedge \bar{e}^j \\
+&= - \frac{c}{4} \delta^k_r \delta^j_s \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^r \wedge \bar{e}^s \\
+&= - \frac{c}{4} \delta^k_s \delta^j_r \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^s \wedge \bar{e}^r
+\end{align*} 
+%
+\begin{align*}
+\bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ir} A^b_{js} e^s \wedge \bar{e}^l  &= \delta^k_r \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)  \bar{A}^b_{rl} \bar{A}^b_{js} e^s \wedge \bar{e}^l \\
+&= \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)  \bar{A}^a_{rk} \bar{A}^a_{js} e^s \wedge \bar{e}^r
+\end{align*}
+%
+We get, upon gathering like terms and changing around some of the summation indices:
+%
+\begin{align*}
+B^a_{ijs} \bar{B}^a_{ikr} e^s \wedge \bar{e}^r =& - \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \delta^j_k \delta^r_s + \delta^k_s \delta^j_r \right) e^s \wedge \bar{e}^r \\
+&+ \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \bar{A}^a_{rk} A^a_{sj} e^s \wedge \bar{e}^r + \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{ls} A^b_{ij} e^s \wedge \bar{e}^r \\
+&+ \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{lj} A^b_{is} e^s \wedge \bar{e}^r
+\end{align*}
+%
+Since the forms $e^s \wedge \bar{e}^r$ form a basis for the $(1,1)$ forms on $M$, we can isolate the coefficients in the equation above to finally get:
+%
+\begin{align}
+B^a_{ijs} \bar{B}^a_{ikr} =& - \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \delta^j_k \delta^r_s + \delta^k_s \delta^j_r \right) + \left( \frac{nc}{4} - \frac{\lambda}{2} \right)  \bar{A}^a_{rk} A^a_{sj}\\
+&+ \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{ls} A^b_{ij} + \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{lj} A^b_{is}  \notag 
+\end{align}
+
+\begin{cor}  If $\lambda < \frac{(n+1)c}{2}$ then, in fact, $\lambda \leq \frac{nc}{2}$, with equality holding if and only if the second fundamental form $B$ is parallel.
+\end{cor}
+%
+\begin{proof} For convienince, write $ K =\left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)$.  Set $k = j$ and $r = s$ in formula (13) to get:
+%
+\begin{align*}
+B^a_{ijs} \bar{B}^a_{ijs} =& -\frac{c}{4} K ( \delta^j_j \delta^r_r + \delta^r_j \delta^r_j ) + \left( K - \frac{c}{4} \right) \bar{A}^a_{sj} A^a_{sj} \\
+&+ \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sr} A^b_{ij} + \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sj} A^b_{ir}
+\end{align*}
+%
+It is easy to see that:
+%
+\begin{align*}
+-\frac{c}{4} K ( \delta^j_j \delta^r_r + \delta^r_j \delta^r_j ) = -\frac{c}{4} K n (n+1)
+\end{align*}
+%
+The second and fourth terms can be computed using formula (10):
+%
+\begin{align*}
+\left( K - \frac{c}{4} \right) \bar{A}^a_{sj} A^a_{sj} = n K \left( K - \frac{c}{4} \right)
+\end{align*}
+%
+\begin{align*}
+\bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sj} A^b_{ir} = \delta^i_s \delta^i_s K^2 = n K^2
+\end{align*}
+%
+The third term we can merely estimate, using the Cauchy-Swartz inequality.  For sake of clarity, in the estimate we temporarily drop our summation convention.  We have:
+%
+\begin{align*}
+\sum_{abijsr} \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sr} A^b_{ij} &= \sum_{ijsr} \left( \sum_{a} \bar{A}^a_{ij} A^a_{sr} \right)\left( \sum_{b} \bar{A}^b_{sr} A^b_{ij} \right) = \sum_{ijsr} \left| \sum_{a} \bar{A}^a_{ij} A^a_{sr} \right|^2 \\
+&\leq \sum_{ijrs} \left| \sum_{a} \bar{A}^a_{ij} \right|^2 \left| \sum_{b}  A^b_{sr} \right|^2 \\
+&= \sum_{ijrs} \left( \sum_{a} \bar{A}^a_{ij} A^a_{ij} \right) \left( \sum_{b}  A^b_{sr} \bar{A}^b_{sr} \right)\\
+&= n^2 K^2
+\end{align*}
+%
+Where we have used (10) in the last equality.  Putting this all together, and doing a little calculation, we get:
+%
+\begin{align*}
+B^a_{ijs} \bar{B}^a_{ijs} &\leq -\frac{c}{4} K n(n+1) + n K \left( K - \frac{c}{4} \right) + n K^2 + n^2 K^2 \\
+&= n(n+2) \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \frac{nc}{4} - \frac{\lambda}{2} \right)
+\end{align*}
+%
+Now $B^a_{ijs} \bar{B}^a_{ijs}$ and $\left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)$ are both non-negative, so it follows that $\left( \frac{nc}{4} - \frac{\lambda}{2} \right)$ must be as well.  That is, $\lambda \leq \frac{nc}{2}$.  Equality occurs if and only if $B^a_{ijs} = 0$ for every $a,i,j,s$, which by lemma 6, means that the second fundamental form $B$ is parallel.
+\end{proof}
+ 
+With the formula for $B^a_{ijk} \bar{B}^a_{irs}$ in hand we want to study the map $\TMp \odot \TMp \rightarrow \Hom( \TMp, \NMp )$ in more detail.  So let $X = x_{jk} e_j \odot e_k$ be a non-zero vector in $\TMp \odot \TMp$. Then:
+%
+\begin{align*}
+\la \nabla B (X, e_i), \nabla B(X, e_i) \ra &=  x_{jk} \bar{x}_{rs} \la \nabla B(e_j, e_k, e_i), \nabla B(e_r, e_s, e_i) \ra \\
+&= x_{jk} \bar{x}_{rs} B^a_{ijk} \bar{B}^a_{irs}
+\end{align*}
+%
+Using (13) we get that this is equal to:
+%
+\begin{align*}
+- \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)\left( \delta^j_r \delta^s_k + \delta^k_r \delta^s_j \right) x_{jk} \bar{x}_{rs} + \left( \frac{nc}{4} - \frac{\lambda}{2} \right) A^b_{rs} \bar{A}^b_{jk} x_{jk} \bar{x}_{rs} \\
++ \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} + \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lj} A^c_{mk} x_{jk} \bar{x}_{rs}
+\end{align*}
+%
+Looking at the first two of these terms, and recalling that $x_{ij} = x_{ji}$, we see that:
+%
+\begin{align*}
+- \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \delta^j_r \delta^s_k + \delta^k_r \delta^s_j \right) x_{jk} \bar{x}_{rs} &= - \frac{c}{2} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) x_{jk} \bar{x}_{jk} \\
+&= - \frac{c}{2} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \sum_{jk} \left| x_{jk} \right|^2
+\end{align*}
+%
+For the second term we observe that:
+%
+\begin{align*}
+\left( \frac{nc}{4} - \frac{\lambda}{2} \right) A^b_{rs} \bar{A}^b_{jk} x_{jk} \bar{x}_{rs} = \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2
+\end{align*}
+%
+For the final two terms, we calculate:
+%
+\begin{align*}
+\bar{A}^b_{mr} \bar{A}^c_{ls} & A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} + \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lj} A^c_{mk} x_{jk} \bar{x}_{rs} \\ 
+&= \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} + \bar{A}^c_{mr} \bar{A}^b_{ls} A^c_{lj} A^b_{mk} x_{jk} \bar{x}_{rs} \\
+&=  \sum_{lmbc} \left( \sum_{rs} ( \bar{A}^b_{mr} \bar{A}^c_{ls} - \bar{A}^c_{mr} \bar{A}^b_{ls} ) \bar{x}_{rs} \right) \left( \sum_{jk} ( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} ) x_{jk} \right)\\
+&\quad +  \bar{A}^b_{mr} \bar{A}^c_{ls} A^c_{lj} A^b_{mk} x_{jk} \bar{x}_{rs} + \bar{A}^c_{mr} \bar{A}^b_{ls} A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} \\
+&= - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk}  \right) x_{jk} \right|^2 + 2 \delta^r_k \delta^j_s \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)^2 x_{jk} \bar{x}_{rs} \\
+&= - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} \right) x_{jk} \right|^2 + 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)^2 \sum_{jk} \left| x_{jk} \right|^2
+\end{align*}
+%
+Therefore, we have:
+%
+\begin{align*}
+\la \nabla B (X, e_i), \nabla B(X, e_i) \ra &= - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} \right) x_{jk} \right|^2 \\
+&+ \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2 \\
+&+ \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) - \frac{c}{2} \right) \sum_{jk} \left| x_{jk} \right|^2 \\
+&=  - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} \right) x_{jk} \right|^2 \\
+&+ \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2 \\
+&+ 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{jk} \left| x_{jk} \right|^2
+\end{align*}
+%
+We now have all the pieces in hand that we need to prove Chern's theorem.
+
+\begin{thm} 
+Suppose that $m=1$, then the Einstein constant $\lambda$ is either $\frac{(n+1)c}{2}$ or $\frac{nc}{2}$.  In the first case, the immersion is totally geodesic, and in the second, the second fundamental form $B$ is parallel. 
+\end{thm}
+
+\begin{proof} When $m=1$ the first term in the previous formula is easily seen to vanish, so:
+%
+\begin{align*}
+\la \nabla B (X, e_i), \nabla B(X, e_i) \ra &= \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2 \\
+&+ \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) - \frac{c}{2} \right) \sum_{jk} \left| x_{jk} \right|^2 \\
+\end{align*}
+If $\lambda \neq \frac{(n+1)c}{2}, \frac{nc}{2}$, then, by a previous corollary, it must be the case that $\lambda < \frac{nc}{2}$, hence the right hand side is positive.  Therefore:
+%
+$$ \la \nabla B (X, e_i), \nabla B(X, e_i) \ra > 0 $$
+%
+and hence the map $\TMp \odot \TMp \rightarrow \Hom( \TMp, \NMp )$ is injective.  We know already that the map $TM^{+} \rightarrow \Hom( TM^{+}, NM^{+} )$ is injective, and that the images of these two maps are orthogonal.  Since the dimension of $TM^{+}$ is $n$, the dimension of $\TMp \odot \TMp$ is $\frac{n(n-1)}{2}$.  The dimension of $ \Hom ( \TMp, \NMp ) $ is $ n \times 1 = n$, so we must conclude that:
+%
+$$ n + \frac{n(n-1)}{2} < n $$
+%
+which is a contradiction unless $n=1$, a case we have already studied in the previous chapter.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,149 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \Mamb{ \mathcal{M} }
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+Let $\Mamb^n(c)$ be an $n$ dimensional K\"{a}hler space form with constant holomorphic curvature $c$.  As is the case in reimannian geometry, such an $\Mamb$ is locally holomorphically isometric to a standard model space: $\C^n$ with its standard flat metric if $c=0$, $\CP^n(c)$ with its Fubini-Study metric if $c>0$, or $\CH^n(c)$ with its hyperbolic metric if $c<0$.  Let $M$ be a complex submanifold of $\Mamb$.  As is well known, this submanifold inherits a K\"{a}hler structure from that of $\Mamb$.  We call $M$ a Kahler-Einstein submanifold if the induced metric on $M$ is Einstein.  In this paper we address the problem of classifying what submanifolds of complex space forms are Einstein.
+
+The first person to obtain results in this direction was Calabi in his thesis \cite{C1}.  This remarkable work contains a wealth of innovative mathematics, methodically studying isometric embedding in flat and positively curved space forms.  As his main tool Calabi introduces the diastas $D_M$, a real analytic function, determined by the metric, which is defined on a neighborhood of the diagonal in $M \times M$.  The most important property of $D_M$ is its simple behavior with respect to submanifolds:  if $M \rightarrow \Mamb$ is a holomorphic embedding then the diastasis of $\Mamb$ restricts to the diastasis of $M$.  This makes the distasis a tool perfectly suited to the study of complex submanifolds, and using it Calabi is able to deduce necessary and sufficient conditions for a Kahler manifold to isometrically embed into $\C^n$ or $\CP^n(c)$.  
+
+We will elaborate on these results enough to see how Calabi's work settles the problem of classifying Einstein curves isometrically embedded in $\C^n$ or $\CP^n(c)$.  Before beginning we first remark that a K\"{a}hler-Einstein curve is simply a space form of a single complex dimension.  
+
+Let $p$ be a point in some K\"{a}hler manifold $M$, and let $z:U \rightarrow \C$ be a complex coordinate system with $z(p) = 0$.  Then the diastasis has a power series expansion near $(p,p)$:
+%
+$$ D_M(0, z(q)) = \sum_{IJ} b_{IJ} z(q)^I \overline{z(q)}^J $$
+%
+where $I,J$ are multi-indices.  The matrix $(b_{IJ})$ is hermitian, and one can define its rank.  Then, according to Calabi, some neighbourhood of $p$ in $M$ can be isometrically embedded into $\C^n$ if and only if the rank of $b_{IJ}$ is less than or equal to $n$.  Furthermore, if this rank is equal to $n$, then no neighbourhood can be embedded in $\C^{m}$ for any $m < n$, and any two embeddings into $\C^n$ differ by a unitary transformation.  By examining the diastatic functions of $\CP^{1}(c)$ and $\CH^{1}(c)$ one sees that they do not satisfy the criterion above, and hence there is no local isometric embedding of these manifolds into $\C^n$.  Therefore the only isometrically ebedded Einstein complex curves in $\C^n$ are complex lines.
+
+Similar considerations to those above yield a necessary and sufficient condition for a K\"{a}hler manifold to isometrically embed in $\CP^n(c)$.   This criterion immediately implies that $\C$ and $\CH^1$ cannot be isometrically embedded into $\CP^n$ even locally.  As for $\CP^1$, in the last theorem of his paper Calabi applies his criterion to prove:
+
+{\bf Theorem (Calabi):} The space $\CP^{m}(c)$ can be globally embedded into $\CP^{n}(\tilde{c})$ if and only if the following conditions are satisfied:
+\begin{enumerate}
+\item $c \leq \tilde{c}$
+\item $\tilde{c} = k c$ for some positive integer $k$
+\item $ n \geq \left( \begin{array}{c} m + k \\ k \end{array} \right) - 1 $
+\end{enumerate}
+
+Taking $\tilde{c} = 1$ and $m = 1$, we find that $\CP^1(c)$ embedds into $\CP^n(1)$ if and only if $c = \frac{1}{k}$ for some $k$, and $n \geq k$.  Looking at this another way, we see that any einstein curve isometrically embedded in $\CP^{n}$ must have constant sectional curvature equal to one of the numbers $1, \frac{1}{2}, \ldots, \frac{1}{n}$.
+
+Examples of such curves are easy to construct.  Let $[z_1, z_2]$ be the homogeneous coordinates on $\CP^1$.  Then the map:
+%
+$$ [z_1, z_2] \mapsto \left[ \sqrt{ \left( \begin{array}{c} n \\ 0 \end{array} \right) } z_1^n, \sqrt{ \left( \begin{array}{c} n \\ 1 \end{array} \right) } z_1^{n-1} z_2, \cdots, \sqrt{ \left( \begin{array}{c} n \\ n \end{array} \right) } z_2^n \right] $$ 
+%
+isometrically embeddes $\CP^1(\frac{1}{n})$ into $\CP^n(1)$.
+
+The next person to make progress on the problem was Smyth in his thesis \cite{S}, who addressed the case of a complete Einstein hypersurface embedded in a space form.  Let $Q^{n}$ denote the smooth algebraic variety in $\CP^{n+1}$ which is defined by the homogeneous polynomial equation:
+%
+$$ z_0^2 + z_1^2 + \cdots + z_{n+1}^2 = 0 $$
+%
+which is called a hypersphere.  Then Smyth's result is:
+
+{\bf Theorem (Smyth):} If $n \geq 2$ then:
+%
+\begin{itemize}
+\item  $\CP^n$ and the complex hypersphere $Q^n$ are the only complex hypersurfaces in $\CP^{n+1}$ which are complete and Einstein.
+\item  $\C^n$ is the only simply connected complex hypersurface in $\C^{n+1}$.
+\item  $\CH^n$ is the only simply connected complex hypersurface in $\CH^{n+1}$.
+\end{itemize}
+
+Smyth proves his theorem with an in depth analysis of the second fundamental form of a potential Einstein hypersurface.  His work is heavily connection theoretic, playing with the curvature tensors of the space form and hypersurface until he can show that any Einstein hypersurface is a symmetric space.  Then he calls upon Cartan's classification of Hermitian symmetric spaces to narrow down the possibilities for the sumbmanifold to those in the theorem.  
+
+Smyth's work was soon generalized by Chern \cite{Ch}, who proved the corresponding local result.  Chern used his complete mastery of Cartan's connection form formalism to prove that any Einstein hypersurface in a space form of curvature $c$ must have Einstein constant $\lambda$ equal to either $\frac{(n+1)c}{2}$ or $\frac{nc}{2}$.  In case $\lambda = \frac{(n+1)c}{2}$ it is easy to prove that $M$ must be totally geodesic.  It follows from the Gauss equation that when $c<0$ the $\lambda = \frac{nc}{2}$ case cannot occur.  On the other hand, in the case $\lambda = \frac{nc}{2}$ and $c>0$, Chern gives a geometric proof that $M$ is locally isometric to the hypersphere $Q^{n-1}$.
+
+More progress was made by Tsukada \cite{T} who generalized Chern's work to submanifolds of codimension 2.  Tsukada's theorem is:
+
+{\bf Theorem (Tsukada) : } Let $M$ be an isometrically embedded K\"{a}hler Einstein submanifold of codimension 2 in a complex space form $\Mamb(c)$.  Then:
+%
+\begin{itemize}
+\item If $c \leq 0$, then $M$ is totally geodesic.
+\item If $c > 0$, then $M$ is either totally geodesic, or $M$ is a hypersphere $Q^{n-2}$ inside of some totally geodesic hypersurface $\CP^{n-1}(c)$.
+\end{itemize}
+
+Tsukada's argument involves a detailed study of the second fundamental form of $M$ and its first two covariant derivatives.  By carefully investigating the linear algebraic properties of these tensors he obtains the result above.
+
+Finally we have the work of Umehara, which is based on the ideas of Calabi.  In a sequence of three papers \cite{Um1} \cite{Um2} Umehara investigates in detail the properties of Calabi's diastatic function.  
+
+In his first paper, Umehara studies the structure of the set of real analytic function on a K\"{a}hler manifold.  More precisely, he introduces the algebra:
+%
+$$ \Lambda( M ) = \text{span}_{\mathbb{R}} \{ h \bar{k} + \bar{h} k : h, k \text{ are holomorphic functions on } M \} $$
+%
+If $M$ is compact, then $\Lambda(M)$ coincides with the algebra of all real analytic functions on $M$, and in any case, the structure of $\Lambda(M)$ is intimately connected with the complex geometry of $M$.  While studying $\Lambda(M)$ Umehara is able to put the results of Calabi in a convenient framework, which greatly clarifies ones understanding of the situation.  Next, in \cite{Um2}, Umehara addresses the general case of an Einstein submanifold of a complex space form.  It is easy to write down a condition, involving only the diastasis, for $M$ to be embeddable as an Einstein submanifold of $\Mamb(c)$.  Using this condition, and his understanding of the structure of $\Lambda(M)$, Umehara succeeds in completely solving the classification problem in the case $c \leq 0$, obtaining the following result:
+
+{\bf Theorem (Umehara) :} Any Einstein submanifold of $\C^n$ or $\CH^n$ is totally geodesic.
+
+Unfortunately Umehara does not make any progress in the positive curvature case, but even with this drawback, his work is both profound and beautiful.
+
+Reflecting on these results, one immediately sees that there are currently two approaches to the classification problem.  The approach of Calabi and Umehara is analytic, and studies the diastatic function of a space form to draw conclusions about the geometry of submanifolds of $\Mamb$.  The work of Smyth, Chern and Tsukada is purely differential geometric, and uses classical connection theoretic tools to draw conclusions about submanifolds with careful linear algebraic arguments.  One wonders what the connection is between these two approaches, and whether results proved with one technique are approachable with the other.  Also, one wonders whether either technique has exhausted what it can tell us about the problem - can pure differential geometry be more carefully applied to draw further conclusions, and can the diastasis (and the structure of $\Lambda(M)$) be further investigated to draw conclusions in the positive curvature case?  These are the type of questions we wish to address in this paper.
+\vfill
+\begin{thebibliography}{-1}
+
+\parskip 4pt
+
+\bibitem[C1] {C1} E. Calabi, {\it Isometric imbedding of complex manifolds},
+Ann. of Math. 58 (1953), 1-23.
+
+\smallskip
+
+\bibitem[C2] {C2} E. Calabi, {\it Metric Riemann surfaces},
+Contributions to the Theory of Riemann Surfaces, Ann. of Math.
+Studies, Princeton, 1953.
+
+\smallskip
+
+\bibitem[CE] {CE} J. Cheeger, D. Ebin, {\it Comparison Theorems in Riemannian Geometry}, AMS Chelsea Publishing, 2008.
+
+\smallskip
+
+\bibitem[Ch] {Ch} S. S. Chern, {\it Einstein hypersurfaces in a K\"ahlerian manifold of constant
+holomorphic curvature}, J. Differential Geometry. 1 (1967), 21-31.
+
+\smallskip
+
+\bibitem[dC] {dC} M. P. doCarmo {\it Riemannian Geometry}, Birkhauser. 1992. 
+
+\smallskip
+
+\bibitem[S] {S} B. Smyth, {\it Differential geometry of complex hypersurfaces},
+Ann. of Math. 85 (1967), 246-266.
+
+\smallskip
+
+\bibitem[T] {T} K. Tsukada, {\it Einstein K\"ahler submanifolds with codimension 2 in a complex space form},
+Math Ann. 274 (1986), 503-516.
+
+\smallskip
+
+\bibitem[Um1] {Um1} M. Umehara, {\it Einstein K\"ahler submanifolds of
+a complex linear or hyperbolic space}, T\^{o}hoku Math. Journ. 39
+(1987), 385-389.
+
+\smallskip
+
+\bibitem[Um2] {Um2} M. Umehara, {\it Diastases and real analytic functions on complex
+manifolds}, J. Math. Soc. Japan Vol. 40, No. 3 (1988), 519-539.
+
+
+\end{thebibliography}
+\bigskip
+
+\end{document}

@@ -1,0 +1,339 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{example}[subsection]{Example}
+
+
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \Mamb{ \mathcal{M} }
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+\def \disk{ \mathbb{D} }
+\def \tr{ \text{tr} }
+
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\section{ Examples of Kahler-Einstein Submanifolds of Complex Projective Space }
+
+In this section we give some examples of Einstein submanifolds of the complex projective space (equipped with the Fubini-Study metric).
+
+\subsection{ Totally Geodesic Subspaces }
+
+Recall that in a previous section we were able to completely classify the totally geodesic subspaces in a Kahler manifold of constant holomorphic curvature.  In the case of a Fubini study space these were (projections of) intersections of linear subspaces with the ambient space.  Of course, these subspaces are also complex projective spaces, and they inherit a Fubini study metric of the same holomorphic curvature as the ambient space.  In particular, they are Einstein submanifolds. 
+
+\subsection{ Embedded Fubini-Study spaces }
+
+Now we move on to a more general class of embedded Fubini-Study spaces, which include the totally geodesic subspaces as a special case.  We begin with an example to illustrate the general case.
+
+\begin{example}  We show how to embedd the complex projective space $\CP^2$ into the Fubini-Study space $\CP^5$ so that the indeced metric is also Fubuni-Study, but so that the image does not lie in any totally geodesic subspace.  
+
+Let $[z_0, z_1, z_2]$ be homogeneous coordinates on $\CP^2$, and $[w_0, w_1, w_2, w_3, w_4, w_5]$ homogeneous coordinates on $\CP^5$.  Our embedding will be given by the mapping:
+%
+$$ \phi( [z_0, z_1, z_2] ) = [z_0^2, \sqrt{2} z_0 z_1, \sqrt{2} z_0 z_2, z_1^2, \sqrt{2} z_1 z_2, z_2^2 ] $$
+%
+which is inspired by the algebraic identity: 
+%
+$$ ( z_0 + z_1 + z_2 )^2 = z_0^2 + 2 z_0 z_1 + 2 z_0 z_2 + z_1^2 + 2 z_1 z_2 + z_2^2 $$
+%
+Note that since each of the terms in the embedding is homogeneous of degree 2, we have indeed defined a mapping $\CP^2 \rightarrow \CP^5$.
+
+Now consider the inhomogeneous coordinate systems $[1,z_1,z_2]$ and $[1,w_1,w_2,w_3,w_4]$, and notice that the mapping we defined above sends the region covered by the first coordinate system into that covered by the second.  The differential of $\phi$ in these coordinate systems is now easy to compute and is given by:
+%
+$$ d \phi =
+\left( \begin{array}{cc} 
+\sqrt{2} & 0 \\
+0 & \sqrt{2} \\
+2 z_1 & 0 \\
+\sqrt{2} z_2 & \sqrt{2} z_1 \\
+0 & 2 z_2 \\
+\end{array} \right) $$
+% 
+It is easy to see that this matrix has full rank, and so our mapping is an immersion.  To see further that it is an embedding we need to check that it is globally one to one.  This is simple enough.  If $\phi( [z_0, z_1, z_2 ] ) = \phi( [x_1, x_2, x_3] )$ then there is a complex number $\lambda$ so that:
+%
+$$ z_0^2 = \lambda^2 x_0^2 \text{ and } z_1^2 = \lambda^2 x_1^2 \text{ and } z_2^2 = \lambda^2 x_2^2 $$
+%
+Upon taking square roots, we get:
+%
+$$ z_0 = \pm \lambda x_0 \text{ and } z_1 = \pm \lambda x_1 \text{ and } z_2 = \pm \lambda x_2 $$
+%
+Now, if the signs in three of these equalities agree, then we get $[ z_0, z_1, z_2 ] = [ \lambda x_1, \lambda x_2, \lambda x_3 ]$, as we wanted.  So suppose to the contrary that a pair of signs disagrees, say:
+%
+$$ z_0 = \lambda x_0 \text{ and } z_1 = - \lambda x_1 $$
+%
+Then:
+%
+$$ \sqrt{2} z_0 z_1 = - \lambda^2 \sqrt{2} x_0 x_1 $$
+%
+But this contradicts the relation $ \sqrt{2} z_0 z_1 = \lambda^2 \sqrt{2} x_0 x_1 $, which is a consequence of our assumption.  Therefore all the signs must agree, and the mapping is globally one to one.  
+
+Now we show that the image of the mapping does not lie in any totally geodesic subspace.  If this were so then there would be a linear relation:
+%
+$$  a z_0^2 + b \sqrt{2} z_0 z_1 + c \sqrt{2} z_0 z_2 + d z_1^2 + e \sqrt z_1 z_2 + f z_2^2 ) = 0 $$
+%
+which holds for all values of $(z_0, z_1, z_2)$.  Successively setting each of the variables equal to one while letting the two remaining be zero gets us that:
+%
+$$ a = 0 \text{ and } d = 0 \text{ and } f = 0 $$
+%
+Similarly, if we successively let two of the variables take the value one, while letting the other be zero, them we get that:
+%
+$$ \lambda(1,1,0) b = 0 \text{ and } \lambda(1,0,1) c = 0 \text{ and } \lambda(0,1,1) e = 0 $$
+%
+Therefore, the only linear relation possible is the trivial one, and we conclude that the image of $\phi$ does not lie in a totally geodesic subspace.
+
+Finally, we verify that the induced metric is Fubini-Study, and explicitly calculate the holomorphic curvature.  We continue to use the coordinate systems above.  Recall that a Kahler potential for the Fubini-Study metric on the ambient space is:
+%
+$$ f( w_1, w_2, w_3, w_4, w_5 ) = \frac{2}{c} \log ( 1 + |w_1|^2 + |w_2|^2 + |w_3|^2 + |w_4|^2 + |w_5|^2 ) $$
+%
+The potential for the induced metric on $\CP^2$ is the restriction of the potential for the ambient space to the image.  Substituting in, we get that the induced potential is:
+%
+\begin{align*}
+f \circ \varphi ( z_1, z_2 ) &= \frac{2}{c} \log ( 1 + |z_0^2|^2 + 2|z_0 z_1|^2 + 2|z_0 z_2|^2 + |z_1^2|^2 + 2|z_1 z_2|^2 + |z_2^2|^2 ) \\
+&= \frac{2}{c} \log( (1 + |z_1|^2 + |z_2|^2 )^2 ) \\
+&= \frac{4}{c} \log( 1 + |z_1|^2 + |z_2|^2 )
+\end{align*}
+%
+This is the potential for the Fubini-Study metric on $\CP^2$ with constant holomorphic curvature $\frac{c}{2}$.
+%
+\end{example}
+
+Now we turn to the general case.
+
+To begin, we consider the algebraic identity:
+%
+$$ (z_0 + z_1 + \cdots z_m )^k = \sum_I c_I z^I $$
+%
+where the $I$'s are multi-indices.  We include the following combinatorial result for completeness:
+%
+\begin{lem} The number of terms in the sum above is $\left( \begin{array}{c} m + k \\ k \end{array} \right)$
+\end{lem}
+
+\begin{proof} Each term in the sum above corresponds to a monomial of the shape $z_0^{i_1} z_1^{i_1} \cdots z_m^{i_m}$, where each of the $i$'s is a non-negative integer, and $i_0 + i_1 + \cdots + i_m = k$. Think of forming such a monomial by first writing down a list of $k$ stars, for instance, say $k=5$, then we would start with:
+%
+$\ast \ast \ast \ast \ast$
+%
+To communicate a monomial we then group these stars into $m+1$ collections.  We do this by separating the stars with bars, for instance, when $m=2$ we get the following correspondences:  
+%
+$$ *|**|** \mapsto z_0 z_1^2 z_2^2 $$
+$$ **||*** \mapsto z_0^2 z_2^3 $$
+$$ |*****| \mapsto z_1^5 $$
+%
+and so on (we hope the reader can see the correspondence from these examples).  Now to count the number of possible star and bar diagrams we simply observe that we have $m+n$ spaces we want to fill with $k$ stars and $m$ bars.  Choosing the $k$ places to put the stars automatically determines where the bars go, because they must fill up the remaining spaces.  Since there are $n+k$ spaces, and we are placing $k$ stars in them, we get the count that were after.
+\end{proof}
+
+For notational convenience we will use the abbreviation $C(m+k,k) = \left( \begin{array}{c} m + k \\ k \end{array} \right)$ below.
+
+Now we define an embedding $\varphi : \CP^m \rightarrow \CP^{C(m+k,k)}$ by:
+%
+$$ [z_0, z_1, \ldots, z_m ] \mapsto [ \sqrt{ c_I } z^I ]_{I} $$
+%
+For example, in the case $m=2$ and $k=2$ we get the mapping from our example above.  Furthermore, in the case $m=1$, we get the following embedding of $\CP^1$ into $\CP^k$:
+%
+$$ [z_0, z_1] \mapsto \left[ \sqrt{ \left( \begin{array}{c} n \\ 0 \end{array} \right) } z_0^k, \sqrt{ \left( \begin{array}{c} n \\ 1 \end{array} \right) } z_0^{k-1} z_1, \cdots, \sqrt{ \left( \begin{array}{c} n \\ n \end{array} \right) } z_1^k \right] $$ 
+%
+which was mentioned in the introduction.
+
+We want to determine what metric is induced on $\CP^m$ by this embedding.  Working in the coordinate system $[1, w_1, \ldots, w_{C(k,m)}]$ we recall that a potential for the Fubini-Study metric of constant holomorphic curvature $c$ on the ambient space is:
+%
+$$ f( w_1, \ldots, w_{C(k,m)} ) = \frac{2}{c} \log ( 1 + |w_1|^2 + \cdots + | w_{C(k,m)} |^2 ) $$
+%
+The map $\varphi$, when expressed in this coordinate system for the ambient space and the corresponding coordinate system for $\CP^m$, is given by:
+%
+$$ \varphi[ 1, z_1, \ldots, z_m ] = \left[ \sqrt{ c_I } z^I |_{z_0 = 1} \right]_I $$
+%
+So a Kahler potential for the induced metric on $\CP^m$ is:
+%
+\begin{align*}
+f \circ \varphi[ 1, z_1, \ldots, z_m ] &= \frac{2}{c} \log \left( \ \sum_I | \sqrt{ c_I } z^I  |^2_{z_0 = 1} \ \right) \\
+&= \frac{2}{c} \log \left( \sum_I c_I |z_I|^2_{z_0 = 1} \right) \\
+&= \frac{2}{c} \log( \ ( 1 + |z_1|^2 + \cdots + |z_m|^2 )^k \ ) \\
+&= \frac{2k}{c} \log( 1 + |z_1|^2 + \cdots + |z_m|^2 ) 
+\end{align*}
+%
+which is the potential for the fubini-study metric on $\CP^m$ of constant holomorphic sectional curvature $c$, scaled by a factor of $k$.  Hence the induced metric has constant holomorphic sectional curvature $\frac{c}{k}$, and is consequently a Kahler-Einstein submanifold with einstein constant $\lambda = \frac{(m+1)c}{2k}$.
+
+\subsection{ Products of Fubini-Study Spaces }
+
+We now want to expand the discussion in the previous section to embedded products of Fubini-Study spaces.  Again, we start with a simple example to illustrate.
+
+\begin{example} We show how to embed $\CP^1 \times \CP^1$ into $\CP^3$ so that the induced geometry is a product of Fubini-Study metrics.  Again, this embedding will be full in the sense that the image does not lie in any proper totally geodesic subspace. 
+
+Let $[x_0,x_1]$ and $[y_0, y_1]$ be homogeneous coordinates on the two $\CP^1$ factors, and let $[w_0, w_1, w_2, w_3]$ be homogeneous coordinates on $\CP^3$.  Our embedding is given by the mapping:
+%
+$$\varphi( [x_0, x_1], [y_0, y_1] ) = [ x_0 y_0, x_0 y_1, x_1 y_0, x_1 y_1 ]$$
+%
+It is easy to see that this mapping is well defined.
+
+We now want to show that $\varphi$ is an immersion.  To do so, we consider the inhomogeneous coordinate systems $[1,x_1]$, $[1,y_1]$ and $[1,w_1,w_2,w_3]$.  Note that the region covered in $\CP^1 \times \CP^1$ by the product of the first two coordinate systems is mapped by $\varphi$ into the region covered by the third in $\CP^3$.  Therefore we can compute the differential of $\varphi$ in these coordinates, and the result is:
+%
+$$ d \varphi = \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \\ y_1 & x_1 \end{array} \right) $$
+%
+This matrix clearly has full rank, so $\varphi$ is an immersion.
+
+Now we check that $\varphi$ is globally one to one, and is hence an embedding.  Suppose that $\varphi( [x_0, x_1], [y_0, y_1 ] ) = \varphi( [x'_0, x'_1], [y'_0, y'_1 ] )$.  Then there is a non-zero complex number $\lambda$ so that:
+%
+$$ x_0 y_0 = \lambda x'_0 y'_0 \text{ and } x_0 y_1 = \lambda x'_0 y'_1 \text{ and } x_1 y_0 = \lambda x'_1 y'_0 \text{ and } x_1 y_1 = \lambda x'_1 y'_1 $$
+%
+Dividing the first of these equations by the second, and the first by the third, (or the other way around if necessary) gives us:
+%
+$$ \frac{y_0}{y_1} = \frac{y'_0}{y'_1} \text{ and } \frac{x_0}{x_1} = \frac{x'_0}{x'_1} $$
+%
+So there are non-zero complex numbers $a$ and $b$ such that:
+%
+$$ y_0 = a y'_0 \text{ and } y_1 = a y'_1 $$
+%
+and:
+%
+$$ x_0 = b x'_0 \text{ and } x_1 = b x'_1 $$
+%
+So we get $[x_0, x_1] = [x'_0, x'_1]$ and $[y_0, y_1] = [y'_0, y'_1]$, which is what we wanted to show.
+
+Now let's show that the image of $\varphi$ does not lie in any proper totally geodesic subspace.  Let:
+%
+$$ a x_0 y_0 + b x_0 y_1 + c x_1 y_0 + d x_1 y_0 = 0 $$
+%
+be a linear relation that holds for all $x_0, x_1, y_0$ and $y_1$.  Setting pairs of variables equal to one while letting the other pair be zero immediately allows us to conclude that $a=b=c=d=0$.  So the only linear relation is the trivial one, and consequently the image of $\varphi$ does not lie in a proper totally geodesic subspace.
+
+We now want to determine the metric induced on $\CP^1 \times \CP^1$ by this embedding.  Again, we work in the coordinate systems we already used above, and use the Kahler potential of the ambient space, which we remind the reader is:
+%
+$$ f(w_1,w_2,w_3) = \frac{2}{c} \log ( 1 + |w_1|^2 + |w_2|^2 + |w_3|^2 ) $$
+%
+Therefore, a potential for the induced metric on $\CP^1 \times \CP^1$ is:
+%
+\begin{align*}
+f \circ \varphi ( x_1, y_1 ) &= \frac{2}{c} \log ( 1 + |x_1|^2 + |y_1|^2 + |x_1 y_1|^2 ) \\
+&= \frac{2}{c} \log ( (1 + |x_1|^2) (1 + |y_1|^2 ) ) \\
+&= \frac{2}{c} \log ( 1 + |x_1|^2 ) + \frac{2}{c} \log ( 1 + |y_1|^2 )
+\end{align*}
+%
+Which the reader will recognise as a potential for the product of two Fubini-Study spaces of constant holomorphic curvature $c$.  Note that since the curvatures of each factor agree, this is an Einstein submanifold.
+\end{example}
+
+Now we will discuss how to embed products in general.  Before we begin in earnest, let's first discuss when a product of Fubini-Study spaces is a Kahler-Einstein manifold:
+
+\begin{lem}
+A metric product $\CP^{n_1}(c_1) \times \CP^{n_2}(c_2) \times \cdots \times \CP^{n_k}(c_k)$ of Fubini-Study spaces is Kahler-Einstein if and only if $(n_1 + 1) c_1 = (n_2 + 1) c_2 = \cdots = (n_k + 1) c_k$.
+\end{lem}
+
+\begin{proof}
+Recall that a Fubini-Study space $\CP^n(c)$ is Kahler-Einstein with constant $\frac{(n+1)c}{2}$, and that a product of Einstein manifolds is itself Einstein if and only if the Einstein constants of the individual factors agree.  The lemma follows immediately from these two facts.
+\end{proof}
+
+We will only consider the case of a product of two projective spaces in this exposition, but it will be clear to the reader how to generalize our results to the case of more factors.  Consider the algebraic identity:
+%
+$$ (x_0 + x_1 + \cdots + x_n)^r (y_0 + y_1 + \cdots + y_m)^s = \sum_{IJ} c_{IJ} x^I y^J $$
+%
+where the $I$'s and the $J$'s are multi-indicies.  Note that there are $\left( \begin{array}{c} n  + r \\ r \end{array} \right) \left( \begin{array}{c} m + s \\ s \end{array} \right)$ terms in the sum on the right, which we abbreviate $C(n + r, r) C( m + s, s)$ for the same typographical reasons as before.  
+
+Now consider the product manifold $\CP^{n} \times \CP^{m}$.  Similarly to before, we define a mapping:
+%
+$$ \varphi : \CP^{n} \times \CP^{m} \rightarrow \CP^{ C(n + r, r) C( m + s, s) - 1} $$
+%
+whose expression in the obvious homogeneous coordinates is:
+%
+$$ \varphi( [x_0, x_1, \ldots, x_n], [y_0, y_1, \ldots, y_m] ) = [ \sqrt{c_{IJ}} x^I y^J ]_{IJ} $$
+%
+Notice that the previous example concerned the case $n=m=r=s=1$.  
+
+We want to determine what metric is induced on the product by this embedding.  To do so we, as usual, restrict the Kahler potential$f$ for the metric on the ambient space to our submanifold.  We express the result in inhomogeneous coordinates (as before). The result is:
+%
+\begin{align*}
+f \circ \varphi( & [1, x_1, \ldots, x_n], [1, y_1, \ldots, y_m] ) = \frac{2}{c} \log \left( \sum_{IJ} | \sqrt{c_{IJ}} x^I y^J |^2_{x_0 = y_0 = 1} \right) \\
+&= \frac{c}{2} \log \left( \sum_{IJ} c_{IJ} |x^I y^J|^2_{x_0 = y_0 = 1} \right) \\
+&= \frac{c}{2} \log \left( (1 + |x_1|^2 + \cdots + |x_n|^2 )^r (1 + |y_1|^2 + \cdots + |y_m|^2 )^s \right) \\
+&= \frac{cr}{2} \log ( 1 + |x_1|^2 + \cdots + |x_n|^2 ) + \frac{cs}{2} \log (1 + |y_1|^2 + \cdots + |y_m|^2 )
+\end{align*}
+%
+Which we recognise as the potential for a product of Fubini-Study metrics, of holomorphic curvature $rc$ on the first factor, and holomorphic curvature $sc$ on the second factor.  By the previous lemma, this is an Einstein metric if and only if:
+%
+$$ (n+1)rc = (m+1)sc \Leftrightarrow (n+1)r = (m+1)s $$
+%
+The Einstein constant of the metric in this case is the same as the Einstein constant of the metric on either of the factors, which is:
+%
+$$ \lambda = \frac{(n+1)c}{2r} = \frac{(m+1)c}{2s} $$
+
+\subsection{ The Hypersphere }
+
+Consider the variety $Q^{n-1}$ in $\CP^n$ defined by the homogeneous polynomial equation:
+%
+$$ z_0^2 + z_1^2 + \cdots + z_n^2 = 0 $$
+%
+which is called the hypersphere.  It follows easily from the implicit function theorem that this is a codimension one, holomorphically embedded submanifold in $\CP^n$.  We will show in this section that it is Kahler-Einstein.
+
+Let $Z_0 : Q^{n-1} \rightarrow \C^{n+1} - \{0\}$ be a local section of the projection map $\pi: \C^{n+1} \rightarrow \CP^n$ over $Q^{n-1}$, and let $\{ e_1, \ldots, e_{n-1} \}$ be a local unitary frame field for $TQ^{n-1}$ with the same domain of definition as $Z_0$.  Recall from a previous section that there is a unitary frame $\{ Z_1, \ldots, Z_{n-1} \}$ in the unitary complement of $Z_0$ corresponding to $\{ e_1, \ldots, e_{n-1} \}$.  We can extend this frame to a basis in the following way:
+
+\begin{lem} The vectors $\{ Z_0, Z_1, \ldots, Z_{n-1}, \bar{Z}_0 \}$ form a unitary frame for $\C^{n+1}$.
+\end{lem}
+
+\begin{proof}  Since $\{ Z_1, Z_2, \ldots, Z_{n-1} \}$ lie in the unitary complement of $Z_0$, we need to verify that the equations $\bar{Z}_0 \cdot Z_0$ and $Z_i \cdot \bar{Z}_0$ hold for $i=1, \ldots, n-1$, where $\cdot$ denotes the standard Hermitian inner product in $\C^{n+1}$.
+
+For the first equation, note that the components of the vector 
+%
+$$Z_0 = (z_{00}, z_{01}, \ldots, z_{0 n+1 })$$
+%
+satisfy the defining equation of $Q^{n-1}$, and hence:
+%
+$$ Z_0 \cdot \bar{Z}_0 = z_{00}^2 + \cdots + z_{0 n+1}^2 = 0 $$
+%
+To check the other equations, recall that $Z_i$ is an isometric lift of the tangent vector $e_i$.  Let $e_i(t)$ be a curve in $Q^{n-1}$ so that $e'_i(0) = e_i$, and let $Z_i(t)$ be a lift of this curve satisfying $Z'_i(0) = Z_i$.  Then the components of $Z_i(t)$ satisfy the defining equation of $Q^{n-1}$ for every $t$, that is, $Z_i(t) \cdot \bar{Z}_0 = 0$ for every $t$.  Differentiating this equation gives:
+%
+$$ 0 = Z'_i(t) \cdot \bar{Z}_0 $$
+%
+for every $t$.  Evaluating this at $t=0$ gives the result that we want.
+\end{proof}
+
+We are almost ready to show that $Q^{n-1}$ is an Einstein submanifold, but we need a little more preparation.  First, differentiating the equation $Z_j \cdot \bar{Z}_0 = 0$ gives us:
+%
+$$ 0 = d( Z_j \cdot \bar{Z}_0 ) = d Z_j \cdot \bar{Z}_0 + Z_j \cdot d \bar{Z}_0 $$
+%
+so:
+%
+$$ d Z_j \cdot \bar{Z}_0 = - Z_j \cdot \bar{Z}_0 = - d Z_0 \cdot \bar{Z}_j $$
+%
+Now since $\{ Z_1, \ldots, Z_{n-1 } \}$ corresponds isometrically to the unitary frame field $\{ e_1, \ldots, e_{n-1} \}$, it follows that the unitary frame $\{ \bar{Z}_1, \ldots, \bar{Z}_{n-1} \}$ corresponds to $\{ \bar{e}_1, \ldots, \bar{e}_{n-1} \}$.  The calculation above shows that:
+%
+$$ \phi^{n}_j = - d Z_0 \cdot \bar{Z}_j = - \bar{e}^j $$ 
+
+Corresponding to the unitary frame $\{ Z_1, \ldots, Z_{n-1}, \bar{Z}_0 \}$ for the unitary complement of $Z_0$, there is a unitary frame $ \{ e_1, \ldots, e_{n-1}, e_n \} $ for $T \CP^{n} |_{Q^{n-1}}$, let $\theta$ be the connection form for the Fubini-Study metric in this frame field.  Then the $(n-1) \times (n-1)$ submatrix in the upper left hand corner of $\theta$ is the connection form matrix for the induced metric on $Q^{n-1}$.  Let $\Omega$ be the corresponding curvature form for $Q^{n-1}$.  In the subsequent calculation we consider all differential forms as restricted to $Q^{n-1}$, note in this context that we have:
+%
+$$ \phi^n_0 = e^n = 0 $$
+%
+Now we can calculate.  Below the greek index $\alpha$ always runs over the range $1,\ldots,n$ and $k$ runs over the range $1,\ldots,n-1$:
+%
+\begin{align*}
+\tr \ \Omega &= \Omega^j_j = d \theta^j_j + \theta^j_k \wedge \theta^k_j \\
+&= d( \phi^j_j - \delta^j_j \phi^0_0 ) + ( \phi^j_k - \delta^j_k \phi^0_0 ) \wedge ( \phi^k_j - \delta^k_j \phi^0_0 ) \\
+%
+&= - \phi^j_\alpha \wedge \phi^\alpha_j + \delta^j_j \phi^0_\alpha \wedge \phi^\alpha_0 + \phi^j_k \wedge \phi^k_j - \delta^k_j \phi^j_k \wedge \phi^0_0 \\
+& \quad  - \delta^j_k \phi^0_0 \wedge \phi^k_j + \delta^j_k \delta^k_j \phi^0_0 \wedge \phi^0_0 \\
+%
+&= - \phi^j_n \wedge \phi^n_j - \phi^j_k \wedge \phi^k_j + (n-1) \phi^0_n \wedge \phi^n_0 + (n-1) \phi^0_k \wedge \phi^k_0 \\
+& \quad + \phi^j_k \wedge \phi^k_j -  \phi^j_j \wedge \phi^0_0 - \phi^0_0 \wedge \phi^j_j \\
+%
+&= - \phi^j_n \wedge \phi^n_j + (n-1) \phi^0_k \wedge \phi^k_0 \\
+&= - \phi^n_j \wedge \bar{\phi}^n_j + (n-1) \phi^k_0 \wedge \bar{\phi}^k_0 \\
+&= - \bar{e}^j \wedge e^j + (n-1) e^k \wedge \bar{e}^k \\
+&= n e^k \wedge \bar{e}^k \\
+&= - 2 n i \frac{i}{2} e^k \wedge \bar{e}^k \\
+&= - 2 i \omega
+\end{align*}
+%
+So we see that $Q^{n-1}$ is Einstein of constant $2$.  Since our ambient space in this calculation had constant holomorphic curvature $4$, we see that in general the hypersphere is a codimension $1$ Einstein submanifold of $\C P(c)$, with Einstein constant $\frac{nc}{2}$.
+
+\end{document}

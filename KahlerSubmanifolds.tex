@@ -1,0 +1,224 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+\newtheorem{case}{Case}
+
+
+\def \Mamb{ \tilde{M} }
+\def \Ramb{ \tilde{R} }
+\def \Jamb{ \tilde{J} }
+\def \gamb{ \tilde{g} }
+\def \omegaamb{ \tilde{\omega} }
+\def \nablaamb{ \tilde{\nabla} }
+\def \Kamb{ \tilde{K} }
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \disk{ \mathbb{D} }
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\section{ Kahler Submanifolds }
+
+In this section we study complex submanifolds of an ambient Kahler manifold.
+
+Let $M$ and $\Mamb$ be complex manifolds with complex structures $J$ and $\Jamb$ respectively.  Recall that a smooth map $f:M \rightarrow \Mamb$ is holomorphic if and only if $df \circ J = \Jamb \circ df$.
+
+\begin{definition} We say $M$ is an immersed (or embedded) complex submanifold of $\Mamb$ if it is a real submanifold, and the immersion (or embedding) map is holomorphic.
+\end{definition}
+
+As usual in this context, we will suppress the notation for the immersion map, and consider $M$ as a subset of $\Mamb$.  Notice that, according to the comment preceding the definition, if $M$ is a complex submanifold of $\Mamb$, then $TM$ is a subbundle of $T \Mamb|_{M}$, and the complex structure of $\Mamb$ restricts to that of $M$, that is, $\Jamb |_{TM} = J$.
+
+Now suppose that $\Mamb$ is a Kahler manifold with Kahler metric $\gamb$.  Then $g = \gamb |_{M}$ is a riemannian metric on $M$, which, according to the previous comment, is $J$-invariant.  The associated 2-form for this metric is then $ \omegaamb = \omega |_{M} $, and we have:
+%
+$$ d \omega = d ( \omegaamb |_{M} ) = ( d \omegaamb )|_{M} = 0 $$
+%
+so $g$ is a Kahler metric.  In this situation we call $M$ a Kahler submanifold of $\Mamb$.
+
+Recall that a locally defined real valued function on $\Mamb$ is called a potential for the Kahler metric if:
+%
+$$ \omegaamb = i \del \delbar f $$
+%
+The relation between potentials for an ambient space and a Kahler submaifold is as clear-cut as possible:
+
+\begin{prop} If $f$ is a Kahler potential for $\gamb$ then $f|_{M}$ is a Kahler potential for $g$.
+\end{prop}
+
+\begin{proof} This follows from the simple calculation:
+%
+$$ i \del \delbar ( f|_{M} ) = ( i \del \delbar f )|_{M} = \omegaamb |_{M} = \omega $$
+%
+\end{proof}
+
+Another important property of Kahler submanifolds is:
+
+\begin{prop} If $M$ is a Kahler submanifold of $\Mamb$, then the normal bundle of $M$ in $\Mamb$ is $\Jamb$-invariant.
+\end{prop}
+
+\begin{proof} 
+%
+Let $X$ be tangent to $M$ and $Y$ normal to $M$, both at the same point.  It suffices to show that $\gamb (X, \Jamb Y) = 0$.  But:
+%
+$$ \gamb (X, \Jamb Y) = - \gamb ( \Jamb X, Y) = 0 $$
+%
+since $ \Jamb X$ is also tangent to $M$.
+%
+\end{proof}
+
+Now we introduce, as usual, the second fundamental form $B: TM \otimes TM \rightarrow NM$, which is defined as:
+%
+$$ B(X,Y) = (\nablaamb_X Y)^{\perp} = \nablaamb_X Y - \nabla_X Y $$
+%
+where $\nablaamb$ is the riemannian connection associated to the metric $\gamb$, and $\nabla$ the induced connection on $M$.  As is well known, the second fundamental form is symmetric.  In the Kahler case, we have the following additional property:
+%
+\begin{prop}
+%
+If $M$ is a Kahler submanifold of $\Mamb$, and $B$ is its second fundamental form, then:
+%
+$$ B(X,JY) = B(JX,Y) = \Jamb B(X,Y) $$
+%
+\end{prop}
+
+\begin{proof}
+%
+Again, we simply calculate:
+%
+$$ B(X, JY) = \nablaamb_X J Y - \nabla_X JY = \Jamb ( \nablaamb_X Y - \nabla_X Y ) = \Jamb B(X,Y) $$
+% 
+and consequently:
+%
+$$ B( JX, Y ) = B( Y, JX ) = \Jamb B (Y,X) = \Jamb B(X,Y) $$
+%
+which is what we wanted to show.
+%
+\end{proof}
+
+From here on we will drop the tedious distinction between structures on the ambient space, and the corresponding structures on the submanifold. We will resume using tildes only when confusion would otherwise result, since all of the previous propositions show that in most cases the distinction is immaterial.
+
+\begin{remark}  Suppose we now extend $B$ complex linearly in both components to the bundle $T_{\C}M$.  Using the usual arguments we get that:
+%
+$$ B(X,Y) = 0 \quad \text{for} \quad X \in TM^{+}, Y \in TM^{-} $$
+%
+and that:
+%
+$$ B(\bar{X}, \bar{Y} ) = \overline{ B(X,Y) } $$
+%
+Let $N_{\C}M$ denote the unitary complement of $T_{\C}M$ inside $T_{\C} \Mamb$, and let $NM^{+}$ and $NM^{-}$ be the $i$ and $-i$ eigenspaces of $J$ in $N_{\C}M$ respectively.  Then for $X,Y \in TM^{+}$ we have:
+%
+$$ J B(X,Y) = B( JX, Y ) = B( iX, Y ) = i B(X,Y) $$
+%
+so $B(X,Y) \in NM^{+}$.  In the same way, for $X,Y \in TM^{-}$ we have $B(X,Y) \in NM^{-}$.
+%
+\end{remark}
+
+Now recall the most important fact about the second fundamental form, the Gauss Equation:
+
+{ \bf Gauss Equation : } If $X,Y,Z$ and $W$ are tangent to $M$ at some point $p$, then:
+%
+\begin{align*}
+ R(X,Y,Z,W) &= \Ramb (X,Y,Z,W) + g( B(X,W), B(Y,Z) ) \\
+& \quad - g( B(X,Z), B(Y,W) ) 
+\end{align*}
+
+In the Kahler setting, we deduce the following relation between the holomorphic sectional curvatures:
+%
+\begin{align*}
+K(X) &= R(X,JX,JX,X) \\
+&= \Ramb (X,JX,JX,X) + g( B(X,X), B(JX,JX) ) \\
+& \quad - g( B(X,JX), B(JX,X) ) \\
+&= \Kamb (X) - 2 | B(X,X) |^2
+\end{align*}
+%
+Recall that a submanifold is called totally geodesic if its second fundamental form vanishes.  Since $B$ is symmetric, this is equivelant to saying that $B(X,X) = 0$ for all vectors $X$ tangent to the submanifold.  The equation above has the following important consequence:
+
+\begin{prop}
+A complex submanifold $M$ in a Kahler manifold of constant holomorphic sectional curvature is totally geodesic if and only if it also has constant holomorphic sectional curvature in the induced metric, with the same curvature constant as the ambient space.
+\end{prop}
+
+\begin{proof}
+This is immediate since:
+%
+$$ K(X) - \Kamb (X) = |B(X,X)|^2 $$
+%
+so $K = \Kamb$ if and only if $B = 0$.
+\end{proof}
+
+We can use this to completely classify the totally geodesic submanifolds of Kahler manifolds of constant holomorphic curvature.
+
+\begin{prop}  A totally geodesic Kahler submanifold in one of the standard models for a simply connected Kahler manifold of constant holomorphic sectional curvature must be one of the following:
+%
+\begin{itemize}
+%
+\item An affine subspace in $\C^n$ with its flat Kahler metric.
+\item An affine subspace in $\CP^n$ with its Fubini-Study metric; more precisely, the projection of an affine subspace of $\C^{n+1} - \{0\}$ to $\CP^n$.
+\item The image of a linear subspace of $\disk^n$ with its hyperbolic metric which passes through the point $z = 0$ under an isometry of the ambient hyperbolic space.
+%
+\end{itemize}
+%
+\end{prop}
+
+\begin{proof} We start by recalling a fact from Riemannian geometry: given a Riemannian manifold $M$ and a subspace of some tangent space, say $V \subset T_P M$, there is at most one totally geodesic submanifold of $M$ passing through $p$ whose tangent space is $V$.  Briefly, this is because such a submanifold, if it exists, must coincide with $ \text{exp}_p V $.  
+
+Now we prove the proposition case by case, though the general structure of the argument is the same regardless of the ambient space.
+
+\begin{case} Flat metric.
+\end{case}
+%
+Up to an isometry of the ambient space we may assume that the submanifold passes through the point $z=0$, and that the tangent plane at this point is given by $z_{k+1} = \cdots = z_n = 0$.  Further, due to the uniqueness of totally geodesic submanifolds we alluded to above, it suffices for us to construct a single totally geodesic submanifold with this tangent plane.  Easy enough, let:
+%
+$$M = \{ z \in \C^n : z_{k+1} = \cdots = z_n = 0 \}$$
+%
+The restriction of the metric on the ambient space to $M$ is easily seen to be another flat metric on $M$, so it also has constant holomorphic curvature zero.  Owing to the previous proposition, this guarantees that it is totally geodesic.
+
+The other two cases are technically a little more complicated, but the idea is exactly the same.
+
+\begin{case} Fubini-Study metric.
+\end{case}
+%
+Again, let's use the transitive property of the isometry group to arrange it so that our submanifold passes through the point $[1,0,\ldots,0]$ and shares a tangent plane with the affine subspace:
+%
+$$ M = \{ [z_0, \ldots, z_n] \in \CP^n : z_{k+1} = \cdots = z_n = 0 \} $$
+%
+It then suffices for us to show that $M$ is in fact totally geodesic.  First, note that this affine subspace is in fact an embedded copy of $\CP^k$, with the embedding function given in homogeneous coordinates by:
+%
+$$ [z_0, \ldots, z_k ] \mapsto [ z_0, \ldots, z_k, 0, \ldots, 0] $$
+%
+Now, as we saw in a previous section, a Kahler potential for the Fubini-Study metric on $\CP^n$ in the standard coordinate system centred at  $[1,0,\ldots,0]$ is:
+%
+$$ f(z) = \log( 1 + |z|^2 ) = \log( 1 + z_0 \bar{z}_0 + \cdots + z_n \bar{z}_n ) $$
+%
+By a previous lemma, the restriction of this to  $M$ is a Kahler potential for the induced metric on $M$.  But:
+%
+$$ f|_{M} (z_0, \ldots, z_k ) = \log ( 1 + z_0 \bar{z}_0 + \cdots + z_k \bar{z}_k ) $$
+%
+which is the Kahler potential for the standard Fubini-Study metric on $\CP^k$.  Since $M$ is a Kahler manifold of constant holomorphic sectional curvature whose curvature constant is the same as the ambient space, we conclude that $M$ is totally geodesic.
+
+\begin{case} Hyperbolic Metric
+\end{case}
+
+The proof is the same as for the Fubini-Study metric, but instead uses the potential
+%
+$$ f(z) = - \log( 1 - |z|^2 ) $$
+%
+for the hyperbolic metric.
+
+Since we have covered all three possible cases, the proposition has been proved.
+\end{proof}
+
+\end{document}

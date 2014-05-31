@@ -1,0 +1,2941 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+\newtheorem{claim}{Claim}
+\newtheorem{case}{Case}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\title{ Kahler-Einstein submanifolds of Complex Space Forms }
+\author{ Matthew Drury }
+
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \Mamb{ \mathcal{M} }
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+\def \Ric{ \text{Ric} }
+\def \tr{ \text{tr} }
+\def \ric{ \text{ric} }
+\def \Rcurv{ \mathcal{R} }
+\def \re{ \text{Re} }
+\def \im{ \text{Im} }
+\def \disk{ \mathbb{D} }
+\def \thetasquig{ \tilde{\theta} }
+\def \Omegasquig{ \tilde{\Omega} }
+\def \hsquig{ \tilde{h} }
+\def \la { \left\langle }
+\def \ra { \right\rangle }
+\def \dim{ \text{dim} }
+\def \Hom{ \text{Hom} }
+\def \nablabar{ \bar{\nabla} }
+\def \TMp{ TM^{+} }
+\def \TMm{ TM^{-} }
+\def \NMp{ NM^+ }
+\def \NMm{ NM^- }
+\def \TMps{ T^{\ast}M^{+} }
+\def \Mamb{ \tilde{M} }
+\def \Ramb{ \tilde{R} }
+\def \Jamb{ \tilde{J} }
+\def \gamb{ \tilde{g} }
+\def \omegaamb{ \tilde{\omega} }
+\def \nablaamb{ \tilde{\nabla} }
+\def \Kamb{ \tilde{K} }
+
+\begin{document}
+
+\maketitle
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\section{Introduction}
+
+Let $\Mamb^n(c)$ be an $n$ dimensional K\"{a}hler space form with constant holomorphic curvature $c$.  As is the case in reimannian geometry, such an $\Mamb$ is locally holomorphically isometric to a standard model space: $\C^n$ with its standard flat metric if $c=0$, $\CP^n(c)$ with its Fubini-Study metric if $c>0$, or $\CH^n(c)$ with its hyperbolic metric if $c<0$.  Let $M$ be a complex submanifold of $\Mamb$.  As is well known, this submanifold inherits a K\"{a}hler structure from that of $\Mamb$.  We call $M$ a Kahler-Einstein submanifold if the induced metric on $M$ is Einstein.  In this paper we address the problem of classifying what submanifolds of complex space forms are Einstein.
+
+The first person to obtain results in this direction was Calabi in his thesis \cite{C1}.  This remarkable work contains a wealth of innovative mathematics, methodically studying isometric embedding in flat and positively curved space forms.  As his main tool Calabi introduces the diastas $D_M$, a real analytic function, determined by the metric, which is defined on a neighborhood of the diagonal in $M \times M$.  The most important property of $D_M$ is its simple behavior with respect to submanifolds:  if $M \rightarrow \Mamb$ is a holomorphic embedding then the diastasis of $\Mamb$ restricts to the diastasis of $M$.  This makes the distasis a tool perfectly suited to the study of complex submanifolds, and using it Calabi is able to deduce necessary and sufficient conditions for a Kahler manifold to isometrically embed into $\C^n$ or $\CP^n(c)$.  
+
+We will elaborate on these results enough to see how Calabi's work settles the problem of classifying Einstein curves isometrically embedded in $\C^n$ or $\CP^n(c)$.  Before beginning we first remark that a K\"{a}hler-Einstein curve is simply a space form of a single complex dimension.  
+
+Let $p$ be a point in some K\"{a}hler manifold $M$, and let $z:U \rightarrow \C$ be a complex coordinate system with $z(p) = 0$.  Then the diastasis has a power series expansion near $(p,p)$:
+%
+$$ D_M(0, z(q)) = \sum_{IJ} b_{IJ} z(q)^I \overline{z(q)}^J $$
+%
+where $I,J$ are multi-indices.  The matrix $(b_{IJ})$ is hermitian, and one can define its rank.  Then, according to Calabi, some neighbourhood of $p$ in $M$ can be isometrically embedded into $\C^n$ if and only if the rank of $b_{IJ}$ is less than or equal to $n$.  Furthermore, if this rank is equal to $n$, then no neighbourhood can be embedded in $\C^{m}$ for any $m < n$, and any two embeddings into $\C^n$ differ by a unitary transformation.  By examining the diastatic functions of $\CP^{1}(c)$ and $\CH^{1}(c)$ one sees that they do not satisfy the criterion above, and hence there is no local isometric embedding of these manifolds into $\C^n$.  Therefore the only isometrically ebedded Einstein complex curves in $\C^n$ are complex lines.
+
+Similar considerations to those above yield a necessary and sufficient condition for a K\"{a}hler manifold to isometrically embed in $\CP^n(c)$.   This criterion immediately implies that $\C$ and $\CH^1$ cannot be isometrically embedded into $\CP^n$ even locally.  As for $\CP^1$, in the last theorem of his paper Calabi applies his criterion to prove:
+
+{\bf Theorem (Calabi):} The space $\CP^{m}(c)$ can be globally embedded into $\CP^{n}(\tilde{c})$ if and only if the following conditions are satisfied:
+\begin{enumerate}
+\item $c \leq \tilde{c}$
+\item $\tilde{c} = k c$ for some positive integer $k$
+\item $ n \geq \left( \begin{array}{c} m + k \\ k \end{array} \right) - 1 $
+\end{enumerate}
+
+Taking $\tilde{c} = 1$ and $m = 1$, we find that $\CP^1(c)$ embedds into $\CP^n(1)$ if and only if $c = \frac{1}{k}$ for some $k$, and $n \geq k$.  Looking at this another way, we see that any einstein curve isometrically embedded in $\CP^{n}$ must have constant sectional curvature equal to one of the numbers $1, \frac{1}{2}, \ldots, \frac{1}{n}$.
+
+Examples of such curves are easy to construct.  Let $[z_1, z_2]$ be the homogeneous coordinates on $\CP^1$.  Then the map:
+%
+$$ [z_1, z_2] \mapsto \left[ \sqrt{ \left( \begin{array}{c} n \\ 0 \end{array} \right) } z_1^n, \sqrt{ \left( \begin{array}{c} n \\ 1 \end{array} \right) } z_1^{n-1} z_2, \cdots, \sqrt{ \left( \begin{array}{c} n \\ n \end{array} \right) } z_2^n \right] $$ 
+%
+isometrically embeddes $\CP^1(\frac{1}{n})$ into $\CP^n(1)$.
+
+The next person to make progress on the problem was Smyth in his thesis \cite{S}, who addressed the case of a complete Einstein hypersurface embedded in a space form.  Let $Q^{n}$ denote the smooth algebraic variety in $\CP^{n+1}$ which is defined by the homogeneous polynomial equation:
+%
+$$ z_0^2 + z_1^2 + \cdots + z_{n+1}^2 = 0 $$
+%
+which is called a hypersphere.  Then Smyth's result is:
+
+{\bf Theorem (Smyth):} If $n \geq 2$ then:
+%
+\begin{itemize}
+\item  $\CP^n$ and the complex hypersphere $Q^n$ are the only complex hypersurfaces in $\CP^{n+1}$ which are complete and Einstein.
+\item  $\C^n$ is the only simply connected complex hypersurface in $\C^{n+1}$.
+\item  $\CH^n$ is the only simply connected complex hypersurface in $\CH^{n+1}$.
+\end{itemize}
+
+Smyth proves his theorem with an in depth analysis of the second fundamental form of a potential Einstein hypersurface.  His work is heavily connection theoretic, playing with the curvature tensors of the space form and hypersurface until he can show that any Einstein hypersurface is a symmetric space.  Then he calls upon Cartan's classification of Hermitian symmetric spaces to narrow down the possibilities for the sumbmanifold to those in the theorem.  
+
+Smyth's work was soon generalized by Chern \cite{Ch}, who proved the corresponding local result.  Chern used his complete mastery of Cartan's connection form formalism to prove that any Einstein hypersurface in a space form of curvature $c$ must have Einstein constant $\lambda$ equal to either $\frac{(n+1)c}{2}$ or $\frac{nc}{2}$.  In case $\lambda = \frac{(n+1)c}{2}$ it is easy to prove that $M$ must be totally geodesic.  It follows from the Gauss equation that when $c<0$ the $\lambda = \frac{nc}{2}$ case cannot occur.  On the other hand, in the case $\lambda = \frac{nc}{2}$ and $c>0$, Chern gives a geometric proof that $M$ is locally isometric to the hypersphere $Q^{n-1}$.
+
+More progress was made by Tsukada \cite{T} who generalized Chern's work to submanifolds of codimension 2.  Tsukada's theorem is:
+
+{\bf Theorem (Tsukada) : } Let $M$ be an isometrically embedded K\"{a}hler Einstein submanifold of codimension 2 in a complex space form $\Mamb(c)$.  Then:
+%
+\begin{itemize}
+\item If $c \leq 0$, then $M$ is totally geodesic.
+\item If $c > 0$, then $M$ is either totally geodesic, or $M$ is a hypersphere $Q^{n-2}$ inside of some totally geodesic hypersurface $\CP^{n-1}(c)$.
+\end{itemize}
+
+Tsukada's argument involves a detailed study of the second fundamental form of $M$ and its first two covariant derivatives.  By carefully investigating the linear algebraic properties of these tensors he obtains the result above.
+
+Finally we have the work of Umehara, which is based on the ideas of Calabi.  In a sequence of three papers \cite{Um1} \cite{Um2} Umehara investigates in detail the properties of Calabi's diastatic function.  
+
+In his first paper, Umehara studies the structure of the set of real analytic function on a K\"{a}hler manifold.  More precisely, he introduces the algebra:
+%
+$$ \Lambda( M ) = \text{span}_{\mathbb{R}} \{ h \bar{k} + \bar{h} k : h, k \text{ are holomorphic functions on } M \} $$
+%
+If $M$ is compact, then $\Lambda(M)$ coincides with the algebra of all real analytic functions on $M$, and in any case, the structure of $\Lambda(M)$ is intimately connected with the complex geometry of $M$.  While studying $\Lambda(M)$ Umehara is able to put the results of Calabi in a convenient framework, which greatly clarifies ones understanding of the situation.  Next, in \cite{Um2}, Umehara addresses the general case of an Einstein submanifold of a complex space form.  It is easy to write down a condition, involving only the diastasis, for $M$ to be embeddable as an Einstein submanifold of $\Mamb(c)$.  Using this condition, and his understanding of the structure of $\Lambda(M)$, Umehara succeeds in completely solving the classification problem in the case $c \leq 0$, obtaining the following result:
+
+{\bf Theorem (Umehara) :} Any Einstein submanifold of $\C^n$ or $\CH^n$ is totally geodesic.
+
+Unfortunately Umehara does not make any progress in the positive curvature case, but even with this drawback, his work is both profound and beautiful.
+
+Reflecting on these results, one immediately sees that there are currently two approaches to the classification problem.  The approach of Calabi and Umehara is analytic, and studies the diastatic function of a space form to draw conclusions about the geometry of submanifolds of $\Mamb$.  The work of Smyth, Chern and Tsukada is purely differential geometric, and uses classical connection theoretic tools to draw conclusions about submanifolds with careful linear algebraic arguments.  One wonders what the connection is between these two approaches, and whether results proved with one technique are approachable with the other.  Also, one wonders whether either technique has exhausted what it can tell us about the problem - can pure differential geometry be more carefully applied to draw further conclusions, and can the diastasis (and the structure of $\Lambda(M)$) be further investigated to draw conclusions in the positive curvature case?  These are the type of questions we wish to address in this paper.
+
+\section{ Background on Kahler Geometry }
+
+In this section we outline the basic properties of Kahler geometry that we will be using throughout this paper.
+
+\subsection{Invariant Metrics and the Associated 2-form }
+
+Let $M$ be a complex manifold with complex structure $J$.
+%
+\begin{definition} A riemannian metric on $M$ is called $J$-invariant if $g(JX, JY) = g(X, Y)$ for all $X,Y \in TM$.
+\end{definition}
+%
+Note that any complex manifold can be given a $J$-invariant Riemannian metric, for we can locally use the standard euclidean metric on $\C^n$, and then assemble one globally using a partition of unity.  
+%
+We denote also by $g$ the complex bilinear extension of the given metric to the complexified tangent bundle $T_{\C}M$.  As usual we consider the local holomorphic coordinate frame fields:
+%
+$$ Z_i = \frac{ \del }{ \del z_i } = \frac{1}{2} \left( \frac{ \del }{ \del x_i } - i \frac{ \del }{ \del y_i } \right) = \frac{1}{2}(X_i - i Y_i) $$
+%
+and:
+%
+$$\bar{Z}_i = \frac{ \del }{ \del \bar{z}_i } = \frac{1}{2} \left( \frac{ \del }{ \del x_i } + i \frac{ \del }{ \del y_i } \right) = \frac{1}{2} ( X_i + i Y_i ) $$
+%
+Then, since $Y_i = J X_i$ and $g$ is $J$-invariant, we have:
+%
+\begin{align*}
+g(Z_i, Z_j) &= g( X_i - i Y_i, X_j - i Y_j ) \\
+&= g( X_i, X_j ) - i g(X_i, Y_j) - i g(Y_i, X_j) - g(Y_i, Y_j) \\
+&= g( X_i, X_j ) - i g(X_i, Y_j) + i g(Y_j, X_i) - g(X_i, X_j) \\
+&= 0
+\end{align*}
+%
+Similarly, $g( \bar{Z}_i, \bar{Z}_j ) = 0$.  
+%
+Set:
+%
+$$ g_{ij} = g( Z_i, \bar{Z}_j ) $$
+%
+then:
+%
+$$ g( \bar{Z}_i, Z_j ) = \overline{ g( Z_i, \bar{Z}_j ) } = \bar{g}_{ij} $$
+%
+and we have the following expression for the metric in a holomorphic coordinate frame field:
+%
+$$ g = g_{ij} d z_i \otimes d \bar{z}_j + \bar{g}_{ij} d \bar{z}_i \otimes d z_j $$
+
+\begin{remark}  It is easy to now derive an expression for the metric in terms of the original real coordinates.  Indeed, it is easy to check that:
+%
+$$ d z = dx + i dy \quad \text{ and } \quad d \bar{z} = dx - i dy $$
+%
+so we get:
+%
+\begin{align*}
+g &= g_{ij} dz_i \otimes d \bar{z}_j + \bar{g}_{ij} d \bar{z}_i \otimes d z_j \\
+&= g_{ij} ( dx_i + i dy_j ) \otimes ( d x_i - i d y_j ) + \bar{g}_ij (  d x_i - i d y_j  ) \otimes ( dx_i + i dy_j ) \\
+%
+&= ( g_{ij} + \bar{g}_{ij} ) dx_i \otimes dx_j + ( - i g_{ij} + i \bar{g}_{ij} ) dx_i \otimes dy_j \\
+& \quad + ( i g_{ij} - i \bar{g}_{ij} ) dy_i \otimes dx_j + ( g_{ij} + \bar{g}_{ij} ) dy_i \otimes dy_j \\
+%
+&= 2 \Re (g_{ij}) dx_i \otimes dx_j + 2 \Im( g_{ij} ) dx_i \otimes dy_j \\
+& \quad - 2 \Im( g_{ij} ) dy_i \otimes dx_j + 2 \Re ( g_{ij} ) dy_i \otimes dy_j
+\end{align*}
+%
+which gives an expression for the metric in real coordinates.
+\end{remark}
+
+Observe that if $g$ is a $J$-invariant metric, then the equation:
+%
+$$\omega(X,Y) = g(JX, Y)$$
+%
+defines a real valued 2-form on $M$. Indeed, by the $J$-invariance of $g$, we have:
+%
+$$ \omega(Y,X) = g(JY, X) = g( J^2 Y, JX ) = - g( Y, JX ) = - g( JX, Y ) = \omega( X, Y ) $$
+%
+We refer to $\omega$ as the 2-form associated to $g$.  Clearly we can recover $g$ from $\omega$ with the formula:
+%
+$$ g(X,Y) = \omega(X,JY) $$
+%
+Again, we denote also by $\omega$ the complex bilinear linear extension of this form to the complexified tangent bundle.  We then have:
+%
+$$ \omega( Z_i, Z_j ) = g( J Z_i, Z_j ) = i g( Z_i, Z_j ) = 0 $$
+%
+and similarly $ \omega( \bar{Z}_i, \bar{Z}_j ) = 0 $.  Finally:
+%
+$$ \omega( Z_i, \bar{Z}_j ) = g( J Z_i, \bar{Z}_j ) = i g( Z_i, \bar{Z}_j ) = i g_{ij} $$
+%
+so we get the following local expression for $\omega$ in a holomorphic coordinate frame field:
+%
+$$ \omega = i g_{ij} d z_i \wedge d \bar{z}_j $$
+%
+In particular, $\omega$ is a $(1,1)$ form.
+
+\begin{remark}
+While we used a holomorphic coordinate frame field in our calculations above, it will be useful to note that these expressions hold in any frame field $Z_i$ for the bundle $TM^{+}$.
+\end{remark}
+
+\subsection{ The Connection and the Kahler Condition}
+
+Let $\nabla$ denote the riemannian connection of the metric $g$, and extend it complex linearly in both components to the complexified tangent bundle.  Recall that this connection canonically induces connections on all bundles associated to $T_{\C}M$, and in particular we can write $\nabla J$ since, $J$ is a tensor of type $(1,1)$ on $T_{\C}M$.  As usual, $\nabla J$ is again a $(1,1)$ tensor, and is defined as:
+%
+$$ ( \nabla_X J )(Y) = \nabla_X( JY ) - J( \nabla_X Y ) $$
+%
+With this setup we have the following proposition relating $\nabla J$ and $d \omega$:
+%
+\begin{prop} Let $M$ be a complex manifold, $g$ a $J$-invariant riemannian metric, $\omega$ the 2-form associated to $g$, and let $\nabla$ be the riemannian connection of $g$.  Then we have:
+%
+$$ d \omega( X, Y, Z ) = g( (\nabla_X J)Y, Z) + g( (\nabla_Y J)Z, X ) + g( (\nabla_Z J)X, Y ) $$
+$$ 2 g( (\nabla_X J)Y, Z ) = d \omega(X, Y, Z) - d \omega(X, JY, JZ) $$
+%
+\end{prop}
+%
+\begin{proof} We start with the first formula.  It suffices to compute $d \omega( X,Y,Z )$ for $X,Y,Z$ coordinate vectors, and if we use holomorphic coordinates then $X,Y,Z,JX,JY$ and $JZ$ are mutually commuting vector fields (i.e. the bracket of any two of these vector fields vanishes).  Then:
+%
+\begin{align*}
+d \omega( X, Y, Z ) &= X \omega(Y,Z) + Y \omega(Z,X) + Z \omega(X,Y) \\
+%
+&= X g( JY, Z ) + Y g( JZ, X ) + Z g( JX, Y ) \\
+%
+&= g( \nabla_X (JY), Z ) + g( JY, \nabla_X Z) + g( \nabla_Y (JZ), X )\\
+& \quad + g( JZ, \nabla_Y X ) + g( \nabla_Z (JX), Y ) + g( JX, \nabla_Z Y ) \\
+%
+&= g( (\nabla_X J)Y, Z ) + g( J( \nabla_X Y ), Z ) + g( JY, \nabla_X Z) \\
+& \quad + g( (\nabla_Y J)Z, X ) + g( J( \nabla_Y Z ), X ) + g( JZ, \nabla_Y X ) \\
+& \quad + g( (\nabla_Z J)X, Y ) + g( J( \nabla_Z X ), Y ) + g( JX, \nabla_Z Y )
+\end{align*}
+%
+Now we simply observe that, for example:
+%
+$$ g( JY, \nabla_X Z) = g( JY, \nabla_Z X ) = - g( Y, J( \nabla_Z X ) )$$
+%
+so six of the terms in the above expression cancel in pairs and we are left with:
+%
+$$ d \omega( X, Y, Z ) = g( (\nabla_X J)Y, Z) + g( (\nabla_Y J)Z, X ) + g( (\nabla_Z J)X, Y ) $$
+%
+which is what we wanted to show.
+
+
+To prove the second formula, we write out:
+%
+\begin{align*}
+d \omega( X, JY, JZ ) &= X \omega( JY, JZ ) + JY \omega( JZ, X ) + JZ \omega( X, JY ) \\
+&= - X g( Y, JZ ) - JY g( Z, X ) + JZ g( X, Y )
+\end{align*}
+%
+and so:
+%
+\begin{align*}
+d \omega( X, Y, Z ) &- d \omega( X, JY, JZ ) \\
+&= Y g( JZ, X ) + Z g( JX, Y ) + JY g( Z, X ) - JZ g(X, Z)
+\end{align*}
+%
+To calculate the left hand side we first write:
+%
+\begin{align*}
+2 g( (\nabla_X J)Y, Z ) &= 2 g( \nabla_X (JY), Z ) - 2 g( J( \nabla_X Y ), Z ) \\
+&= 2 g( \nabla_X (JY), Z ) + 2 g( \nabla_X Y, JZ )
+\end{align*}
+%
+and now we calculate each of these two terms with the Kozul formula (\cite{CE} page 2).  The results are:
+%
+\begin{align*}
+2 g( \nabla_X (JY), Z ) &= X g( JY, Z ) + JY g( X, Z ) - Z g( X, JY ) \\
+&= X g( JY, Z ) + JY g( X, Z ) + Z g( JX, Y ) 
+\end{align*}
+%
+and:
+%
+\begin{align*}
+2 g( \nabla_X Y, JZ ) &= X g( Y, JZ ) + Y g( X, JZ ) - JZ g( X, Y ) \\
+&=  - X g( JY, Z ) + Y g( X, JZ ) - JZ g( X, Y )
+\end{align*}
+%
+so adding these gives us:
+%
+\begin{align*}
+2 g( (\nabla_X J)Y, Z ) = Y g( JZ, X ) + Z g( JX, Y ) + JY g( Z, X ) - JZ g(X, Z)
+\end{align*}
+%
+as we wanted to show.
+%
+\end{proof}
+%
+The next proposition lies at the very heart of Kahler geometry:
+%
+\begin{prop} Let $M$ be a complex manifold with $g$ a $J$-invariant riemannaian metric, let $\omega$ be the 2-form associated to $g$, and let the $\nabla$ be riemannian connection of $g$.  Then the following conditions are equivalent:
+%
+\begin{enumerate}
+%
+\item $ \nabla J = 0 $
+%
+\item $ d \omega = 0 $
+%
+\item For every point $p \in M$ there is a smooth real valued function $f$, defined in a neighbourhood of $p$, so that $ \omega = i \del \delbar f$
+%
+\end{enumerate}
+%
+\end{prop}
+%
+\begin{proof}
+The previous proposition immediately implies that $1)$ and $2)$ are equivalent. It is also clear that $3) \Rightarrow 2)$, since $d = \del + \delbar$.
+
+We now show that $2) \Rightarrow 3)$.  Assume that $d \omega = 0$.  Now $\omega$ is a real valued 2-form on $TM$, so by the Poincare lemma there is a real valued 1-form $\alpha$, defined in a neighbourhood of $p$, so that $\omega = d \alpha$.  Extending these forms complex linearly to $T_{\C}M$, we can write $\alpha = \beta + \bar{\beta}$, where $\beta$ is a (1,0) form.  Now we have:
+%
+$$\omega = d \alpha = \del \beta + \delbar \beta + \del \bar{\beta} + \delbar \bar{\beta}$$
+%
+and since $\omega$ is a (1,1) form we must then have $\del \beta = \delbar \bar{\beta} = 0$ (since $\del \beta$ is a (2,0) form and $\delbar \bar{\beta}$ is a (0,2) form).  It follows, from the Poincare-Grothendieck lemma, that $\beta = \del \phi$ for some smooth complex function $\phi$ defined near $p$, and hence also $ \bar{\beta} = \delbar \bar{\phi} $.  Now assembling all of this information gives us:
+%
+$$ \omega = \delbar \beta + \del \bar{\beta} = \delbar \del \phi + \del \delbar \bar{\phi} = \del \delbar( \bar{\phi} - \phi ) $$
+%
+So setting $f = i( \bar{\phi} - \phi )$ does the trick (note that this is real valued because $\bar{\phi} - \phi$ is imaginary valued).
+%
+\end{proof}
+%
+Now we are prepared to make the important definition:
+%
+\begin{definition} Let $M$ be a complex manifold with a $J$-invariant riemannian metric.  If any of the three equivelant conditions in the previous proposition are satisfied, then $M$ is called a Kahler manifold, $g$ a Kahler metric, and $\omega$ the Kahler form.  Further, any function $f$ which locally satisfies the condition $3)$ is called a Kahler potential for the metric.
+\end{definition}
+
+One of the great advantages of Kahler geometry over riemannian geometry is the simplification that comes about when doing computations.  We now investigate how this simplification arises, and derive formulas for the Christoffel symbols of a Kahler manifold.
+
+Let:
+%
+$$ Z_i = \frac{ \del }{ \del z_i } = \frac{1}{2} \left( \frac{ \del }{ \del x_i } - i \frac{ \del }{ \del y_i } \right) = \frac{1}{2}\left( X_i - i Y_i \right) $$
+%
+be some local holomorphic coordinate frame field for the bundle $TM^{+}$, with $\bar{Z}_i$ the corresponding frame field for the bundle $TM^{-}$.
+Then, using the symmetry of the connection, the fact that all of the relevant brackets vanish, and the fact that $J$ is parallel, we have:
+%
+\begin{align*}
+\nabla_{Z_i} \bar{Z}_j &= \frac{1}{4} \nabla_{(X_i - i J X_i)} (X_j + i J X_j ) \\
+&= \frac{1}{4} ( \nabla_{X_i} X_j + i \nabla_{X_i} (J X_j) - i \nabla_{J X_i} X_j + \nabla_{J X_i} ( J X_j ) )\\
+&= \frac{1}{4} ( \nabla_{X_i} X_j + i J \nabla_{X_i} X_j - i J \nabla_{X_j} X_i - \nabla_{X_j} X_i ) \\
+&= 0
+\end{align*}
+%
+and consequently $\nabla_{\bar{Z}_i} Z_j = \overline{ \nabla_{Z_i} \bar{Z}_j } = 0$ as well.  Finally, we note that, for any complex vector field $X$ on $M$:
+%
+$$ J \nabla_{X} Z_i = \nabla_{X}(J Z_i) = \nabla_{X}( iZ_i ) = i \nabla_{X} Z_i $$
+%
+so that $\nabla_{X} Z_j \in TM^{+}$.  Saying this another way, on a Kahler manifold $M$ the subbundle $TM^{+}$ of $T_{\C} M$ is parallel with respect to the riemannian connection of a Kahler metric.  In exactly the same way, $TM^{-}$ is also a parallel subbundle of $T_{\C}M$ .
+
+Now an important question comes up.  Recall that there is a canonical bundle isomorphism $\Phi: TM \rightarrow TM^{+}$ which sends the complex structure $J$ on $TM$ to the complex structure given by multiplication by $i$ on $TM^{+}$.  This isomporphism is given by:
+%
+$$ X \mapsto \frac{1}{2}( X - i JX )$$
+%
+which we abbreviate as $X \mapsto Z$.  By taking the riemannian connection $\nabla$ on $TM$, extending it to $T_{\C}M$, and then restricting it to the parallel subbundle $TM^{+}$ we get a connection on $TM^{+}$, and it is important for us to be aware of the relationship between these two connections.  Thankfully, the best of all possible results holds:
+
+\begin{prop} Let $X$ and $Y$ be any two vector fields on $TM$, then $\Phi( \nabla_X Y ) = \nabla_{ \Phi X } \Phi Y$.  That is, the connection induced on $TM^{+}$ by the isomorphism $\Phi$ agrees with the one obtained by first extending $\nabla$ to be complex bilinear and then restricting it to $TM^{+}$.
+\end{prop}
+
+\begin{proof}
+%
+It suffices to verify this in a holomorphic coordinate frame field, so let $Z_i = \frac{1}{2}(X_i - i Y_i)$ be such a field.  We note that the inverse of the isomorphism $\Phi$ is given by $Z \mapsto Z + \bar{Z}$.  With this in mind, we compute:
+%
+\begin{align*}
+\nabla_{X_i} X_j & = \nabla_{Z_i + \bar{Z}_i} ( Z_j + \bar{Z}_j ) \\
+&= \nabla_{Z_i} Z_j + \overline{ \nabla_{Z_i} Z_j }\\
+&= \Phi^{-1}( \nabla_{Z_i} Z_j )
+\end{align*}
+%
+so:
+%
+$$ \Phi ( \nabla_{X_i} X_j ) = \nabla_{Z_i} Z_j = \nabla_{ \Phi X_i } \Phi X_j $$
+%
+Continuing:
+%
+\begin{align*}
+\nabla_{Y_i} Y_j &= \nabla_{i(\bar{Z}_i - Z_i)} ( i(\bar{Z}_j - Z_j ) ) \\
+&= - (\nabla_{Z_i} Z_j + \overline{ \nabla_{Z_i} Z_j } ) \\
+&= - \Phi^{-1}( \nabla_{Z_i} Z_j ) 
+\end{align*}
+%
+so:
+%
+$$ \Phi( \nabla_{Y_i} Y_j ) = -  \nabla_{Z_i} Z_j =  \nabla_{i Z_i}( i Z_j ) = \nabla_{ \Phi Y_i } \Phi Y_j $$
+%
+For the mixed terms we use that $\Phi$ sends $J$ to multiplication by $i$.  For:
+%
+\begin{align*}
+\Phi( \nabla_{X_i} Y_j ) &= \Phi( \nabla_{X_i} J X_j ) = i \Phi( \nabla_{X_i} X_j ) = i \nabla_{\Phi X_i} \Phi X_j \\
+&= \nabla_{\Phi X_i } i \Phi X_j = \nabla_{\Phi X_i} \Phi Y_j 
+\end{align*}
+%
+The proof for the other mixed term is entirely analogous. 
+%
+\end{proof}
+
+
+Now we investigate the local expression of $\nabla$ on a Kahler manifold.  Since $TM^{+}$ is a parellel subundle, and $\nabla_{\bar{Z}_i} Z_j = 0$, we define the (complex) Christoffel symbols of $\nabla$ by:
+%
+$$ \nabla_{Z_i} Z_j = \Gamma_{ij}^k Z_k $$
+%
+and observe that we then also have:
+%
+$$ \nabla_{ \bar{Z}_i } \bar{Z}_j = \bar{\Gamma}_{ij}^k \bar{Z}_k $$
+%
+We want to derive a an expression for these symbols, and this is very easy to do.  Notice that:
+%
+$$ \Gamma_{ij}^k g_{kl} = g( \nabla_{Z_i} Z_j, \bar{Z}_l ) = Z_i g( Z_j, \bar{Z}_l ) = \frac{ \del g_{jl} }{ \del z_i } $$
+%
+and therefore:
+%
+$$ \Gamma_{ij}^k = \Gamma_{ij}^r g_{rl} g^{lk} = \frac{ \del g_{jl} }{ \del z_i } g^{lk} $$
+%
+which is the desired formula for the Christoffel symbols in a holomorphic coordinate system.
+
+\subsection{The Curvature}
+
+Now let's move on to the riemannian curvature.  We remind the reader that the riemannian curvature tensor is defined, for $X,Y,Z \in TM$, by:
+%
+$$ R(X,Y)Z = \nabla_{X} \nabla_{Y} Z - \nabla_{Y} \nabla_{X} Z - \nabla_{[X,Y]} Z $$
+%
+and as usual, we extend this to be $\C$ bilinear (actually, since we have already extended $\nabla$ in this way, R is already $\C$ bilinear).  Then, if $Z_i$ is a holomorphic coordinate frame field for $TM^{+}$, we have (by arguments entirely analogous to those used for $\nabla$):
+%
+$$ R(Z_i, Z_j) Z_k = 0 $$
+%
+and:
+%
+$$ R( \bar{Z}_i, \bar{Z}_j ) \bar{Z}_k = \overline{ R(Z_i, Z_j ) Z_k } = 0 $$
+%
+Note also that $JR = RJ$, since $J$ is parallel, and hence we have:
+%
+$$ J R( \bar{Z_i}, Z_j ) Z_k = R( \bar{Z_i}, Z_j )(J Z_k) = R( \bar{Z_i}, Z_j )( i Z_k) = i R( \bar{Z_i}, Z_j ) Z_k $$
+%
+that is, $ R( \bar{Z_i}, Z_j ) Z_k \in TM^{+} $.  Of course, $R$ satisfies all of the usual symmetries of a curvature tensor, and in Kahler case additional symmetries appear.  Let $X,Y,Z,W$ be any complex vector fields on a Kahler manifold.  Then:
+%
+\begin{align*}
+g( R(X,Y) JZ, JW ) &=  g( J R(X,Y) Z, JW ) \\
+&= - g( R(X,Y) Z, W )
+\end{align*}
+%
+and consequently we also have:
+%
+\begin{align*}
+g( R( JX, JY ) Z, W ) &= g( R(Z, W) JX, JY ) \\
+&= g( R( Z, W ) X, Y ) \\
+&= g( R(X, Y) Z, W )
+\end{align*}
+
+Now let's take a look at the local expression for the curvature tensor on a Kahler manifold, as is the case for the connection, the formulas simplify drastically over their riemannian counterparts.  Let $Z_i$ be any holomorphic coordinate frame field for $TM^{+}$, and define the complex curvature symbols by:
+%
+$$ R( \bar{Z_i}, Z_j ) Z_k = R_{ijk}^l Z_l $$
+%
+It is easy to derive a local expression for these curvature symbols.  Indeed:
+%
+\begin{align*}
+R( \bar{Z_i}, Z_j ) Z_k &= \nabla_{ \bar{Z}_i } \nabla_{Z_j} Z_k - \nabla_{ Z_j } \nabla_{ \bar{Z}_i } Z_k \\
+&= \nabla_{ \bar{Z}_i } \left( \Gamma_{jk}^l Z_l \right ) \\
+&= \frac{ \del \Gamma_{jk}^l }{ \del \bar{z}_i } Z_l + \Gamma_{jk}^l \nabla_{ \bar{Z}_i } Z_l \\
+&=  \frac{ \del \Gamma_{jk}^l }{ \del \bar{z}_i } Z_l
+\end{align*}
+%
+so we conclude that:
+%
+$$ R_{ijk}^l = \frac{ \del \Gamma_{jk}^l }{ \del \bar{z}_i } $$
+%
+One sees how the complexity of computations in Kahler geometry are vastly simplified over their riemannian counterparts.
+
+\begin{definition} Let $M$ be a Kahler manifold, and let $X \in TM$. The holomorphic sectional curvature of $M$ at $X$ is defined to be:
+$$ K(X) = \frac{ g( R(X, JX) JX, X) }{ g( X, X )^2 } $$
+that is, the sectional curvature of the 2-plane spanned by $X$ and $JX$.
+\end{definition}
+%
+In a later section we will need to know how to compute the holomorphic sectional curvature using a holomorphic coordinate frame.  With this in mind we offer:
+%
+\begin{lem} Given $X \in TM$ write $Z = \frac{1}{2}( X - i JX )$.  Then:
+$$ K(X) = \frac{ g( R(X, JX) JX, X) }{ g( X, X )^2 } = - \frac{ g( R(Z, \bar{Z}) \bar{Z}, Z) }{g( Z, \bar{Z} )^2 } $$
+\end{lem}
+%
+\begin{proof} Observe that $X = Z + \bar{Z}$ and $JX = i( \bar{Z} - Z )$.  Now we simply compute:
+%
+$$ R(X, JX) = R( Z + \bar{Z}, i( \bar{Z} - Z ) ) = - i( R( \bar{Z}, Z ) - R( Z, \bar{Z} ) ) = - 2i R( \bar{Z}, Z )$$
+%
+Therefore:
+%
+$$ g( R(X, JX) JX, X ) = (-2i)^2 g( R(\bar{Z}, Z) Z, \bar{Z} ) = -4 g( R(Z, \bar{Z}) \bar{Z}, Z ) $$
+%
+On the other hand:
+%
+$$ g(X, X) = g(Z + \bar{Z}, Z + \bar{Z}) = 2 g(Z, \bar{Z}) $$
+%
+Putting these two computations together gives the result.
+%
+\end{proof}
+%
+
+\begin{definition} A Kahler manifold is said to have constant holomorphic sectional curvature $c$ when $K(X) = c$ for all $X \in TM$.
+\end{definition}
+%
+In the next section we will give examples of Kahler manifolds with constant holomorphic sectional curvature.  Until then, we give the following characterization.
+%
+\begin{prop} A Kahler manifold has constant holomorphic sectional curvature equal to $c$ if and only if its curvature tensor is given by:
+%
+\begin{align*}
+g( R(X,Y)Z, W ) = \frac{c}{4} & ( g(X,W)g(Y,Z) - g(X,Z)g(Y,W) + g(X,JW)g(Y,JZ) \\
+& \quad - g(X,JZ)g(Y,JW) + 2g(X,JY)g(W,JZ) )
+\end{align*}
+%
+\end{prop}
+%
+\begin{proof}
+%
+Let's use the notation:
+%
+$$ R(X,Y,Z,W) = g( R(X,Y)Z, W ) $$
+%
+for the curvature tensor, and write $\Rcurv (X,Y,Z,W)$ for the tensor defined by the right hand side of the equation we are trying to verify.  Then the reader can directly check that $\Rcurv$ satisfies all of the symmetry properties of the curvature tensor (we call a tensor with these symmetries an algebraic curvature tensor), that is:
+%
+\begin{align*}
+\Rcurv (X,Y,Z,W) &= - \Rcurv (Y,X,Z,W) \\
+\Rcurv (X,Y,Z,W) &= - \Rcurv (X,Y,W,Z) \\
+\Rcurv (X,Y,Z,W) &= \Rcurv(Z,W,X,Y)
+\end{align*}
+%
+and the Bianchi identity:
+$$ \Rcurv (X,Y,Z,W) + \Rcurv (Y,Z,X,W) + \Rcurv (Z,X,Y,W) = 0 $$
+%
+Furthermore, $\Rcurv$ satisfies the Kahler symmetry properties:
+%
+$$ \Rcurv( JX, JY, Z, W ) = \Rcurv ( X, Y, JZ, JW ) = \Rcurv ( X,Y,Z,W ) $$
+%
+Finally, we note now, for use at the end of this proof, that any algebraic curvature tensor is completely determined by the values of $\Rcurv( X,Y,Y,X )$, the reader who doubts this is invited to look at any textbook on Riemannian geometry (for instance \cite{dC} page 94).
+%
+Now observe that:
+%
+\begin{align*}
+\Rcurv (X, JX, JX, X) &= \frac{c}{4} ( g(X,X)g(JX,JX) - g(X,JX)^2 + g(X, JX)^2 \\
+& \qquad + g(X,X)g(JX,JX) + 2 g(X,X)^2 ) \\
+&= c g(X,X)^2
+\end{align*}
+%
+Let's now consider the tensor $Q = R - \Rcurv$, which is also an algebraic curvature tensor, and additionally satisfies the Kahler symmetry properties we highlighted earlier.  In light of the previous calculation, we see that $M$ has constant holomorphic sectional curvature $c$ if and only if $Q(X,JX,JX,X) = 0$ for all $X \in TM$.  Consequently, to prove the proposition we need to show that $Q=0$ if and only if $Q(X,JX,JX,X) = 0$ for all $X$.
+%
+We begin by polarizing the equation $Q(X,JX,JX,X) = 0$:
+%
+\begin{align*}
+0 &= Q ( X + Y, JX + JY, JX + JY, X + Y ) \\
+&= 4 Q (X, JX, Y, JX ) +  2 Q (X,Y,X,Y) + 6 Q (X, JY, X, JY) \\
+& \qquad + 4 Q ( Y, JY, Y, JX )
+\end{align*}
+%
+We have used the symmetry properties of an algebraic curvature tensor and the Kahler symmetry properties in arriving at this simplified form and suppressed the computation to preserve readability.  Now let's substitute $tX$ in for $X$, the result is a cubic polynomial in $t$ which is identically zero, and hence the coefficient of $t^2$ in this polynomial must vanish.  That is:
+%
+$$2 Q(X,Y,X,Y) + 6 Q(X, JY, X, JY) = 0 $$
+%
+for all $X,Y \in TM$.  We now apply this last equation twice:
+%
+$$ Q(X,Y,X,Y) = - 3 Q(X,JY,X,JY) = 9 Q(X, Y, X, Y) $$
+%
+It follows immediately that $Q(X,Y,Y,X) = - Q(X,Y,X,Y) = 0$ for all $X,Y \in TM$.  As mentioned earlier, this implies that $Q = 0$, and we have completed the proof.
+%
+\end{proof}
+
+\begin{cor} A Kahler manifold has constant holomorphic sectional curvature if and only if its curvature tensor is given by:
+%
+\begin{align*}
+R(X,Y)Z &= \frac{c}{4} (g(Y,Z)X - g(X,Z)Y - g(Y,JZ)JX  \\
+& \quad + g(X, JZ)JY + 2 g(X,JY)JZ )
+\end{align*}
+%
+\end{cor}
+
+\begin{proof}  Use the $J$-invariance of $g$ to pass all the $J$'s off of the $W$'s in the formula from the previous proposition.
+\end{proof}
+
+The expression for the curvature tensor in manifolds of constant holomorphic sectional curvature leads to the following important corollary:
+
+\begin{cor} Any two Kahler manifolds with the same constant holomorphic sectional curvature are locally isometric, and if they are both simply connected, then they are globally isometric.
+\end{cor}
+
+\begin{proof} This follows immediately from the Cartan-Ambrose-Hicks theorem (see \cite{CE} page 31), using the expression for the curvature tensor in the previous corollary and the fact that $g$ and $J$ are invariant under parallel translation.
+\end{proof}
+
+\subsection{ The Ricci Curvature and Kahler-Einstein Manifolds }
+
+We now want to introduce one of the main objects of study in this paper, Kahler-Einstein manifolds.  We begin with the important definition:
+%
+\begin{definition} The Ricci tensor of a Kahler manifold is the 2-tensor on $T_{\C} M$ defined by:
+$$ \Ric (X, Y) = \tr( Z \mapsto R(Z,X)Y )$$
+\end{definition}
+%
+As in the riemannian case, the Ricci tensor is symmetric.  Therefore, there is an associated $\C$-linear map $T_{\C} M \rightarrow T_{\C} M$, which we also call $\Ric$, defined by:
+%
+$$ g( \Ric (X), Y ) = \Ric ( X, Y ) $$
+
+The Kahler environment lends itself to a convenient expression for this map.
+%
+\begin{prop} Suppose that $\{X_i, JX_i\}$, for $i=1,\ldots,n$, is an orthonormal frame for the tangent space at some point of $M$.  Then we have:
+$$ \Ric (X) = \sum_i R(X_i, JX_i) JX $$
+\end{prop}
+%
+\begin{proof}
+We compute, using the usual convention to avoid repeatedly writing summation signs:
+%
+\begin{align*}
+g( \Ric(X), Y ) &= \Ric(X,Y) \\
+&= g( R ( X_i, X ) Y, X_i ) + g( R ( J X_i, X ) Y, J X_i ) \\
+&= - g( R( X_i, X ) J X_i, J Y ) - g( R( J X_i, X )J X_i, Y ) \\
+&= g( R( X, X_i ) J X_i, J Y ) + g( R( J X_i, X ) X_i, JY ) \\
+&= - g( R( X_i, J X_i ) X, JY ) \\
+&= g( R( X_i, J X_i ) JX, Y )
+\end{align*}
+%
+where we have used the Bianchi identity in the fourth line of the computation. 
+%
+\end{proof}
+%
+As a consequence of the above proposition we deduce the $J$-invariance or the Ricci tensor, for:
+%
+\begin{align*}
+\Ric( JX, JY ) &= g( \Ric( JX ), JY ) \\
+&= g( R( X_i, J X_i ) J^2 X, JY ) \\
+&= g( R(X_i, J X_i ) JX, Y ) \\
+&= \Ric( X, Y )
+\end{align*}
+%
+Consequently, we can define an associated (1,1) form, the Ricci form, by:
+%
+$$ \ric(X,Y) = \Ric(JX, Y)$$
+
+Let's once again investigate how all of this looks in a holomorphic local coordinate system.  Since $\Ric$ is $\C$-bilinear and symmetric we can repeat the proof we gave for $g$ to show that:
+%
+$$ \Ric(Z_i, Z_j ) = \Ric( \bar{Z}_i, \bar{Z}_j )= 0 $$
+%
+So we set:
+%
+$$ \Ric_{ij} = \Ric( Z_i, \bar{Z}_j ) $$
+%
+Before we begin deriving a local expression for these symbols, we make a small preliminary calculation.  First note that the trace used in defining the ricci curvature can be calculated by viewing $R$ as a real linear tensor on $TM$ or a complex linear tensor on $T_{\C}M$.  Therefore, if we let $Z_i$ be a local holomorphic coordinate frame field, so that $\{ Z_i, \bar{Z}_i \}$ is a frame field for $T_{\C}M$, we have:
+%
+\begin{align*}
+\Ric( Z_i, \bar{Z}_j ) &= \tr( Z \rightarrow R( Z, Z_i ) \bar{Z}_j ) \\
+&= Z^k( R(Z_k, Z_i) \bar{Z}_j ) + \bar{Z}^k ( R( \bar{Z}_k, Z_i ) \bar{Z}_j )
+\end{align*}
+%
+The first term above is zero, because $R(Z_r, Z_i) = 0$.  As for the other, playing around with the curvature tensor gives us:
+%
+\begin{align*}
+R( \bar{Z}_k, Z_i ) \bar{Z}_j &= - \overline{ R( \bar{Z}_i, Z_k ) Z_j } \\
+&= - \overline{ R_{ikj}^r Z_r } \\
+&= - \bar{R}_{ikj}^r \bar{Z}_r
+\end{align*}
+%
+Therefore:
+%
+$$ \Ric( Z_i, \bar{Z}_j ) = \tr( Z \rightarrow( Z, Z_i ) \bar{Z}_j ) = - \bar{R}_{ikj}^k = - \frac{ \del \bar{ \Gamma }_{kj}^k }{ \del z_i } $$
+%
+Setting $G = (g_{ij})$, we have:
+%
+$$ \Gamma_{kj}^k = \Gamma_{jk}^k = \frac{ \del g_{kl} }{ \del z_j } g^{lk} = \tr \left( \frac{ \del G }{ \del z_j } G^{-1} \right) = \frac{ \del }{ \del z_j } \log \det G $$
+%
+where in the last equality we have used a classic formula from linear algebra.  Now observe that that, since $G^t = \bar{G}$, we have:
+%
+$$ \det G = \det G^t = \det \bar{G} = \overline { \det G } $$
+%
+so $\det G$ is real valued.  Putting this all together, we obtain:
+%
+$$ \Ric( Z_i, \bar{Z}_j ) = - \frac{ \del \bar{ \Gamma }_{kj}^k }{ \del z_i } = - \frac{ \del }{ \del z_i } \frac{ \del }{ \del \bar{z}_j } \log \det G $$
+%
+that is:
+%
+$$ \Ric_{ij} = - \frac{ \del^2 }{ \del z_i \del \bar{z}_j } \log \det G $$
+%
+This formula becomes particularly simple in the context of the Ricci form, for:
+%
+$$ \ric = i \Ric_{ij} d z_j \wedge d \bar{z}_i = - i \del \delbar \log \det G $$
+%
+from which it follows immediately that the Ricci form is a closed (1,1) form.
+
+\begin{definition} A Kahler manifold is called Kahler-Einstein if there is a constant $\lambda$ so that $\ric = \lambda \omega$, or equivalently, $\Ric = \lambda g$.  The constant $\lambda $ is called the Einstein constant of $M$.
+\end{definition}
+
+Clearly an Einstein constant is a real number.  We already have some examples of Kahler-Einstein manifolds, those of constant holomorphic sectional curvature.
+
+\begin{prop} A Kahler manifold, of complex dimension $n$, with constant holomorphic sectional curvature $c$ is a Kahler-Einstein manifold with Einstein constant $\frac{(n+1)c}{2}$.
+\end{prop}
+
+\begin{proof}
+%
+We use the characterization of metrics of constant holomorphic sectional curvature from a previous proposition.  Let $e_1, e_2, \ldots, e_{2n}$ be an orthonormal frame for some tangent space to $M$, and let $X, Y$ be any two tangent vectors at this same point.  Then we have:
+%
+\begin{align*}
+\Ric(X,Y) &= R(X, e_i, e_i, Y) \\
+&= \frac{c}{4} ( g(X,Y)g(e_i,e_i) - g(X,e_i)g(Y,e_i) + g(X, JY)g(e_i, Je_i) \\
+& \qquad - g(X,Je_i)g(e_i,JY) + 2g(X,Je_i)g(Y,Je_i) ) \\
+&= \frac{c}{4}( 2n g(X,Y) - g(X,Y) + g(X,Y) + 2g(X,Y) ) \\
+&= \frac{ (n+1) c }{2} g(X,Y)
+\end{align*}
+%
+where we have used that $g(X,e_i)g(e_i,Y) = g(X,Y)$ in the computation.
+%
+\end{proof}
+
+\section{ Kahler Manifolds with Constant Holomorphic Sectional Curvature }
+
+In this section we will discuss the various examples of simply connected Kahler manifolds of constant holomorphic sectional curvature.
+
+\subsection{Flat Kahler Manifolds}
+
+Consider the complex coordinate space $\C^n$ with a metric given by:
+%
+$$ g = d z_i \otimes d \bar{z}_i + d \bar{z}_i \otimes d z_i $$
+%
+This is clearly a $J$-invariant metric, and the associated 2-form is given by:
+%
+$$ \omega = i d z_i \wedge d \bar{z}_i $$
+%
+which can be written as:
+%
+$$ \omega = i \del \delbar |z|^2 $$
+%
+Hence $g$ is a Kahler metric.  We see immediately that in the obvious global coordinate system:
+%
+$$ g_{ij} = \delta^i_j \text{ and } g^{ij} = \delta^i_j $$
+%
+so:
+%
+$$ \Gamma_{ij}^k = 0 \text{ and } R_{ijk}^l = 0 $$
+%
+from which is follows that $g$ has constant holomorphic sectional curvature zero.
+
+
+\subsection{The Fubini-Study Metric}
+
+Recall that the complex projective space $\CP^n$ can be viewed as the collection of all complex lines in $\C^{n+1}$.  From this perspective there is clearly a natural complex $n$-plane bundle $E \rightarrow \CP^n$ whose total space is:
+%
+$$ E = \{ (p,v) : p \in \CP^n, v \in p \} \subset \CP^n \times \C^{n+1} $$
+%
+The reader will find it routine to check that this is a holomorphic vector bundle.  Take a holomorphic local section $S: \CP^n \rightarrow E$, and consider the locally defined closed $(1,1)$ form on $\CP^n$ given by:
+%
+$$ \omega = i \del \delbar \log ( S \bar{S}^{t} ) $$
+%
+The form $\omega$ does not depend on our choice of local section, for any other local section $T$ is related to $S$ by the formula $T = M S $, where $M: \CP^n \rightarrow \C $ is some locally defined holomorphic function.  Therefore:
+%
+\begin{align*} \omega' &= i \del \delbar \log \det ( T \bar{T}^{t} ) \\
+&= i \del \delbar \log ( M S \bar{S}^t \bar{M} ) \\
+&= i \del \delbar( \log ( M ) + \log( S \bar{S}^t ) + \log( \bar{M} ) ) \\
+&= i \del \delbar \log \det ( \bar{S}^{t} S ) \\
+&= \omega
+\end{align*}
+%
+since $M$ is holomorphic and $\bar{M}$ is antiholomorphic.  It follows that $\omega$ is a globally defined (1,1) form on $\CP^n$.
+%
+\begin{definition} The Fubini-Study metric on $\CP^n$ is given by $g(X,Y) = \omega(X,JY)$.
+\end{definition}
+%
+We now want to verify that the Fubini-Study metric is Kahler.  To begin, recall that there is a transitive action of the unitary group $U_{n+1}$ on $\CP^n$ which is induced from the standard action on $\C^{n+1}$.  For $A \in U_{n+1}$ we write $f_{A}: \CP^n \rightarrow \CP^n$ for this induced map, which is easily verified to be holomorphic.  We claim that $f_A$ preserves the Fubini-Study metric, that is, $f^{\ast}_A \omega = \omega$.  To see this, again let $S$ be a holomorphic local section of $E$, say over some open set $U$.  Then $T = S A^{-1} \circ f_A$ is another such section, this one over the open set $f_A^{-1}(U)$, and we can calculate:
+%
+\begin{align*} f^{\ast}_A \omega &= i \del \delbar f^{\ast}_A \log \det ( S \bar{S}^t ) \\
+&= i \del \delbar \log \det ( ( S \circ f_A ) ( \bar{S}^t \circ f_A ) ) \\
+&= i \del \delbar \log ( ( S A^{-1} \circ f_A ) ( A \bar{S}^t \circ f_A ) ) \\
+&= i \del \delbar \log ( T \bar{T}^t ) \\
+&= \omega 
+\end{align*}
+%
+where we have used that $A$ is a unitary matrix in the third line.
+
+It remains only for us to show that $g$ is positive definite and $J$-invariant, which because of the transitive holomorphic action just described, must only be done at one point.  Let's find a local expression for $g$ at the point $[1,0, \ldots, 0]$ in $\CP^n$.  As usual we consider the open neighbourhood:
+%
+$$U = \{ [z_0,z_1, \ldots, z_n]: z_0 \neq 0 \} $$
+%
+which has the coordinate function (after normalization):
+%
+$$[1,z_1, \ldots, z_n] \mapsto (z_1, \ldots, z_n)$$
+%
+Clearly then, a holomorphic section over $U$ is:
+%
+$$[1,z_1, \ldots, z_n] \mapsto (1,z_1, \ldots, z_n)$$
+%
+and hence we have:
+%
+\begin{align*}
+\omega &= i \del \delbar \log( 1 + |z_1|^2 + \cdots + |z_n|^2 ) \\
+&= i \del \left( \frac{ z_i d\bar{z}_i }{ 1 + |z|^2 } \right) \\
+&= i \frac{ (1 + |z|^2 ) dz_i \wedge d \bar{z}_i - \bar{z}_j d z_j \wedge z_i d \bar{z}_i }{ (1 + |z|^2 )^2 } \\
+&= i \frac{ (1 + |z|^2)\delta^i_j - \bar{z}_i z_j }{ (1 + |z|^2)^2 } d z_i \wedge d \bar{z}_j
+\end{align*}
+%
+where we have written $|z|^2 = z_i \bar{z}_i$ for convenience.  Evaluating this at $z=0$ gives us:
+%
+$$ \omega|_{z=0} = i \delta^i_j dz_i \wedge d \bar{z}_j = i dz_i \wedge d \bar{z}_i $$
+%
+and therefore:
+%
+$$ g|_{z=0} = dz_i \otimes d \bar{z}_i + d \bar{z}_i \otimes d z_i $$
+%
+Which shows that $g$ is positive definite and $J$-invariant at $z=0$.  According to our previous remark, it follows that $g$ is $J$-invariant and positive definite everywhere.
+
+Now we want to continue the discussion and show that the Fubini-Study metric has constant holomorphic sectional curvature.  To begin, we calculate the Christoffel symbols of $g$ in the usual coordinate system.  
+
+Recall that in a holomorphic coordinate frame field on a Kahler manifold we have:
+%
+$$\nabla_{ Z_i }{ Z_j }= \Gamma^k_{ij} Z_k \text{ and } \nabla_{ \bar{Z}_i }{ \bar{Z}_j } = \bar{ \Gamma }^k_{ij} \bar{Z}_k $$
+%
+with all the mixed covariant derivatives vanishing.  The Christoffel symbols are given by the formula:
+%
+$$ \Gamma^k_{ij} = \frac{ \del g_{jr} }{\del z_i} g^{rk} $$
+%
+We have seen that the Fubini-Study metric is given in the usual coordinate frame by:
+%
+$$ g_{ij} = \frac{ (1 + |z|^2)\delta^i_j - \bar{z}_i z_j }{ (1 + |z|^2)^2 } $$
+%
+and it is easy to check that:
+%
+$$g^{ij} = (1 + |z|^2)( \delta^i_j + \bar{z}_i z_j )$$
+%
+We begin by calculating the partial derivative in the formula for the Christoffel symbols:
+%
+\begin{align*}
+\frac{ \del g_{jr} }{\del z_i} &= \frac{\del}{ \del z_i }\left( \frac{ (1 + |z|^2) \delta^j_r - \bar{z}_j z_r }{ (1 + |z|^2)^2 } \right) \\
+&= \frac{ ( \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j ) (1 + |z|^2 )^2 - 2 (1 + |z|^2 ) \bar{z}_i( (1 + |z|^2)\delta^j_r - \bar{z}_j z_r )}{ (1 + |z|^2 )^4 } \\
+&= \frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } - \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 } + \frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 }
+\end{align*}
+%
+Focusing on these three terms one by one, we have, for the first:
+%
+\begin{align*}
+\frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } g^{rk} &= \frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } (1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= \frac{1}{ 1 + |z|^2 } ( \delta^j_r \delta^r_k \bar{z}_i - \delta^r_i \delta^r_k \bar{z}_j + \delta^j_r \bar{z}_r \bar{z}_i z_k - \delta^r_i \bar{z}_r \bar{z}_j z_k ) \\
+&= \frac{ \delta^j_k \bar{z}_i - \delta^i_k \bar{z}_j }{ 1 + |z|^2 }
+\end{align*}
+%
+for the second:
+%
+\begin{align*}
+- \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 }g^{rk} &= - \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 }(1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= - \frac{2 \delta^j_k \bar{z}_i + 2 \bar{z}_i \bar{z}_j z_k}{1 + |z|^2}\\
+\end{align*}
+%
+and finally, for the third:
+%
+\begin{align*}
+\frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 } g^{rk} &= \frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 } (1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= \frac{2}{(1 + |z|^2)^2}( \delta^r_k \bar{z}_i \bar{z}_j z_r + \bar{z}_i \bar{z}_j z_k z_r \bar{z}_r ) \\
+&= \frac{2}{(1 + |z|^2)^2}( \delta^r_k \bar{z}_i \bar{z}_j z_r + \bar{z}_i \bar{z}_j z_k |z|^2 ) \\
+&= \frac{2}{(1 + |z|^2)^2}(1 + |z|^2)\bar{z}_i \bar{z}_j z_k  \\
+&= \frac{2 \bar{z}_i \bar{z}_j z_k }{1 + |z|^2}
+\end{align*}
+%
+Putting these ingredients all together, we find that the Christoffel symbols are given by:
+%
+$$ \Gamma^k_{ij} = - \frac{ \delta^k_i \bar{z}_j + \delta^k_j \bar{z}_i }{ 1 + |z|^2 } $$
+
+Now we move on to the curvature tensor.  Recall that in a holomorphic coordinate frame we have:
+%
+$$ R(Z_i, Z_j)Z_l = 0$$
+%
+so that we set:
+%
+$$ R( \bar{Z}_i, Z_j )Z_l = R_{ijl}^r Z_r $$
+%
+and then have the following formula for the curvature symbols:
+%
+$$ R_{ijl}^r = \frac{ \del \Gamma_{jl}^r }{ \del \bar{z}_i } $$
+%
+In the case of the Fubini-Study metric, in the coordinate frame we have been using, we then have:
+%
+\begin{align*}
+R_{ijl}^r &= \frac{\del}{\del \bar{z}_i } \left( - \frac{ \delta^k_i \bar{z}_j + \delta^k_j \bar{z}_i }{ 1 + |z|^2 } \right) \\
+&= - \frac{ (\delta^r_j \delta^i_l + \delta^r_l \delta^j_i)( 1 + |z|^2 ) - z_i ( \delta^r_j \bar{z}_l + \delta^r_l \bar{z}_j ) }{ (1 + |z|^2)^2 } 
+\end{align*}
+%
+so:
+%
+$$ R \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } = - \frac{ \delta^i_l (1 + |z|^2) - z_i \bar{z}_l }{ (1 + |z|^2)^2 } \frac{ \del }{ \del z_j } - \frac{ \delta^i_j (1 + |z|^2) - z_i \bar{z}_j }{ (1 + |z|^2)^2 } \frac{ \del }{ \del z_l } $$
+%
+For reasons we discussed earlier we only need to calculate the holomorphic curvature at one point, so we evaluate the above at $z=0$ and get:
+%
+$$ R \left. \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } \right|_{z=0} = - \delta^i_l \frac{ \del }{ \del z_j } - \delta^i_j \frac{ \del }{ \del z_l }$$
+%
+Therefore we have, at $z=0$:
+%
+\begin{align*} g \left( R \left( \frac{ \del }{ \del x_i }, \frac{ \del }{ \del y_i } \right) \frac{ \del }{ \del y_i }, \frac{ \del }{ \del x_i } \right) &= - 4 g \left( R \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_i } \right) \frac{ \del }{ \del z_i }, \frac{ \del }{ \del \bar{z}_i } \right) \\
+&= -4 g \left( - 2 \frac{ \del }{ \del z_i}, \frac{ \del }{ \del \bar{z}_i } \right) \\
+&= 8 
+\end{align*}
+%
+so the holomorphic sectional curvature is:
+%
+$$ K \left( \frac{ \del }{ \del x_i } \right) = \frac{8}{ g \left( \frac{ \del }{ \del x_i }, \frac{ \del }{ \del x_i } \right) } = \frac{8}{4 \left( \frac{ \del }{ \del z_i }, \frac{ \del }{ \del \bar{z}_i } \right) } = 2 $$
+%
+A similar calculation yields that $K \left( \frac{ \del }{ \del y_i } \right) = 2$, and we conclude that the Fubini-Study metric has constant holomorphic sectional curvature equal to $2$.
+%
+
+\subsection{The Complex Hyperbolic Space}
+
+Consider the disk in $\C^n$:
+%
+$$ \disk^n = \{ z \in \C^n : |z|^2 < 1 \} $$
+%
+In analogy to our procedure for the Fubini-Study metric, we define a 2-form on $\disk^n$ by:
+%
+\begin{align*}
+\omega &= - i \del \delbar \log ( 1 - |z|^2 ) \\
+&= i \frac{ (1 - |z|^2) \delta^i_j + z_j \bar{z}_i }{ (1 - |z|^2)^2 } d z_i \wedge d \bar{z}_j
+\end{align*}
+
+\begin{definition} The (complex) hyperbolic metric on $\disk^n$ is given by $g(X,Y) = \omega(JX,Y)$.
+\end{definition}
+
+In the global coordinate frame for $\disk^n$ the symbols for this metric are clearly:
+%
+$$ g_{ij} = \frac{ (1 - |z|^2) \delta^i_j + z_j \bar{z}_i }{ (1 - |z|^2)^2 } $$
+%
+To deduce that the complex hyperbolic metric is Kahler we will again investigate the isometries of $g$.  Consider the group of matrices that preserve the standard indefinite bilinear form with signature $(1,n)$, that is:
+%
+$$ U_{1,n} = \{ A \in GL_{n+1}( \C ) : A I_{1,n} \bar{A}^{t} = I_{1,n} \} $$
+%
+where $I_{1,n}$ is the matrix:
+%
+$$ \left( \begin{array}{cc} -1 & 0 \\ 0 & I_n \end{array} \right) $$
+%
+We define a transitive action by holomorphic isometries of this group on $\disk^n$.  To do this, consider the holomorphic projections $\pi_0 : \C^{n+1} \rightarrow \C $ and $ \pi : \C^{n+1} \rightarrow \C^{n} $ given by:
+%
+$$ \pi_0 ( z_0, z ) = z_0 $$
+%
+and:
+%
+$$ \pi ( z_0, z ) = z $$
+%
+where $z_0 \in \C$ and $z \in \C^n$. Let $U_{1,n}$ act on $\disk^n$ (on the right) by setting:
+%
+$$ f_A (z) = \frac{ \pi( (1,z)A ) }{ \pi_0 ( (1,z)A ) } $$
+%
+We first need to check that $f_A (z) \in \disk^n$ for all $A \in U_{1,n}$ and $z \in \disk^n$.  To see this we simply write:
+%
+\begin{align*}
+|f_A (z)|^2 &= \frac{ |\pi( (1,z)A )|^2 - |\pi_0 ( (1,z)A )|^2 + |\pi_0 ( (1,z)A )|^2 }{ |\pi_0 ( (1,z)A )|^2 } \\
+&= \frac{ |\pi( (1,z)A )|^2 - |\pi_0 ( (1,z)A )|^2 }{ |\pi_0 ( (1,z)A )|^2 } + 1 \\
+&= \frac{ (1,z)A I_{1,n} \bar{A}^{t} (1, \bar{z})^{t} }{ \pi_0 ( (1,z)A ) } + 1 \\
+&= \frac{ (1,z) I_{1,n} (1, \bar{z} )^{t} }{ \pi_0 ( (1,z)A ) } + 1\\
+&= \frac{ |z|^2 - 1  }{ \pi_0 ( (1,z)A ) } + 1 \\
+&< 1
+\end{align*}
+%
+To see that this is actually a group action it is convenient for us to give a slightly different description.  Consider $\disk^n$ as a subset of $\CP^n$ defined by:
+%
+$$ \disk = \left\{ [z_0, z] : \frac{ |z|^2 }{ |z_0|^2 } < 1 \right\} $$
+%
+Then $U_{1,n}$ acts on this disk by $[z_0, z] \mapsto [z_0, z]A$, and the map $[z_0, z] \mapsto \frac{z}{z_0}$ sends the new action into the old one.  But the new definition clearly results in a group action, and hence the old one does as well.  We conclude that each $f_A$ is a homeomorphism, so it remains to see that each is an isometry, and that the action is transitive.
+
+To see that we have an action by isometries, it suffices to check that $f_A^{\ast} \omega = \omega$.  First observe that:
+%
+\begin{align*}
+(1, f_A(z) ) &= \left( 1, \frac{ \pi( (1,z)A ) }{ \pi_0 ( (1,z)A ) } \right) \\
+&= \frac{ ( \ \pi_0 ( (1,z)A ), \pi ( (1,z)A ) \ ) }{ \pi_0( (1,z)A ) } \\
+&= \frac{ (1,z)A }{ \pi_0 ( (1,z)A ) }
+\end{align*}
+%
+with a similar result holding for $( 1, \overline{ f_A (z) } )$.  Now notice that we can express $\omega$ as:
+%
+$$ \omega = -i \del \delbar \log( \ - (1,z) I_{1,n} (1, \bar{z})^{t} \ ) $$
+%
+and with this we can calculate:
+%
+\begin{align*}
+f_A^{\ast} \omega &= - i \del \delbar \log ( - (1, f_A (z) ) I_{1,n} (1, \overline{ f_A (z) } )^{t} ) \\
+&= -i \del \delbar \log \left( - \frac{ (1,z)A I_{1,n} \bar{A}^{t} (1, \bar{z})^{t} }{ | \pi_0 (z) |^2 } \right) \\
+&= - i \del \delbar \log ( - (1,z) I_{1,n} (1, \bar{z})^{t} ) \\
+&= \omega
+\end{align*}
+%
+as we wanted to show.
+
+Finally, we show that the action is transitive.  To do this, it suffices to show that, given $z \in \disk^n$, there is an $A \in U_{1,n}$ so that $f_A (z) = 0$, which is equivalent to solving the equation $\pi( (1,z)A ) = 0$ for $A \in U_{1,n}$.  This is easy enough, take the vector $(1,z)$ and normalize it, and then extend it to a basis for $\C^{n+1}$ which is orthonormal with respect to the indefinite bilinear form defined by $I_{1,n}$.  Use this basis as the columns in a matrix $A$, which is then easily seen to lie in $U_{1,n}$.  Since $(1,z)$ is orthogonal to the last $n$ columns of the matrix, clearly $\pi ( (1,z)A ) = 0$.
+
+All together, we have shown that $U_{1,n}$ acts transitively on the disk by holomorphic isometries with respect to our metric $g$.  To now see that $g$ is positive definite and J-invariant, it suffices to look at only one point.  We have:
+%
+$$ g_{ij}|_{z=0} = \delta^i_j$$
+%
+and so, indeed, $g$ is $J$-invariant, positive definite, and hence a Kahler metric on $\disk^n$.
+
+Now we calculate the Chirstoffel symbols, and find the caculation completely analogous to that for the Fubini-Study metric, obtaining the result:
+%
+$$ \Gamma_{ij}^k = \frac{ \delta^i_k \bar{z}_j + \delta^j_k \bar{z}_i }{ 1 - |z|^2 } $$
+%
+For the curvature symbols we get:
+%
+$$ R_{ijl}^r = \frac{ \del \Gamma_{jl}^r }{ \del \bar{z}_i } = \frac{ ( 1 - |z|^2 )( \delta^r_j \delta^i_l + \delta^r_l \delta^i_j ) + \delta^r_j z_i \bar{z}_l + \delta^r_l z_i \bar{z}_j }{ ( 1 - |z|^2 )^2 } $$
+%
+so that:
+%
+$$ R \left( \frac{ \del }{ \del \bar{z}_i },\frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } = \frac{ ( 1 - |z|^2 ) \delta^i_l + z_i \bar{z}_l }{ (1 - |z|^2)^2 } \frac{ \del }{ \del z_j } + \frac{ ( 1 - |z|^2 ) \delta^i_j + z_i \bar{z}_j }{ (1 - |z|^2)^2 } \frac{ \del }{ \del z_l } $$
+%
+To calculate the holomorphic sectional curvature it suffices to focus on a single point, so we set $z=0$ and obtain:
+%
+$$  \left. R \left( \frac{ \del }{ \del \bar{z}_i },\frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } \right|_{z=0} =  \delta^i_l \frac{ \del }{ \del z_j } + \delta^i_j \frac{ \del }{ \del z_l } $$
+%
+which is exactly the negation of what we obtained for the Fubini-Study metric.  It is now immediate that this metric has constant holomorphic sectional curvature equal to $-2$.
+
+\subsection{ Summary }  
+Although we have only constructed simply connected Kahler manifolds with constant holomorphic sectional curvatures $0,2$ and $-2$, it is easy to now find metrics of any constant holomorphic sectional curvature.  Indeed, suppose we take a Kahler metric $g$ and scale it to get another metric $\lambda g$.  Following through the various formulas (or definitions) we see that the Christoffel symbols and curvature symbols in any coordinate system are left unchanged.  The only difference occurs in the last step of calculating the holomorphic sectional curvature, where we evaluate the curvature tensor inside the metric, here the numerator is scaled by $\lambda$, and the denominator by $\lambda^2$, so the final result is scaled by $\frac{1}{\lambda}$.  So let $c > 0$, then the 2-form:
+%
+$$ \omega = i \frac{2}{c} \del \delbar \log ( 1 + |z|^2 ) $$
+%
+(in an appropriate coordinate system) defines a metric of constant holomorphic sectional curvature $c$ on $\CP^n$.  This metric is called the Fubini-Study metric of holomorphic curvature $c$, and we denote the resulting Kahler manifold by $\CP^n(c)$.  Similarly, the 2-form:
+%
+$$ \omega = - i \frac{2}{c} \del \delbar \log ( 1 - |z|^2 ) $$
+%
+defines a metric of constant holomorphic sectional curvature $-c$ on $\disk^n$, which we call the complex hyperbolic metric of holomorphic curvature $-c$, and denote the resulting Kahler manifold by $\CH^n (c)$.
+
+We now have, for every real number $c$, a simply connected complex manifold with a Kahler metric of constant holomorphic sectional curvature $c$.  Recalling that such a space is unique up to isometry, we have proven the following theorem:
+
+\begin{thm} Let $M$ be a simply connected Kahler manifold of constant holomorphic sectional curvature $c$ and complex dimension $n$, then:
+%
+\begin{itemize}
+%
+\item If $c = 0$, then $M$ is isometric to $\C^n$ with its flat Kahler metric.
+\item If $c > 0$, then $M$ is isometric to $\CP^n (c)$.
+\item If $c < 0$, then $M$ is isometric to $\CH^n (c)$.
+%
+\end{itemize}
+%
+\end{thm}
+
+\section{ The Hermitian Metric and the Connection and Curvature Forms }
+
+In this section we take a closer look at some of the results from the last section, and recast them in the language of Hermitian metrics and the Cartan formalism of differential forms.
+
+\subsection{ The Hermitian Metric }
+
+Let $M$ be a Kahler manifold with metric $g$, associated 2-form $\omega$, and riemannian connection $\nabla$.  Consider the complex valued 2-tensor defined on $TM$ by:
+%
+$$ h(X,Y) = g(X,Y) - i \omega(X,Y) $$
+%
+Since $M$ is a complex manifold, its tangent bundle is naturally a complex vector bundle, with the complex structure encoded by the automorphism $J$.  In this context $h$ is a hermitian metric, for:
+%
+\begin{align*}
+h(JX,Y) &= g(JX,Y) - i \omega( JX, Y ) \\
+&= \omega( X, Y ) + i g( X, Y ) \\
+&= i h(X,Y)
+\end{align*}
+%
+and similarly, $ h(X,JY) = - ih(X,Y) $.  In a holomorphic coordinate frame field $Z_i = \frac{1}{2}(X_i - i Y_i)$ we define the symbols of this metric by:
+%
+$$h_{ij} = h( X_i, X_j ) = h( Y_i, Y_j )$$
+%
+These are related to the $g$ symbols by:
+%
+\begin{align*}
+g_{ij} &= g( Z_i, \bar{Z}_j ) = \frac{1}{4}g( X_i - i Y_i, X_j + i Y_j ) \\
+&= \frac{1}{2}( g(X_i, X_j) - i g( Y_i, X_j ) ) \\
+&= \frac{1}{2}( g(X_i, X_j) - i \omega( X_i, X_j ) ) \\
+&= \frac{1}{2} h( X_i, X_j ) \\
+&= \frac{1}{2} h_{ij}
+\end{align*}
+%
+Therefore we have the following expressions for $g$ and the associated 2-form in a holomorphic coordinate frame field:
+%
+$$ g = \frac{ h_{ij} }{2}  d z_i \otimes d \bar{z}_j + \frac{ \bar{h}_{ij} }{2} d \bar{z}_i \otimes d z_i  $$
+%
+and:
+%
+$$ \omega = \frac{i h_{ij} }{2} d z_i \wedge d \bar{z}_j $$
+
+\begin{remark}  Note that the above expressions hold for the $h$ and $g$ symbols in any local frame field for $TM^{+}$, not just in a coordinate frame field.  In particular, if $\{ e_1, \ldots, e_n \}$ is unitary with respect to $h$, and $ \{ e^1, \ldots, e^n \} $ is the dual frame field, then the 2-form associated to the metric is given by:
+%
+$$ \omega = \frac{i}{2} e^i \wedge \bar{e}^i $$
+%
+\end{remark}
+
+ We observe now, for later use, an important property of the hermitian metric on a Kahler manifold:
+%
+\begin{prop} The riemannian connection $\nabla$ is compatible with the hermitian metric, that is:
+%
+$$ X h( Y,Z ) = h( \nabla_X Y, Z ) + h( Y, \nabla_X Z ) $$
+%
+\end{prop}
+%
+\begin{proof}
+We simply calculate using the definition of $h$:
+%
+\begin{align*}
+X h(Y,Z) &= X( g(Y,Z) - i g( JY, Z ) ) \\
+&= g( \nabla_X Y, Z ) + g( Y, \nabla_X Z ) - i g( J \nabla_X Y, Z ) - i g( JY, \nabla_X Z ) \\
+&= h( \nabla_X Y, Z ) + h( Y, \nabla_X, Z)
+\end{align*}
+%
+which is what we wanted to show.
+%
+\end{proof}
+%
+\begin{remark} Using the bundle isomorphism $\Phi : TM \rightarrow TM^{+}$ we can transfer $h$ to a hermitian metric on $TM^{+}$, which we denote by $\hsquig$. The induced connection on $TM^{+}$ is then also compatible with $\hsquig$, and we remind the reader that this induced connection agrees with what we obtain by extending $\nabla$ to $T_{\C}M$ complex linearly, and then restricting to $TM^{+}$.
+\end{remark}
+
+\subsection{ The Connection and Curvature Forms }
+
+We now temporarily turn our attention in another direction, and discuss a different way of organizing the information contained in the connection on a Kahler manifold.  Again, we work with a fixed holomorphic coordinate frame field $Z_i$ for $TM^{+}$.  Define a collection of complex valued one forms on $T_{\C}M$ by:
+%
+$$ \nabla_{X} Z_j = \theta^k_j (X) Z_k $$
+%
+Sometimes we choose to think of $\theta$ as a matrix of one forms (with the top index for the rows and bottom for the columns) and sometimes as a single $M_n(\C)$ valued 1-form, depending on the context.  From this perspective the previous definition can be abbreviated as follows: assemble the frame into a row vector $Z = (Z_i, \ldots, Z_n)$, then:
+%
+$$ \nabla Z = Z \theta $$
+%
+Comparing the definition of $\theta$ to the relations $ \nabla_{Z_i} Z_j = \Gamma_{ij}^k Z_k $ and $\nabla_{\bar{Z}_i} Z_j = 0$, we see that:
+%
+$$ \theta^k_j = \Gamma_{ij}^k d z_i $$
+%
+This last equation lets us easily derive a formula for $\theta$ in terms of $h$, for we have:
+%
+$$ \Gamma_{ij}^k = \frac{ \del g_{jl} }{ \del z_i } g^{lk} = \frac{ \del h_{jl} }{ \del z_i } h^{lk} $$
+%
+and hence:
+%
+$$ \theta^k_j = \frac{ \del h_{jl} }{ \del z_i } h^{lk} d z_i = \left( \frac{ \del h_{jl} }{ \del z_i } d z_i \right) h^{lk} = \del h_{jl} \ h^{lk} = ( \del h \ h^{-1} )_{jk} $$
+%
+which we can write as a single matrix equation:
+%
+$$ \theta = ( \del h \ h^{-1} )^{t} = (h^t)^{-1} (\del h)^{t} = \bar{h}^{-1} \ \del \bar{h} $$
+
+Now let's turn to the curvature.  In analogy with $\theta$ we define some complex bilinear objects $\Omega$ on $T_{\C}M$ by the formula:
+%
+$$ R( X, Y ) Z_k = \Omega_k^l (X, Y) Z_l $$
+%
+since $R(X,Y) = - R(Y,X)$, we see that the $\Omega$'s are complex valued 2-forms.  To relate them to our earlier work, we recall that:
+%
+$$ R(Z_i, Z_j) = R( \bar{Z}_i, \bar{Z}_j ) = 0 $$
+%
+and:
+%
+$$ R( \bar{Z}_i, Z_j )Z_k = R_{ijk}^l Z_l $$
+%
+so that:
+%
+$$ \Omega_k^l = R_{ijk}^l d \bar{z}_i \wedge d z_j $$
+%
+Now recall that:
+%
+$$ R_{ijk}^l = \frac{ \del \Gamma_{jk}^l }{ \del \bar{z}_i } $$
+%
+substituting this into the previous equation gives us:
+%
+$$ \Omega_k^l = \frac{ \del \Gamma_{jk}^l }{ \del \bar{z}_i } d \bar{z}_i \wedge d z_j = \delbar( \Gamma_{jk}^l d z_j ) = \delbar \theta_k^l $$
+%
+or more succinctly:
+%
+$$ \Omega = \delbar \theta $$
+%
+It will be convenient for us, inspired by the above equation, to investigate $ \del \theta $.  We differentiate the formula $\theta = \bar{h}^{-1} \del \bar{h}$, using the linear algebraic formula $\del \bar{h}^{-1} = - \bar{h}^{-1} \del \bar{h} \bar{h}^{-1}$ along the way:
+%
+\begin{align*}
+\del \theta &= \del(  \bar{h}^{-1} \del \bar{h} ) = ( \del \bar{h}^{-1} ) \wedge \del \bar{h} - \bar{h}^{-1} \del^2 \bar{h} \\
+&= - \bar{h}^{-1} (\del \bar{h}) \bar{h}^{-1} \wedge \del \bar{h}  = - \bar{h}^{-1} \del \bar{h} \wedge \bar{h}^{-1} \del \bar{h} \\
+&= - \theta \wedge \theta
+\end{align*}
+
+So we have derived the two equations:
+%
+$$ \delbar \theta = \Omega \quad \text{ and } \quad \del \theta + \theta \wedge \theta = 0 $$
+%
+In fact, since $d = \del + \delbar$, these can be combined in to the single:
+%
+$$ \Omega = d \theta + \theta \wedge \theta $$
+%
+We would like to remove the dependence on a holomorphic coordinate frame from these results, and in fact, this can be very easily done:
+%
+\begin{prop} Let $X_1, X_2, \ldots, X_n$ be be any local frame field for $TM^{+}$, and assemble it into a row vector $X = (X_1, \ldots, X_n)$. Define connection and curvature forms with respect to this frame by $ \nabla X = X \thetasquig $ and $ R X = X \Omegasquig $ respectively.  Then:
+%
+$$ \Omegasquig = d \thetasquig + \thetasquig \wedge \thetasquig $$
+%
+\end{prop}
+
+\begin{proof}
+%
+First choose a local holomorphic frame field $Z = (Z_1, \ldots, Z_n)$ to relate the given frame to; that is, write $X = ZA$ where $A$ is a locally defined function from $M$ to $GL_n (\C)$.  We use $\theta$ and $\Omega$ for the connection and curvature forms with respect to $Z$, which we already know satisfy the equation:
+%
+$$ \Omega = d \theta + \theta \wedge \theta $$
+%
+We have:
+%
+\begin{align*}
+\nabla X &= \nabla( ZA ) = (\nabla Z) A + Z dA \\
+&= Z \theta A + Z dA \\ 
+&= X A^{-1} \theta A + X A^{-1} dA \\
+&= X( A^{-1} \theta A + A^{-1} dA )
+\end{align*}
+%
+and
+%
+\begin{align*}
+RX &= R(ZA) = (RZ)A \\
+&= Z \Omega A \\
+&= X A^{-1} \Omega A
+\end{align*}
+%
+so we conclude that:
+%
+$$ \thetasquig = A^{-1} \theta A + A^{-1} dA \quad \text{ and } \quad \Omegasquig = A^{-1} \Omega A $$
+%
+Therefore:
+%
+\begin{align*}
+%
+d \thetasquig + \thetasquig \wedge \thetasquig &= d( A^{-1} \theta A + A^{-1} dA ) + (A^{-1} \theta A + A^{-1} dA) \wedge ( A^{-1} \theta A + A^{-1} dA )\\
+%
+&= d( A^{-1} ) \wedge \theta A + A^{-1} d \theta A - A^{-1} \theta \wedge dA + d ( A^{-1} ) \wedge dA + A^{-1} \theta \wedge \theta A \\
+& \quad + A^{-1} \theta \wedge dA + A^{-1} dA \wedge A^{-1} \theta A + A^{-1} dA \wedge A^{-1} dA \\
+%
+&= - A^{-1} dA A^{-1} \wedge \theta A + A^{-1} d \theta A - A^{-1} \theta \wedge dA - A^{-1} dA A^{-1} \wedge dA \\
+& \quad + A^{-1} \theta \wedge \theta A + A^{-1} \theta \wedge dA + A^{-1} dA \wedge A^{-1} \theta A + A^{-1} dA \wedge A^{-1} dA \\
+%
+&= A^{-1} d \theta A + A^{-1} \theta \wedge \theta A \\
+&= A^{-1} \Omega A \\
+&= \Omegasquig
+%
+\end{align*}
+%
+as we wanted to show.
+%
+\end{proof}
+
+We need another formula in our subsequent work, and now is a good time to discuss it.
+
+\begin{prop} Let $X = (X_1, \ldots, X_n)$ be any frame field for the bundle $TM^{+}$, and let $X^{\ast} = ( X_1^{\ast}, \ldots, X_n^{\ast} )^t$ be its dual frame field (note the transpose).  Then the equation:
+%
+$$ d X^{\ast} + \theta \wedge X^{\ast} = 0$$
+%
+is equivalent to the connection $\nabla$ being torsion free.
+\end{prop}
+
+\begin{proof}
+%
+Let $Y$ and $Z$ be any two vector fields in $TM^{+}$.  We can write these in the given frame $X$ as:
+%
+$$ Y = X( X^{\ast}(Y) ) \ \text{ and } \ Z = X( X^{\ast}(Z) ) $$
+%
+Let's calculate the torsion of the connection using these two equations.  We have:
+%
+\begin{align*}
+\nabla_Y Z &= \nabla_Y ( X( X^{\ast}(Z) ) ) \\
+&= (\nabla_Y X) ( X^{\ast}(Z) ) + X( Y( X^{\ast}(Z) ) ) \\
+&= ( X \theta(Y) ) ( X^{\ast}(Z) ) + X( Y( X^{\ast}(Z) ) ) \\
+&= X( \ \theta(Y) X^{\ast}(Z) + Y( X^{\ast}(Z)) \ )
+\end{align*}
+%
+and by switching $Y$ with $Z$:
+%
+$$ \nabla_Z Y = X( \ \theta(Z) X^{\ast}(Y) + Z( X^{\ast}(Y)) \ ) $$
+%
+Now, using that $[Y,Z] = X( X^{\ast}( [Y,Z] ) )$, we can express the torsion tensor as:
+%
+\begin{align*}
+T(Y,Z) &= \nabla_Y Z - \nabla_Z Y - [Y,Z] \\
+&= X( \ Y( X^{\ast}(Z)) - Z( X^{\ast}(Y)) - X^{\ast}( [Y,Z] ) + \theta(Y) X^{\ast}(Z) - \theta(Z) X^{\ast}(Y) \ ) \\
+&= X( \ d X^{\ast}(Y,Z) + \theta \wedge X^{\ast} (Y,Z) \ )
+\end{align*}
+%
+which clearly completes the proof.
+%
+\end{proof}
+
+We have defined our connection forms relative to a chosen frame for $TM^{+}$, and different choices of frames can be convenient in different situations.  We have already seen that a holomorphic coordinate frame brings about certain simplifications in the theory, for example, in such a frame $\omega$ is a (1,0) form.  Let's now take a look at how things go if we use a unitary frame $e_1, e_2, \ldots, e_n$ for $TM^{+}$, in the sense that:
+%
+$$ \hsquig ( e_i, e_j ) = \delta^i_j $$
+%
+We want to look at an additional property of the connection form in such a frame, to do so, we differentiate the above equation:
+%
+\begin{align*}
+0 &= X \hsquig ( e_i, e_j ) \\
+&= \hsquig ( \nabla_X e_i, e_j ) + \hsquig ( e_i, \nabla_X e_j ) \\
+&= \hsquig ( \theta^l_i (X) e_l, e_j ) + \hsquig ( e_i, \theta^l_j (X) e_l ) \\
+&= \theta^l_i (X) \delta^l_j + \bar{\theta}^l_j (X) \delta^i_l \\
+&= \theta^j_i (X) + \bar{\theta}^i_j (X)
+\end{align*}
+%
+and hence we have the following result:
+%
+\begin{prop} If $e_1, \ldots, e_n$ is a unitary frame field for the bundle $TM^{+}$ with respect to the hermitian metric $\hsquig$, then the connection form with respect to this frame is skew-hermitian, that is $ \theta^{t} = - \bar{ \theta } $.
+\end{prop}
+
+We note at this point that propositions $3$ and $4$ actually characterize the connection forms completely, since, as we know from riemannian geometry, there is a unique connection which is both compatible with $h$ and torsion free (this could also be verified directly).
+
+We need one more result in about the curvature form of a manifold of constant holomorphic sectional curvature, which is a restatement of our previous determination of the curvature tensor of these spaces.
+
+\begin{prop}  Let $\epsilon = (\epsilon_1, \ldots, \epsilon_n )$ be any local frame field for the bundle $TM^{+}$, let $\epsilon^{\ast} = ( \epsilon^1, \ldots, \epsilon^n )^{t} $ be the dual frame field, and let $\Omega$ be the curvature form with respect to this frame.  Then $M$ has constant holomorphic sectional curvature $c$ if and only if:
+%
+$$ \Omega = \frac{c}{2} \left( - i \omega I + \frac{1}{2} \epsilon^{\ast} \wedge (\bar{ \epsilon }^{\ast})^{t} \bar{h} \right) $$
+%
+\end{prop}
+
+\begin{proof}
+Recall that the definition of $\Omega$ is:
+%
+$$ R(X,Y) \epsilon_i = \Omega^l_i (X,Y) \epsilon_l $$
+%
+so that:
+%
+$$ \Omega^j_i (X,Y) = \epsilon^j ( R(X,Y) \epsilon_i ) $$
+
+Now, $M$ has constant holomorphic sectional curvature $c$ if and only if it's curvature tensor is given by:
+%
+\begin{align*}
+R(X,Y)Z &= \frac{c}{4} (g(Y,Z)X - g(X,Z)Y - g(Y,JZ)JX  \\
+& \quad + g(X, JZ)JY + 2 g(X,JY)JZ )
+\end{align*}
+%
+so we get:
+%
+\begin{align*}
+\Omega^j_i (X,Y) &= \epsilon^j ( R(X,Y) \epsilon_i ) \\
+&= \frac{c}{4} (g(Y, \epsilon_i ) \epsilon^j(X) - g(X, \epsilon_i ) \epsilon^j(Y) - g(Y,J \epsilon_i ) \epsilon^j (JX)  \\
+& \quad + g(X, J \epsilon_i ) \epsilon^j (JY) + 2 g(X,JY)\epsilon^j( J \epsilon_i )
+\end{align*}
+%
+Let's take a look at the terms in this expression one by one, starting with the last.  We have:
+%
+$$ 2 g(X,JY)\epsilon^j( J \epsilon_i )= - 2 \omega( X, Y ) \epsilon^j ( i \epsilon i ) = - 2 i \delta^i_j \omega( X, Y ) $$
+%
+which gives us the first term in our target expression for $\Omega$.  
+
+Now let's examine the term $g( Y, \epsilon_i ) \epsilon^j(X)$.  First we write $Y$ in the given frame as:
+%
+$$ Y = \epsilon^l (Y) \epsilon_l + \bar{ \epsilon }^l (Y) \bar{ \epsilon_l } $$
+%
+and therefore:
+%
+$$ g( Y, \epsilon_i ) = g( \epsilon^l (Y) \epsilon_l + \bar{ \epsilon }^l (Y) \bar{ \epsilon_l }, \epsilon_i ) = g( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }^l (Y) $$
+%
+so the term is:
+%
+$$ g( Y, \epsilon_i ) \epsilon^j(X) = g( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }^l (Y) \epsilon^j(X) $$
+%
+Similarly we get that:
+%
+$$ g(X, \epsilon_i ) \epsilon^j(Y) = g( \bar{\epsilon}_l, \epsilon_i ) \bar{ \epsilon }^l (X) \epsilon^j (Y) $$
+
+Moving on, we now concentrate on $g(Y,J \epsilon_i ) \epsilon^j (JX)$.  First:
+%
+$$ g(Y,J \epsilon_i ) = - \omega( Y, \epsilon_i ) = - \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (Y) $$
+%
+so we need to take a look at the $\epsilon^j (JX)$.  To simplify this, recall that we the complex tangent bundle splits as a direct sum $T_{\C} M = TM^{+} \oplus TM^{-}$, so write $X = X^{+} + X^{-}$ where $X^{+} \in TM^{+}$ and $X^{-} \in TM^{-}$.  Then we have:
+%
+$$ \epsilon^j (JX) = \epsilon^j ( JX^{+} + JX^{-} ) = \epsilon^j( JX^{+} ) = \epsilon^j( i X^{+} ) = i \epsilon^j ( X^{+} ) = i \epsilon^j (X) $$
+%
+so altogether:
+%
+$$ g(Y,J \epsilon_i ) \epsilon^j (JX) = - i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (Y) \epsilon^j (X) $$
+%
+Similarly:
+%
+$$ g(X, J \epsilon_i ) \epsilon^j (JY) = - i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (X) \epsilon^j (Y) $$
+
+Now we put all this together to get:
+%
+\begin{align*}
+\Omega^j_i (X,Y) &= \epsilon^j ( R(X,Y) \epsilon_i ) \\
+%
+&= \frac{c}{4} (g( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }^l (Y) \epsilon^j(X) - g( \bar{\epsilon}_l, \epsilon_i ) \bar{ \epsilon }^l (X) \epsilon^j (Y) \\
+& \quad + i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (Y) \epsilon^j (X) - i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (X) \epsilon^j (Y) - 2 i \delta^i_j \omega( X, Y )) \\
+%
+&= \frac{c}{4}( \ ( g( \epsilon_i, \bar{ \epsilon_l } ) - i \omega( \epsilon_i, \bar{ \epsilon }_l ) )( \bar{ \epsilon }^l (Y) \epsilon^j (X) - \bar{ \epsilon }^l (X) \epsilon^j (Y) \ ) \\
+& \quad - 2 i \delta^i_j \omega( X, Y )) \\
+\end{align*}
+%
+Now:
+%
+$$ g( \epsilon_i, \bar{ \epsilon_l } ) - i \omega( \epsilon_i, \bar{ \epsilon }_l ) = g_{il} - i( i g_{il} ) = 2 g_{il} = h_{il} $$
+%
+and:
+%
+$$ \bar{ \epsilon }^l (Y) \epsilon^j (X) - \bar{ \epsilon }^l (X) \epsilon^j (Y) = \epsilon^j \wedge \bar{ \epsilon }^l (X,Y) $$
+%
+so we have shown that:
+%
+\begin{align*}
+\Omega^j_i (X,Y) &= \frac{c}{4} ( \ h_{il} \epsilon^j \wedge \bar{ \epsilon }^l (X,Y) - 2 i \delta^i_j \omega( X, Y ) \ ) \\
+&= \frac{c}{4} ( \ \epsilon^j \wedge \bar{ \epsilon }^l (X,Y) \bar{h}_{li} - 2 i \delta^i_j \omega( X, Y ) \ )
+\end{align*}
+%
+Which is exactly what we wanted to show.
+%
+\end{proof}
+
+Finally, we prove a result characterising Kahler-Einstein manifolds in terms of their curvature forms.
+
+\begin{prop}
+A manifold is Kahler einstein of constant $\lambda$ if and only if its curvature form in any local frame for $TM^{+}$ satisfies $ \tr \ \Omega =  - i \lambda \omega $.
+\end{prop}
+
+\begin{proof}
+We begin by proving the result in a local holomorphic coordinate frame field $Z_i$ for $TM^{+}$, and let $Z^i$ be the dual frame field.  Recall that the Kahler metric is Einstein if and only if $\ric = \lambda \omega$, and then we have:
+%
+\begin{align*}
+\lambda \omega( Z_i, \bar{Z}_j ) &= \ric ( Z_i, \bar{Z}_j ) = i \Ric( Z_i, \bar{Z}_j ) \\
+&= i  \tr ( Z \mapsto R( Z, Z_i ) \bar{Z}_j ) \\
+&= i \bar{Z}^k ( R( \bar{Z}_k, Z_i ) \bar{Z}_j ) \\
+&= i \bar{Z}^k ( - R( \bar{Z}_j, \bar{Z}_k ) Z_i - R( Z_i, \bar{Z}_j ) \bar{Z}_k ) \\
+&= - i \bar{Z}^k ( \bar{\Omega}^k_r ( Z_i, \bar{Z}_j ) \bar{Z}_r ) \\
+&= - i \bar{\Omega}^k_k ( Z_i, \bar{Z}_k )
+\end{align*}
+%
+Now taking the conjugate of both sides, and using that $\omega$ is real valued gives the result we want.
+
+Given an arbitrary frame field $X$, let $\tilde{ \Omega }$ denote the curvature form in this frame.  Set $A \in GL_n( \C )$ to be the change of frame matric from $X$ to $Z$ and recall that $\tilde{ \Omega } = A^{-1} \Omega A$.  We then have:
+%
+$$ \tr \tilde{ \Omega } = \tr ( A^{-1} \Omega A ) = \tr \Omega $$
+%
+which proves the result in the frame $X$.
+%
+\end{proof} 
+
+\subsection{ Some More Discussion of the Fubini Study Metric }
+
+We will now give another perspective on the Fubini-Study metric and study its connection and curvature forms.
+
+Consider the normalization map $z_0 : \C^{n+1} - \{0\} \rightarrow S^{2n-1}$ defined by:
+%
+$$ z_0(z) = \frac{z}{|z|} $$
+%
+which is smooth on $\C^{n+1} - \{0\}$.  Define a hermitian metric on $\C^{n+1} - \{0\}$ by:
+%
+$$ds^2 = d z_0 \cdot d z_0 - ( d z_0 \cdot z_0 )( z_0 \cdot d z_0 ) $$
+%
+where we are using the symbol $\cdot$ to denote the usual Hermitian inner product on $\C^{n+1}$.  Observe that this metric is invariant under the action of $\C - \{0\}$ on $\C^{n+1}$, and it therefore induces a metric on the quotient $\CP^{n}$.  We will prove that this is the Fubini-Study metric of constant holomorphic sectional curvature $4$.
+
+Let $p \in \CP^{n}$, and let $Z_0$ be a fixed unit vector in the fiber over $p$.  Then it is easy to see that the projection $\pi : \C^{n+1} - \{0\} \rightarrow \CP^{n}$ induces an isometry from the unitary complement of $Z_0$ equipped with the metric $ds^2$ to the tangent space $T_p \CP^{n}$ with the induced metric, since for vectors in this space we have $ d z_0 \cdot z_0 = 0 $.  Therefore, a given unitary frame $ \{ e_1, \ldots, e_n \}$ lifts isometrically to a unitary frame $ \{ Z_1, \ldots, Z_n \} $ for $Z_0^{\perp}$.  So suppose we have a local section of unit vectors $Z_0 : U \subset \CP^{n} \rightarrow  \C^{n+1} - \{0\}$ and a local unitary frame field for $TM^{+}$ over $U$.  We can lift all this structure to map:
+%
+$$ \Phi : U \rightarrow U_{n+1} $$
+% 
+(where $U_{n+1}$ is the group of unitary frames for $\C^{n+1}$) which is defined in our notation as:
+%
+$$ p \rightarrow (Z_0, Z_1, \ldots, Z_n) $$
+
+Now each $d Z_i : U \rightarrow \C^{n+1}$ is then a $\C^{n+1}$ valued 1-form, and hence can be expressed as:
+%
+$$ d Z_i = \phi^j_i Z_j $$
+%
+where the $\phi$'s are complex valued 1-forms on $U$.  We can write this definition succinctly as $ d Z = Z \phi$, where here we think of $\phi$ as a $M_{n}( \C )$ valued 1-form.  Clearly, these 1-forms can be expressed:
+%
+$$ \phi^j_i = d Z_i \cdot Z_j $$
+%
+This immediately implies that:
+%
+$$ \phi^i_0 = d Z_0 \cdot Z_i = e^i $$
+%
+since $d Z_0$ is an isometry from $T_p \CP^n$ to its image in $Z_0^{\perp}$.
+
+Differentiating the equation $ Z_i \cdot Z_j = \delta^i_j $ tells us that:
+%
+$$ \phi^j_i = - \bar{\phi}^i_j $$
+%
+that is, the matrix $\phi$ is skew hermitian. 
+
+We can also calculate the exterior derivative of $\phi$.  Let's write:
+%
+$$ Z_i = ( z_{i0}, z_{i1}, \ldots, z_{in} ) $$
+%
+then:
+%
+$$ d Z_i \cdot Z_j = \bar{z}_{jr} d z_{ir} $$
+%
+and hence:
+%
+\begin{align*}
+d( d Z_i \cdot Z_j ) &= d \bar{z}_{jr} \wedge d z_{ir} \\
+&= ( \bar{\phi}^s_j \bar{z}_{sr} ) \wedge ( \phi^t_i z_{tr} ) \\
+&= \bar{\phi}^s_j \wedge \phi^t_i \bar{z}_{sr}  z_{tr} \\
+&= \bar{\phi}^s_j \wedge \phi^s_i \\
+&= - \phi^j_s \wedge \phi^s_i
+\end{align*}
+%
+which shows that $d \phi = - \phi \wedge \phi $.   
+
+Now we can relate the forms $\phi$ to the connection forms of the metric $ds^2$ on $\CP^n$.
+%
+\begin{lem}  Let $ \theta^j_i = \phi^j_i - \delta^j_i \phi^0_0 $, then $\theta$ is the connection form of the metric $ds^2$ with respect to the unitary frame $e_i$.
+\end{lem}
+%
+\begin{proof}  First observe that since $\phi$ is skew hermitian, so is $\theta$.  Therefore we only need to check that the torsion free equation is satisfied:
+%
+\begin{align*}
+d e^i &= d \phi^i_0 = - \phi^i_r \wedge \phi^r_0 \\
+&= - \phi^i_r \wedge e^r - \phi^i_0 \wedge \phi^0_0 \\
+&= ( - \phi^i_r + \delta^i_r \phi^0_0 ) \wedge e^r \\
+&= - \theta^i_r \wedge e^r
+\end{align*} 
+%
+so $d e + \theta \wedge e = 0$, as we wanted to show.
+%
+\end{proof}
+%
+\begin{prop} The metric induced on $\CP^n$ by $ds^2$ has constant holomorphic curvature equal to $4$, and hence is isometric to the Fubini-Study metric with that curvature.
+\end{prop}
+%
+\begin{proof}
+%
+We calculate the curvature forms using the fundamental equation and the previous lemma:
+%
+\begin{align*}
+\Omega^j_i &= d \theta^j_i + \theta^j_r \wedge \theta^r_i \\
+&= d( \phi^j_i - \delta^j_i \phi^0_0 ) + ( \phi^j_r - \delta^j_r \theta^0_0 ) \wedge ( \phi^r_i - \delta^r_i \phi^0_0 ) \\
+%
+&= - \phi^j_0 \wedge \phi^0_i - \phi^j_r \wedge \phi^r_i + \delta^j_i \phi^0_0 \wedge \phi^0_0 + \delta^j_i \phi^0_r \wedge \phi^r_0 \\
+& \quad \phi^j_r \wedge \phi^r_i - \delta^r_i \phi^j_r \wedge \phi^0_0 - \delta^j_r \theta^0_0 \wedge \phi^r_i + \delta^j_r \delta^r_i \phi^0_0 \wedge \phi^0_0 \\
+%
+&= - \phi^j_0 \wedge \phi^0_i + \delta^j_i \phi^0_r \wedge \phi^r_0 \\
+&= e^j \wedge \bar{e}^i - \delta^j_i \bar{e}^r \wedge e^r \\
+&= \delta^j_i e^r \wedge \bar{e}^r + e^j \wedge \bar{e}^i 
+\end{align*}
+%
+Now note that since we are using a unitary frame, $h_{ij} = \delta^i_j$, and consequently:
+%
+$$ \omega = \frac{i}{2} e^r \wedge \bar{e}^r $$
+%
+and therefore we have:
+%
+$$ \Omega^j_i = - 2 i \omega + e^j \wedge \bar{e}^i $$
+%
+which, from an earlier proposition, implies that the metric has constant holomorphic sectional curvature $4$.
+\end{proof}
+
+\section{ Kahler Submanifolds }
+
+In this section we study complex submanifolds of an ambient Kahler manifold.
+
+Let $M$ and $\Mamb$ be complex manifolds with complex structures $J$ and $\Jamb$ respectively.  Recall that a map $f:M \rightarrow \Mamb$ is holomorphic if and only if $df \circ J = \Jamb \circ df$.
+
+\begin{definition} We say $M$ is an immersed (or embedded) complex manifold of $\Mamb$ if it is a real submanifold, and the immersion (or embedding) map is holomorphic.
+\end{definition}
+
+As usual in this context, we will suppress the notation for the immersion map, and consider $M$ as a subset of $\Mamb$.  Notice that, according to the comment preceding the definition, if $M$ is a complex submanifold of $\Mamb$, then $TM$ is a subbundle of $T \Mamb|_{M}$, and the complex structure of $\Mamb$ restricts to that of $M$, that is, $\Jamb |_{TM} = J$.
+
+Now suppose that $\Mamb$ is a Kahler manifold with Kahler metric $\gamb$.  Then $g = \gamb |_{M}$ is a riemannian metric on $M$, which is obviously $J$-invariant.  The associated 2-form for this metric is then $ \omegaamb = \omega |_{M} $, and we have:
+%
+$$ d \omega = d ( \omegaamb |_{M} ) = ( d \omegaamb )|_{M} = 0 $$
+%
+so $g$ is a Kahler metric.  In this situation we call $M$ a Kahler submanifold of $\Mamb$.
+
+Recall that a locally defined real valued function on $\Mamb$ is called a potential for the Kahler metric if:
+%
+$$ \omegaamb = i \del \delbar f $$
+%
+The relation between potentials for an ambient space and a Kahler submaifold is as clear-cut as possible:
+
+\begin{prop} If $f$ is a Kahler potential for $\gamb$ then $f|_{M}$ is a Kahler potential for $g$.
+\end{prop}
+
+\begin{proof} This follows from the simple calculation:
+%
+$$ i \del \delbar ( f|_{M} ) = ( i \del \delbar f )|_{M} = \omegaamb |_{M} = \omega $$
+%
+which proves what we want.
+\end{proof}
+
+Another important property of Kahler submanifolds is:
+
+\begin{prop} If $M$ is a Kahler submanifold of $\Mamb$, then the normal bundle $N M$ is $\Jamb$-invariant.
+\end{prop}
+
+\begin{proof} 
+%
+Let $X$ be tangent to $M$ and $Y$ normal to $M$, both at the same point.  It suffices to show that $\gamb (X, \Jamb Y) = 0$.  But:
+%
+$$ \gamb (X, \Jamb Y) = - \gamb ( \Jamb X, Y) = 0 $$
+%
+since $ \Jamb X$ is also tangent to $M$.
+%
+\end{proof}
+
+Now we introduce, as usual, the second fundamental form $B: TM \otimes TM \rightarrow NM$, which is defined as:
+%
+$$ B(X,Y) = (\nabla_X Y)^{\perp} = \nablaamb_X Y - \nabla_X Y $$
+%
+where $\nablaamb$ is the riemannian connection associated to the metric $\gamb$, and $\nabla$ the induced connection on $M$.  As is well known, the second fundamental form is symmetric.  In the Kahler case, we have the following additional property:
+%
+\begin{prop}
+%
+If $M$ is a Kahler submanifold of $\Mamb$, and $B$ is its second fundamental form, then:
+%
+$$ B(X,JY) = B(JX,Y) = \Jamb B(X,Y) $$
+%
+\end{prop}
+
+\begin{proof}
+%
+Again, we simply calculate:
+%
+$$ B(X, JY) = \nablaamb_X J Y - \nabla_X JY = \Jamb ( \nablaamb_X Y - \nabla_X Y ) = \Jamb B(X,Y) $$
+% 
+and consequently:
+%
+$$ B( JX, Y ) = B( Y, JX ) = \Jamb B (Y,X) = \Jamb B(X,Y) $$
+%
+which is what we wanted to show.
+%
+\end{proof}
+
+From here on we will drop the tedious distinction between structures on the ambient space, and the corresponding structures on the submanifold. We keep using tildes only when confusion can result, since all of the previous propositions show that in most cases the distinction is immaterial.
+
+\begin{remark}  Suppose we now extend $B$ complex linearly in both components to the bundle $T_{\C}M$.  Using the usual arguments we get that:
+%
+$$ B(X,Y) = 0 \quad \text{for} \quad X \in TM^{+}, Y \in TM^{-} $$
+%
+and that:
+%
+$$ B(\bar{X}, \bar{Y} ) = \overline{ B(X,Y) } $$
+%
+Let $N_{\C}M$ denote the unitary complement of $T_{\C}M$ inside $T_{\C} \Mamb$, and let $NM^{+}$ and $NM^{-}$ be the $i$ and $-i$ eigenspaces of $J$ in $N_{\C}M$ respectively.  Then for $X,Y \in TM^{+}$ we have:
+%
+$$ J B(X,Y) = B( JX, Y ) = B( iX, Y ) = i B(X,Y) $$
+%
+so $B(X,Y) \in NM^{+}$.  In the same way, for $X,Y \in TM^{-}$ we have $B(X,Y) \in NM^{-}$.
+%
+\end{remark}
+
+Now recall the most important fact about the second fundamental form, the Gauss Equation:
+
+{ \bf Gauss Equation : } If $X,Y,Z$ and $W$ are tangent to $M$ at some point $p$, then:
+%
+\begin{align*}
+ R(X,Y,Z,W) &= \Ramb (X,Y,Z,W) + g( B(X,W), B(Y,Z) ) \\
+& \quad - g( B(X,Z), B(Y,W) ) 
+\end{align*}
+
+In the Kahler setting, we deduce the following relation between the holomorphic sectional curvatures:
+%
+\begin{align*}
+K(X) &= R(X,JX,JX,X) \\
+&= \Ramb (X,JX,JX,X) + g( B(X,X), B(JX,JX) ) \\
+& \quad - g( B(X,JX), B(JX,X) ) \\
+&= \Kamb (X) - 2 | B(X,X) |^2
+\end{align*}
+%
+Recall that a submanifold is called totally geodesic if its second fundamental form vanishes.  Since $B$ is symmetric, this is equivelant to saying that $B(X,X) = 0$ for all vectors $X$ tangent to the submanifold.  The equation above has the following important consequence:
+
+\begin{prop}
+A complex submanifold $M$ in a Kahler manifold of constant holomorphic sectional curvature is totally geodesic if and only if it also has constant holomorphic sectional curvature in the induced metric, with the same curvature constant as the ambient space.
+\end{prop}
+
+\begin{proof}
+This is immediate since:
+%
+$$ K(X) - \Kamb (X) = |B(X,X)|^2 $$
+%
+so $K = \Kamb$ if and only if $B = 0$.
+\end{proof}
+
+We can use this to completely classify the totally geodesic submanifolds of Kahler manifolds of constant holomorphic curvature.
+
+\begin{prop}  A totally geodesic Kahler submanifold in one of the standard models for a simply connected Kahler manifold of constant holomorphic sectional curvature must be one of the following:
+%
+\begin{itemize}
+%
+\item An affine subspace in $\C^n$ with its flat Kahler metric.
+\item An affine subspace in $\CP^n$ with its Fubini-Study metric, more precisely, the projection of an affine subspace of $\C^{n+1} - \{0\}$ to $\CP^n$.
+\item Up to isometry of the ambient space, a linear subspace of $\disk^n$ with its hyperbolic metric which passes through the point $z = 0$.
+%
+\end{itemize}
+%
+\end{prop}
+
+\begin{proof} We start by recalling a fact from riemannian geometry: given a riemannian manifold $M$ and a subspace of some tangent space, say $V \subset T_P M$, there is at most one totally geodesic submanifold of $M$ passing through $p$ whose tangent space is $V$.  Briefly, this is because such a submanifold, if it exists, must coincide with $ \text{exp}_p V $.  
+
+Now we prove the proposition case by case, though the general structure of the argument is the same regardless of the ambient space.
+
+\begin{case} Flat metric.
+\end{case}
+%
+Up to an isometry of the ambient space we may assume that the submanifold passes through the point $z=0$, and that the tangent plane at this point is given by $z_{k+1} = \cdots = z_n = 0$.  Further, due to the uniqueness statement we alluded to above, it suffices for us to construct a single totally geodesic submanifold with this tangent plane.  Easy enough, let:
+%
+$$M = \{ z \in \C^n : z_{k+1} = \cdots = z_n = 0 \}$$
+%
+The restriction of the metric on the ambient space to $M$ is easily seen to be another flat metric on $M$, so it also has constant holomorphic curvature zero.  Owing to the previous proposition, this guarantees that it is totally geodesic.
+
+The other two cases are technically a little more complicated, but the idea is exactly the same.
+
+\begin{case} Fubini-Study metric.
+\end{case}
+%
+Again, let's use the transitive property of the isometry group to arrange it so that our submanifold passes through the point $[1,0,\ldots,0]$ and shares a tangent plane with the affine subspace:
+%
+$$ M = \{ [z_0, \ldots, z_n] \in \CP^n : z_{k+1} = \cdots = z_n = 0 \} $$
+%
+It then suffices for us to show that $M$ is in fact totally geodesic.  Note first that this affine subspace is in fact an embedded copy of $\CP^k$, with the embedding function given in homogeneous coordinates by:
+%
+$$ [z_0, \ldots, z_k ] \mapsto [ z_0, \ldots, z_k, 0, \ldots, 0] $$
+%
+Now, as we saw in a previous section, a Kahler potential for the Fubini-Study metric on $\CP^n$ in the standard coordinate system centred at  $[1,0,\ldots,0]$ is:
+%
+$$ f(z) = \log( 1 + |z|^2 ) = \log( 1 + z_0 \bar{z}_0 + \cdots + z_n \bar{z}_n ) $$
+%
+By a previous lemma, the restriction of this to  $M$ is a Kahler potential for the induced metric on $M$.  But:
+%
+$$ f|_{M} (z_0, \ldots, z_k ) = \log ( 1 + z_0 \bar{z}_0 + \cdots + z_k \bar{z}_k ) $$
+%
+which is the Kahler potential for the standard Fubini-Study metric on $\CP^k$.  Since $M$ is a Kahler manifold of constant holomorphic sectional curvature whose curvature constant is the same as the ambient space, we conclude that $M$ is totally geodesic.
+
+\begin{case} Hyperbolic Metric
+\end{case}
+
+The proof is the same as for the Fubini-Study metric, but instead uses the potential
+%
+$$ f(z) = - \log( 1 - |z|^2 ) $$
+%
+for the hyperbolic metric.
+
+Since we have covered all three possible cases, the proposition is proved.
+\end{proof}
+
+\section{ Examples of Kahler-Einstein Submanifolds of Complex Projective Space }
+
+In this section we give some examples of Einstein submanifolds of the complex projective space (equipped with the Fubini-Study metric).
+
+\subsection{ Embedded Fubini-Study spaces }
+
+Consider the algebraic identity:
+%
+$$ (z_0 + z_1 + \cdots z_m )^k = \sum_I c_I z^I $$
+%
+in multi-index notation.  We denote by $P(k,m)$ the number of terms in the sum on the right hand side, which is the number of partitions of the integer $k$ into $m$ pieces.  Define an embedding $\varphi : \CP^m \rightarrow \CP^{P(k,m)}$ by:
+%
+$$ [z_0, z_1, \ldots, z_m ] \mapsto [ \sqrt{ c_I } z^I ] $$
+%
+For example, in the case $m=1$, we get the following embedding of $\CP^1$ into $\CP^k$:
+%
+$$ [z_0, z_1] \mapsto \left[ \sqrt{ \left( \begin{array}{c} n \\ 0 \end{array} \right) } z_0^k, \sqrt{ \left( \begin{array}{c} n \\ 1 \end{array} \right) } z_0^{k-1} z_1, \cdots, \sqrt{ \left( \begin{array}{c} n \\ n \end{array} \right) } z_1^k \right] $$ 
+%
+which was mentioned in the introduction.
+
+We want to determine what metric is induced on $\CP^m$ by this embedding.  Working in the coordinate system $[1, w_1, \ldots, w_{P(k,m)}]$ we recall that a potential for the Fubini study metric of constant holomorphic curvature $c$ on the ambient space is:
+%
+$$ f( w_1, \ldots, w_{P(k,m)} ) = \frac{2}{c} \log ( 1 + |w_1|^2 + \cdots + | w_{P(k,m)} |^2 ) $$
+%
+The map $\varphi$, when expressed in this coordinate system for the ambient space and the corresponding coordinate system for $\CP^m$, is given by:
+%
+$$ \varphi[ 1, z_1, \ldots, z_m ] = \left[ \sqrt{ c_I } z^I |_{z_0 = 1} \right]_I $$
+%
+So a Kahler potential for the induced metric on $\CP^m$ is:
+%
+\begin{align*}
+f \circ \varphi[ 1, z_1, \ldots, z_m ] &= \frac{2}{c} \log \left( \ \sum_I | \sqrt{ c_I } z^I  |^2_{z_0 = 1} \ \right) \\
+&= \frac{2}{c} \log \left( \sum_I c_I |z_I|^2_{z_0 = 1} \right) \\
+&= \frac{2}{c} \log( \ ( 1 + |z_1|^2 + \cdots + |z_m|^2 )^k \ ) \\
+&= \frac{2k}{c} \log( 1 + |z_1|^2 + \cdots + |z_m|^2 ) 
+\end{align*}
+%
+which is the potential for the fubini-study metric on $\CP^m$ of constant holomorphic sectional curvature $c$, scaled by a factor of $k$.  Hence the induced metric has constant holomorphic sectional curvature $\frac{c}{k}$, and is consequently a Kahler-Einstein submanifold with einstein constant $\lambda = \frac{(m+1)c}{2k}$.
+
+\subsection{ The Hypersphere }
+
+Consider the variety $Q^{n-1}$ in $\CP^n$ defined by the homogeneous polynomial equation:
+%
+$$ z_0^2 + z_1^2 + \cdots + z_n^2 = 0 $$
+%
+which is called the hypersphere.  It follows easily from the implicit function theorem that this is a codimension one, holomorphically embedded submanifold in $\CP^n$.  We will show in this section that it is Kahler-Einstein.
+
+Let $Z_0 : Q^{n-1} \rightarrow \C^{n+1} - \{0\}$ be a local section of the projection map $\pi: \C^{n+1} \rightarrow \CP^n$ over $Q^{n-1}$, and let $\{ e_1, \ldots, e_{n-1} \}$ be a local unitary frame field for $TQ^{n-1}$ with the same domain of definition as $Z_0$.  Recall from a previous section that there is a unitary frame $\{ Z_1, \ldots, Z_{n-1} \}$ in the unitary complement of $Z_0$ corresponding to $\{ e_1, \ldots, e_{n-1} \}$.  We can extend this frame to a basis in the following way:
+
+\begin{lem} The vectors $\{ Z_0, Z_1, \ldots, Z_{n-1}, \bar{Z}_0 \}$ form a unitary frame for $\C^{n+1}$.
+\end{lem}
+
+\begin{proof}  Since $\{ Z_1, Z_2, \ldots, Z_{n-1} \}$ lie in the unitary complement of $Z_0$, we need to verify that the equations $\bar{Z}_0 \cdot Z_0$ and $Z_i \cdot \bar{Z}_0$ hold for $i=1, \ldots, n-1$, where $\cdot$ denotes the standard Hermitian inner product in $\C^{n+1}$.
+
+For the first equation, note that the components of the vector 
+%
+$$Z_0 = (z_{00}, z_{01}, \ldots, z_{0 n+1 })$$
+%
+satisfy the defining equation of $Q^{n-1}$, and hence:
+%
+$$ Z_0 \cdot \bar{Z}_0 = z_{00}^2 + \cdots + z_{0 n+1}^2 = 0 $$
+%
+To check the other equations, recall that $Z_i$ is an isometric lift of the tangent vector $e_i$.  Let $e_i(t)$ be a curve in $Q^{n-1}$ so that $e'_i(0) = e_i$, and let $Z_i(t)$ be a lift of this curve satisfying $Z'_i(0) = Z_i$.  Then the components of $Z_i(t)$ satisfy the defining equation of $Q^{n-1}$ for every $t$, that is, $Z_i(t) \cdot \bar{Z}_0 = 0$ for every $t$.  Differentiating this equation gives:
+%
+$$ 0 = Z'_i(t) \cdot \bar{Z}_0 $$
+%
+for every $t$.  Evaluating this at $t=0$ gives the result that we want.
+\end{proof}
+
+We are almost ready to show that $Q^{n-1}$ is an Einstein submanifold, but we need a little more preparation.  First, differentiating the equation $Z_j \cdot \bar{Z}_0 = 0$ gives us:
+%
+$$ 0 = d( Z_j \cdot \bar{Z}_0 ) = d Z_j \cdot \bar{Z}_0 + Z_j \cdot d \bar{Z}_0 $$
+%
+so:
+%
+$$ d Z_j \cdot \bar{Z}_0 = - Z_j \cdot \bar{Z}_0 = - d Z_0 \cdot \bar{Z}_j $$
+%
+Now since $\{ Z_1, \ldots, Z_{n-1 } \}$ corresponds isometrically to the unitary frame field $\{ e_1, \ldots, e_{n-1} \}$, it follows that the unitary frame $\{ \bar{Z}_1, \ldots, \bar{Z}_{n-1} \}$ corresponds to $\{ \bar{e}_1, \ldots, \bar{e}_{n-1} \}$.  The calculation above shows that:
+%
+$$ \phi^{n}_j = - d Z_0 \cdot \bar{Z}_j = - \bar{e}^j $$ 
+
+Corresponding to the unitary frame $\{ Z_1, \ldots, Z_{n-1}, \bar{Z}_0 \}$ for the unitary complement of $Z_0$, there is a unitary frame $ \{ e_1, \ldots, e_{n-1}, e_n \} $ for $T \CP^{n} |_{Q^{n-1}}$, let $\theta$ be the connection form for the Fubini-Study metric in this frame field.  Then the $(n-1) \times (n-1)$ submatrix in the upper left hand corner of $\theta$ is the connection form matrix for the induced metric on $Q^{n-1}$.  Let $\Omega$ be the corresponding curvature form for $Q^{n-1}$.  In the subsequent calculation we consider all differential forms as restricted to $Q^{n-1}$, note in this context that we have:
+%
+$$ \phi^n_0 = e^n = 0 $$
+%
+Now we can calculate.  Below the greek index $\alpha$ always runs over the range $1,\ldots,n$ and $k$ runs over the range $1,\ldots,n-1$:
+%
+\begin{align*}
+\tr \ \Omega &= \Omega^j_j = d \theta^j_j + \theta^j_k \wedge \theta^k_j \\
+&= d( \phi^j_j - \delta^j_j \phi^0_0 ) + ( \phi^j_k - \delta^j_k \phi^0_0 ) \wedge ( \phi^k_j - \delta^k_j \phi^0_0 ) \\
+%
+&= - \phi^j_\alpha \wedge \phi^\alpha_j + \delta^j_j \phi^0_\alpha \wedge \phi^\alpha_0 + \phi^j_k \wedge \phi^k_j - \delta^k_j \phi^j_k \wedge \phi^0_0 \\
+& \quad  - \delta^j_k \phi^0_0 \wedge \phi^k_j + \delta^j_k \delta^k_j \phi^0_0 \wedge \phi^0_0 \\
+%
+&= - \phi^j_n \wedge \phi^n_j - \phi^j_k \wedge \phi^k_j + (n-1) \phi^0_n \wedge \phi^n_0 + (n-1) \phi^0_k \wedge \phi^k_0 \\
+& \quad + \phi^j_k \wedge \phi^k_j -  \phi^j_j \wedge \phi^0_0 - \phi^0_0 \wedge \phi^j_j \\
+%
+&= - \phi^j_n \wedge \phi^n_j + (n-1) \phi^0_k \wedge \phi^k_0 \\
+&= - \phi^n_j \wedge \bar{\phi}^n_j + (n-1) \phi^k_0 \wedge \bar{\phi}^k_0 \\
+&= - \bar{e}^j \wedge e^j + (n-1) e^k \wedge \bar{e}^k \\
+&= n e^k \wedge \bar{e}^k \\
+&= - 2 n i \frac{i}{2} e^k \wedge \bar{e}^k \\
+&= - 2 i \omega
+\end{align*}
+%
+So we see that $Q^{n-1}$ is Einstein of constant $2$.  Since our ambient space in this calculation had constant holomorphic curvature $4$, we see that in general the hypersphere is a codimension $1$ Einstein submanifold of $\C P(c)$, with Einstein constant $\frac{nc}{2}$.
+
+\section{Calabi's Theorem}
+
+In this section we outline a purely differential geometric proof of Calabi's theorem. 
+
+First we need some setup.  Fix a one dimensional holomorphically immersed manifold $M$ in the space form $M_c$, and denote with angle brackets $\la \quad , \quad \ra$ the Hermitian metric on $M_c$, which restricts to the Hermitian metric on $M$.
+
+Let $\{e_0, e_1, e_2, \ldots , e_n\}$ be a local unitary frame field for the bundle $TM_c^{+}$, chosen so that $\{e_1, \ldots e_n\}$ is a unitary frame for the normal bundle $\NMp$, and $\{ e_0 \}$ is a unitary frame for the tangent bundle $\TMp$.  Let $\{e^0, e^1, \ldots, e^n\}$ be the dual unitary frame field.  We study the connection forms $\Theta$ and $\theta$ for $M_c$ and $M$. Recall that the connection form for $M_c$ is a matrix of one forms satisfying:
+%
+$$ \nabla e_\alpha = \Theta^{\beta}_{\alpha} e_{\beta} $$
+%
+where $\nabla$ is the connection on $M_c$.  The connection form $\theta$ (which in this context is just a single one form, not a matrix of one forms) is defined analogously using the connection on $M$.  
+
+\begin{remark} 
+%
+In the subsequent calculations we make the following conventions on all indices.  The lower case Greek index $\alpha$ will always have the range $0,1,2,\ldots,n$, and lower case Roman indices $i,j,k$ will always have the range $1,2,\ldots,n$.  The reader should also note that repeated indices in a single term are automatically summed over their ranges. 
+
+Furthermore, every differential form in the calculations below is always considered as a form on $M$ by pulling back through the immersion $M \rightarrow M_c$.  In this context we have, for instance, that $e^i = 0$ for all $i$, and $\Theta^0_0 = \theta$.  
+
+Finally, since we are using a unitary frame field, the curvature forms satisfy the conjugation relations $\bar{\theta} = - \theta$ and $\bar{\Theta}^i_j = - \Theta^j_i$.
+%
+\end{remark}
+
+\bigskip
+
+%Let $B$ denote the second fundamental form of the immersion of $M$ in $M_c$, it is easy to see that we can take $B: \TMp \otimes \TMp \rightarrow \NMp$.  We also make frequent use of the covariant derivatives of $B$.  Let $\nabla^{\perp}$ denote the normal connection on the bundle $\NMp$, together with $\nabla$, this induces a connection:
+%$$ \nabla:  \TMps \otimes \cdots \TMps \otimes \NMp \rightarrow \TMps \otimes \TMps \otimes \cdots \TMps \otimes \NMp$$ 
+
+To begin our work, we differentiate the expression $e^i = 0$ and use the torsion-free property of the Kahler connection.  The result is:
+%
+\begin{align*}
+0 = d e^i = - \Theta^i_{\alpha} \wedge e^{\alpha} = - \Theta^i_0 \wedge e^0
+\end{align*}
+%
+It follows from the above equation that $\Theta^i_0$ is a (1,0) form on $M$, and therefore there are some locally defined functions $b^i_0$ satisfying:
+%
+\begin{align}
+\Theta^i_0 = b^i_0 e^0
+\end{align}
+
+\begin{lem} The immersion $M \rightarrow M_c$ is totally geodesic if and only if $b^i_0 = 0$ for all $i$.
+\end{lem}
+
+\begin{proof} Let $B : \TMp \times \TMp \rightarrow \NMp$ be the second fundamental form of the immersion.  We have:
+%
+\begin{align*}
+\la B(e_0, e_0), e_i \ra &= \la \nablabar_{e_0} e_0, e_i \ra = \la \Theta^{\alpha}_0 ( e_0 ) e_{\alpha}, e_i \ra \\
+&= \Theta^i_0 (e_0) = b^i_0
+\end{align*}
+%
+So $B$ vanishes exactly when $b^i_0 = 0$ for every $i$.
+%
+\end{proof}
+
+It follows from the proof above that the second fundamental form can be expressed as:
+%
+$$B(e_0, e_0) = b^i_0 e_i$$
+
+Now let $\omega$ and $\Omega$ be the curvature forms of $M$ and $M_c$ respectively.  The fundamental equations for $\omega$ and $\Omega$ are:
+%
+$$\omega =  d\theta + \theta \wedge \theta = d\theta$$
+%
+$$\Omega = d\Theta + \Theta \wedge \Theta$$
+%
+Recalling that $\Omega^0_0 = \theta$, and using (1), we get:
+%
+\begin{align*}
+\omega &= d\Theta^0_0 + \Theta^0_0 \wedge \Theta^0_0 = \Omega^0_0 - \Theta^0_i \wedge \Theta^i_0 = \Omega^0_0 - b^i_0 \bar{b}^i_0 e^0 \wedge \bar{e}^0
+\end{align*}
+%
+Now, by assumption, $M_c$ has constant holomorphic sectional curvature $c$ and $M$ is Einstein of constant $\lambda$, which in this case (dimension 1) means that $M$ has constant holomorphic sectional curvature $\lambda$.  Therefore we have:
+%
+\begin{align*}
+\omega &= \frac{\lambda}{2}e^0 \wedge \bar{e}^0 \\
+\Omega^0_0 &= \frac{c}{2} e^0 \wedge \bar{e}^0
+\end{align*}
+%
+Substituting these into the above equation we get:
+%
+$$\frac{\lambda}{2}e^0 \wedge \bar{e}^0 = \frac{c}{2} e^0 \wedge \bar{e}^0- b^i_0 \bar{b}^i_0 e^0 \wedge \bar{e}^0$$
+%
+Hence, since $e^0 \wedge \bar{e}^0$ spans the space of $(1,1)$ forms on $M$,  it follows that:
+%
+\begin{align}
+b^i_0 \bar{b}^i_0 = \frac{1}{2}(c - \lambda)
+\end{align}
+
+\begin{cor} $M$ is totally geodesic if and only if $c = \lambda$.
+\end{cor}
+%
+\begin{proof} This follows immediately from equation 2 and the previous lemma.
+\end{proof}
+
+To continue, we begin by differentiating (1):
+%
+\begin{align*}
+d \Theta^i_0 = d b^i_0 \wedge e^0 + b^i_0 d e^0
+\end{align*}
+%
+Using the torsion free property of the metric again we have:
+%
+\begin{align*}
+d e^0 = - \theta \wedge e^0
+\end{align*}
+%
+Applying the fundamental equations, and the formula for the curvature in a holomorphic space form, we get:
+%
+\begin{align*}
+d \Theta^i_0 &= \Omega^i_0 - \Theta^i_{\alpha} \wedge \Theta^{\alpha}_0 \\
+&= \frac{c}{4} e^i \wedge \bar{e}^0 - \Theta^i_0 \wedge \theta - \Theta^i_j \wedge \Theta^j_0 \\
+&= b^i_0 \theta \wedge e^0 - b^j_0 \Theta^i_j \wedge e^0
+\end{align*}
+%
+Which, upon substituting into the above, gives us:
+%
+\begin{align*}
+0 = ( d b^i_0 - 2 b^i_0 \theta + b^j_0 \Theta^i_j ) \wedge e^0 
+\end{align*}
+%
+It follows from the above equation that $d^i_0 - 2 b^i_0 \theta + b^j_0 \Theta^i_j$ is a $(1,0)$ form, and hence there must be some functions $b^i_1$ so that:
+%
+\begin{align}
+b^i_1 e^0 = d b^i_0 - 2 b^i_0 \theta + b^j_0 \Theta^i_j  
+\end{align}
+
+\begin{lem} The following orthogonality relations hold:
+%
+\begin{enumerate}
+\item $b^i_1 \bar{b}^i_0 = 0$
+\item $b^i_1 \bar{b}^i_1 = \frac{3}{8}(c - \lambda)(c - 2 \lambda)$
+\end{enumerate}
+%
+\end{lem}
+
+\begin{proof} We begin by differentiating (2):
+%
+\begin{align*}
+0 = \bar{b}^i_0 d b^i_0 + b^i_0 d \bar{b}^i_0
+\end{align*}
+%
+Now (3), along with the skew-Hermitian property for the connection form, can be used to simplify the expression above:
+%
+\begin{align*}
+\bar{b}^i_0 d b^i_0 &= \bar{b}^i_0 b^i_1 e^0 + 2 \bar{b}^i_0 b^i_0 \theta - \bar{b}^i_0 b^j_0 \Theta^i_j \\
+b^i_0 d \bar{b}^i_0 &= b^i_0 \bar{b}^i_1 \bar{e}^0 - 2 \bar{b}^i_0 b^i_0 + b^i_0 \bar{b}^j_0 \Theta^j_i
+\end{align*}
+%
+Upon substituting this into the first equation,and switching the summation indices to cancel some terms, we get:
+%
+\begin{align*}
+0 = \bar{b}^i_0 b^i_1 e^0 + b^i_0 \bar{b}^i_1 \bar{e}^0
+\end{align*}
+%
+So, since $e^0$ and $\bar{e}^0$ are linearly independent, we conclude that:
+%
+\begin{align}
+b^i_1 \bar{b}^i_0 = 0
+\end{align}
+%
+Which proves part (a) of the lemma.
+
+To prove (b), we differentiate the equation $\bar{b}^i_0 b^i_1 e^0 = 0$, which is a consequence of (4) above.  This gives us:
+%
+\begin{align*}
+0 = b^i_1 d \bar{b}^i_0 \wedge e^0 + \bar{b}^i_0 d( b^i_1 e^0 )
+\end{align*}
+%
+For the first of these terms, we use (3) to substitute in for $d \bar{b}^i_0$, then simplify with (4) where appropriate:
+%
+\begin{align*}
+b^i_1 d \bar{b}^i_0 \wedge e^0 = b^i_1 \bar{b}^i_1 \bar{e}^0 \wedge e^0 + b^i_1 \bar{b}^i_0 \Theta^j_i \wedge e^0
+\end{align*}
+%
+For the second of the terms, we first differentiate equation (3) and substitute in the result:
+%
+\begin{align*}
+\bar{b}^i_0 d( b^i_1 e^0 ) = -2 \bar{b}^i_0 d b^i_0 \wedge \theta - 2 \bar{b}^i_0 b^i_0 d \theta + \bar{b}^i_0 d b^j_0 \wedge \Theta^i_j + \bar{b}^i_0 b^j_0 d \Theta^i_j
+\end{align*}
+%
+Of the four terms above, we simplify the first and third by using (3) to substitute in for the occurrences of $d b^i_0$, then apply the orthogonality relations already derived. Equation (2) and the Einstein equation $2 d \theta = \lambda e^0 \wedge \bar{e}^0$ are used to simplify the second term.  The results are:
+%
+\begin{align*}
+-2 \bar{b}^i_0 d b^i_0 \wedge \theta &= 2 \bar{b}^i_0 b^j_0 \Theta^i_j \wedge \theta \\
+-2 \bar{b}^i_0 b^i_0 d \theta &= - \frac{1}{2} \lambda ( c - \lambda ) e^0 \wedge \bar{e}^0 \\
+\bar{b}^i_0 d b^j_0 \wedge \Theta^i_j &= \bar{b}^i_0 b^j_1 e^0 \wedge \Theta^i_j + 2 \bar{b}^i_0 b^j_0  \theta \wedge \Theta^i_j - \bar{b}^i_0 b^k_0 \Theta^j_k \wedge \Theta^i_j
+\end{align*}
+%
+For the last term, we recall our formula for the curvature form in a space of constant holomorphic curvature:
+%
+\begin{align*}
+d \Theta^i_j &= \Omega^i_j - \Theta^i_{\alpha} \wedge \Theta^{\alpha}_i \\
+&= \frac{c}{4} \delta^i_j e^0 \wedge \bar{e}^0 + b^i_0 \bar{b}^j_0 e^0 \wedge \bar{e}^0 - \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+Substituting this expression in, and using the various orthogonality relations we have already obtained, we get:
+%
+\begin{align*}
+\bar{b}^i_0 b^j_0 d \Theta^i_j = \frac{1}{8} c (c- \lambda) e^0 \wedge \bar{e}^0 + \frac{1}{4} (c - \lambda)^2 e^0 \wedge \bar{e}^0 - \bar{b}^i_0 b^j_0 \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+Now we substitute these results into the first equation of the paragraph, and observe that all the terms involving a $\theta$ or a $\Theta$ cancel.  We are left with:
+%
+\begin{align*}
+0 = b^i_1 \bar{b}^i_1 \bar{e}^0 \wedge e^0 - \frac{1}{2} \lambda ( c - \lambda ) e^0 \wedge \bar{e}^0 + \frac{1}{8} c (c- \lambda) e^0 \wedge \bar{e}^0 + \frac{1}{4} (c - \lambda)^2 e^0 \wedge \bar{e}^0
+\end{align*}
+%
+A short calculation yields:
+%
+\begin{align*}
+\frac{1}{8} c (c- \lambda) e^0 \wedge \bar{e}^0 &+ \frac{1}{4} (c - \lambda)^2 e^0 \wedge \bar{e}^0 - \frac{1}{2} \lambda ( c - \lambda ) e^0 \wedge \bar{e}^0\\
+&= \frac{3}{8}(c - \lambda)(c - 2 \lambda) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+and therefore:
+%
+\begin{align}
+b^i_1 \bar{b}^i_1 = \frac{3}{8}(c - \lambda)(c - 2 \lambda)
+\end{align}
+%
+which completes the proof of (b), and hence of the lemma.
+%
+\end{proof}
+
+At this point we would like to start an inductive process based on the procedure we used to arrive at the previous lemma.  Unfortunately, to do this honestly, one more step must be worked out separately.  We spare the readers the details of this, and state the results as another lemma, as the argument differs only slightly from the actual induction step we will outline below.
+
+\begin{lem} There are locally defined functions $b^i_2$ which satisfy the relations:
+%
+\begin{align*}
+b^i_2 e^0 = d b^i_1 - 3 b^i_1 \theta + b^j_1 \Theta^i_j + \frac{3}{4}(c - 2 \lambda) b^i_0 \bar{e}^0
+\end{align*}
+%
+These functions satisfy the orthogonality relations:
+%
+\begin{enumerate}
+\item $b^i_2 \bar{b}^i_1 = b^i_2 \bar{b}^i_0 = 0$
+\item $b^i_2 \bar{b}^i_2 = \frac{3}{8} (c - \lambda)(c - 2\lambda)(c - 3 \lambda)$
+\end{enumerate}
+%
+\end{lem}
+
+\begin{proof} As stated, the proof is omitted.
+\end{proof}
+
+Now we have assembled enough facts to start an inductive procedure.  We prove the following lemma:
+
+\begin{lem} Set $b^i_{-1} = 0$. For each $r = 1,2, \ldots$ there are locally defined functions $b^i_r$ satisfying:
+%
+\begin{align}
+b^i_r e^0 = d b^i_{r-1} - (r + 1) b^i_{r-1} \theta + b^j_{r-1} \Theta^i_j + \frac{r + 1}{4} (c - r \lambda) b^i_{r-2} \bar{e}^0
+\end{align}
+%
+For $0 \leq s \leq r$ these functions satisfy the orthogonality relations:
+%
+\begin{align}
+b^i_r \bar{b}^i_s = \delta^r_s \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align}
+%
+\end{lem}
+
+\begin{proof}  The reader may easily check that we have already verified formula (6) for $r=1,2$, and formula (7) for $r,s = 0,1,2$.  So we assume, towards induction, that we have verified the formula for the cases $1,2,\ldots,r$, and work on proving them for $r+1$.  
+
+We begin by differentiating (6):
+%
+\begin{align*}
+d b^i_r \wedge e^0 + b^i_r d e^0 = &-(r+1) d b^i_{r-1} \wedge \theta - (r+1) b^i_{r-1} d \theta \\
+&+ d b^j_{r-1} \wedge \Theta^i_j + b^j_{r-1} d \Theta^i_j \\
+&+ \frac{r+1}{4} (c - r \lambda) d b^i_{r-2} \bar{e}^0 + \frac{r+1}{4} (c - r \lambda) b^i_{r - 2} d \bar{e}^0
+\end{align*} 
+%
+For the term on the left hand side, we use the torsion free metric property to get:
+%
+\begin{align*}
+b^i_r \wedge d e^0 = - b^i_r \theta \wedge e^0
+\end{align*}
+%
+To simplify the terms on the right hand side, we use the inductive assumptions and the procedures outlined in the exposition above.  The results are:
+%
+\begin{align*}
+-(r+1) d b^i_{r-1} \wedge \theta = &-(r+1) b^i_r e^0 \wedge \theta + (r+1) b^j_{r-1} \Theta^i_j \wedge \theta  \\
+&+ \frac{(r+1)^2}{4} (c - r \lambda) b^i_{r-2} \bar{e}^0 \wedge \theta 
+\end{align*}
+%
+\begin{align*}
+- (r+1) b^i_{r-1} d \theta &= - \frac{r+1}{2} \lambda b^i_{r-1} e^0 \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+d b^j_{r-1} \wedge \Theta^i_j = b^j_{r} &e^0 \wedge \Theta^i_j + (r+1) b^j_{r-1} \theta \wedge \Theta^i_j \\
+&- b^k_{r-1} \Theta^j_k \wedge \Theta^i_j - \frac{r+1}{4}(c - r \lambda) b^j_{r-2} \bar{e}^0 \wedge \Theta^i_j
+\end{align*}
+%
+\begin{align*}
+b^j_{r-1} d \Theta^i_j = \frac{c}{4} b^i_{r-1} e^0 \wedge \bar{e}^0 - b^j_{r-1} \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+\begin{align*}
+\frac{r+1}{4}(c-r \lambda) d b^i_{r-2} \wedge \bar{b}^0 = &\frac{r+1}{4} (c - r \lambda) b^i_{r-1} e^0 \wedge \bar{e}^0 \\
+&+ \frac{ (r+1)r }{4}( c - r \lambda) b^i_{r-2} \theta \wedge \bar{e}^0 \\
+&- \frac{r+1}{4} (c - r \lambda) b^j_{r-2} \Theta^i_j \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+\frac{r+1}{4} (c - r \lambda) b^i_{r-2} d \bar{e}^0 = \frac{r+1}{4} (c - r \lambda) b^i_{r-2} \theta \wedge \bar{e}^0
+\end{align*}
+%
+Substituting these results in, we see that three pairs of terms cancel, and we are left, upon gathering like terms, with:
+%
+\begin{align*}
+d b^i_r \wedge e^0 = (r &+ 2) b^i_r \theta \wedge e^0 - b^j_r \Theta^i_j \wedge e^0 \\
+&- \left( \frac{c}{4} - \frac{r+1}{2} \lambda + \frac{r+1}{4} (c - r \lambda) \right) b^i_{r-1} \bar{e}^0 \wedge e^0 \\
+&+ \left( \frac{ (r+1)r }{4} - \frac{ (r+1)^2 }{4} + \frac{r+1}{4} \right) (c - r \lambda) b^i_{r-2} \theta \wedge \bar{e}^0
+\end{align*}
+%
+A short calculation reveals that:
+%
+\begin{align*}
+\frac{c}{4} - \frac{r+1}{2} \lambda + \frac{r+1}{4} (c - r \lambda) = \frac{r+2}{4}(c - (r+1) \lambda)
+\end{align*}
+%
+and:
+%
+\begin{align*}
+\frac{ (r+1)r }{4} - \frac{ (r+1)^2 }{4} + \frac{r+1}{4} = 0
+\end{align*}
+%
+Therefore:
+%
+\begin{align*}
+0 = \left( d b^i_r - (r + 2) b^i_r \theta + b^j_r \Theta^i_j +  \frac{r+2}{4}(c - (r+1) \lambda ) b^i_{r-1} \bar{e}^0 \right) \wedge e^0
+\end{align*}
+%
+As before, we observe that the coefficient of $e^0$ above must be a (1,0) form, and hence there are some locally defined functions $b^i_{r+1}$ so that:
+%
+\begin{align*}
+b^i_{r+1} e^0 = d b^i_r - (r + 2) b^i_r \theta + b^j_r \Theta^i_j +  \frac{r+2}{4}(c - (r+1) \lambda ) b^i_{r-1} \bar{e}^0
+\end{align*}
+%
+Which completes the inductive verification of formula (6).
+
+\begin{remark}  We included lemma 3 separately from the inductive procedure to be justified in our use of formula (6) to simplify the term involving $d b^i_{r-2}$.
+\end{remark}
+%
+\bigskip
+
+We now go on to verify the orthogonality relations.  To simplify our notation, we write:
+%
+\begin{align*}
+K_r = \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align*}
+%
+Observe that these numbers satisfy the recursive relation:
+%
+\begin{align*}
+K_{r} = \frac{r+2}{4} (c - (r+1) \lambda ) K_{r-1}
+\end{align*}
+%
+Suppose now that $0 \leq s \leq r$.  We differentiate the equation $b^i_r \bar{b}^i_s = \delta^r_s K_r$, which is a consequence of (7).  The result is:
+%
+\begin{align*}
+\bar{b}^i_s d b^i_r + b^i_r d \bar{b}^i_s = 0
+\end{align*}
+%
+Using equations (6) and (7) to simplify yields the results:
+%
+\begin{align*}
+\bar{b}^i_s d b^i_r &= \bar{b}^i_s b^i_{r+1} e^0 - (r+2) \delta^r_s K_r \theta - \bar{b}^i_s b^j_r \Theta^i_j - \frac{r+2}{4} \delta^s_{r-1} K_{r-1} (c - (r+1) \lambda ) \bar{e}^0 \\
+b^i_r d \bar{b}^i_s &= b^i_r \bar{b}^i_{s+1} \bar{e}^0 + (s + 2) \delta^s_r K_r \theta + b^i_r \bar{b}^j_s \Theta^j_i - \frac{r+2}{4} \delta^r_{s-1} K_r (c-(r+1) \lambda) e^0
+\end{align*} 
+%
+We examine these two equations on a case by case basis.
+
+\begin{case} $s \neq r-1,r,r+1$
+\end{case}
+%
+The above equations yield that:
+%
+\begin{align*}
+0 &= \bar{b}^i_s b^i_{r+1} e^0 - \bar{b}^i_s b^j_r \Theta^i_j + b^i_r \bar{b}^j_s \Theta^j_i \\
+&= \bar{b}^i_s b^i_{r+1} e^0
+\end{align*}
+%
+Which proves (7) for $s = 1,2,\ldots, r-2$.
+
+\begin{case} $s = r-1$
+\end{case}
+%
+We get in this case that:
+%
+\begin{align*}
+0 &= \bar{b}^i_{r-1} b^i_{r+1} e^0 - b^j_r \bar{b}^i_{r-1} \Theta^i_j - \frac{r+2}{4} (c - (r+1) \lambda ) K_{r-1} \bar{e}^0 + K_r \bar{e}^0 + b^i_r \bar{b}^j_{r-1} \Theta^j_i \\
+&= \bar{b}^i_{r-1} b^i_{r+1} e^0
+\end{align*}
+%
+Which proves (7) for $s = r - 1$
+
+\begin{case} $s = r$
+\end{case}
+%
+We have:
+%
+\begin{align*}
+0 = b^i_{r+1} & \bar{b}^i_r e^0 - (r+2) K_r \theta - \bar{b}^i_r b^j_r \Theta^i_j \\
+&+ b^i_r \bar{b}^i_{r+1} \bar{e}^0 + (r+2) K_r \theta + b^i_r \bar{b}^j_r \Theta^j_i 
+\end{align*}
+%
+Which, upon cancelling terms becomes:
+%
+\begin{align*}
+0 = b^i_{r+1} & \bar{b}^i_r e^0 +  b^i_r \bar{b}^i_{r+1} \bar{e}^0
+\end{align*}
+%
+Which proves (7) for $s = r$.
+
+\bigskip
+
+At this point we have completed our argument, except for verifying the single relation:
+%
+\begin{align*}
+b^i_{r+1} \bar{b}^i_{r+1} = \frac{(r+3)!}{4^{r+2}} (c- \lambda) \cdots (c - (r+2) \lambda )
+\end{align*}
+%
+To get this, we differentiate the equation:
+%
+\begin{align*}
+\bar{b}^i_r b^i_{r+1} e^0 = 0
+\end{align*}
+%
+Which becomes:
+%
+\begin{align*}
+0 = b^i_{r+1} d \bar{b}^i_r \wedge e^0 + \bar{b}^i_r d( b^i_{r+1} e^0 )
+\end{align*}
+%
+To simplify the first term, we use equation (6) and the orthogonality relations we have already proved to get:
+%
+\begin{align*}
+b^i_{r+1} d \bar{b}^i_r \wedge e^0 = b^i_{r+1} \bar{b}^i_{r+1} \bar{e}^0 \wedge e^0 + b^i_{r+1} \bar{b}^j_{r} \Theta^j_i \wedge e^0
+\end{align*}
+%
+For the second term, we differentiate equation (6) (using $r+1$ instead of $r$) to get:
+%
+\begin{align*}
+\bar{b}^i_r d( b^i_{r+1} e^0 ) &= - (r+2) \bar{b}^i_r d b^i_r \wedge \theta - (r+2) \bar{b}^i_r b^i_r d \theta + \bar{b}^i_r d b^j_r \wedge \Theta^i_j + \bar{b}^i_r b^j_r d \Theta^i_j \\
+&+ \frac{r+2}{4}( c  - (r+1) \lambda ) \bar{b}^i_r d b^i_{r-1} \wedge \bar{e}^0 + \frac{r+1}{4} (c - (r+1) \lambda ) \bar{b}^i_r b^i_{r+1} d \bar{e}^0
+\end{align*}
+%
+and now simplify these terms using the usual techniques:
+%
+\begin{align*}
+- (r+2) \bar{b}^i_r d b^i_r \wedge \theta = (r+2) \bar{b}^i_r b^j_r \Theta^i_j \wedge \theta
+\end{align*}
+%
+\begin{align*}
+- (r+2) \bar{b}^i_r b^i_r d \theta = - \frac{(r+2)^2 (r+1)!}{2 \cdot 4^{r+1}} \lambda (c- \lambda) \cdots (c - (r+1) \lambda) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+\bar{b}^i_r d b^j_r \wedge \Theta^i_j = \bar{b}^i_r & b^j_{r+1} e^0 \wedge \Theta^i_j + (r+2) \bar{b}^i_r b^j_r \theta \wedge \Theta^i_j - \bar{b}^i_r b^k_r \Theta^j_k \wedge \Theta^i_j \\
+&- \frac{r+2}{4} (c - (r + 1) \lambda ) \bar{b}^i_r b^j_{r-1} \bar{e}^0 \wedge \Theta^i_j
+\end{align*}
+%
+\begin{align*}
+\bar{b}^i_r b^j_r d \Theta^i_j = \frac{c(r+2)!}{4^{r+2}} (c - \lambda) \cdots (c - (r+1) \lambda) e^0 \wedge \bar{e}^0 - \bar{b}^i_r b^j_r \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+\begin{align*}
+\frac{r+2}{4}( c  - (r+1) \lambda ) & \bar{b}^i_r d b^i_{r-1} \wedge \bar{e}^0 = \\
+&= \frac{ (r+2)^2 (r+1)!}{4^{r+2}} (c - \lambda) \cdots (c - (r+1) \lambda)^2 e^0 \wedge \bar{e}^0 \\
+&- \frac{r+2}{4}(c - (r+1) \lambda) \bar{b}^i_r b^j_{r-1} \Theta^i_j \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+\frac{r+1}{4} (c - (r+1) \lambda ) \bar{b}^i_r b^i_{r+1} d \bar{e}^0 = 0
+\end{align*}
+%
+Substituting these results in above, cancelling, and gathering the remaining like terms, we get:
+%
+\begin{align*}
+b^i_{r+1} & \bar{b}^i_{r+1}  e^0 \wedge \bar{e}^0 = \\
+& \frac{(r+2)!}{4^{r+1}} (c- \lambda) \cdots (c - (r+1) \lambda) \left( \frac{c}{4} + \frac{r+2}{4}(c - (r+1) \lambda) - \frac{r + 2}{2} \lambda \right) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+A quick calculation shows that:
+%
+\begin{align*}
+\frac{c}{4} + \frac{r+2}{4}(c - (r+1) \lambda) - \frac{r + 2}{2} \lambda = \frac{r+3}{4}( c - (r+2) \lambda )
+\end{align*}
+%
+so we get:
+%
+\begin{align*}
+b^i_{r+1} & \bar{b}^i_{r+1}  e^0 \wedge \bar{e}^0 = \frac{(r+3)!}{4^{r+2}}(c - \lambda) \cdots (c - (r+2) \lambda) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+which completes the proof of (7), and hence, of the lemma.
+%
+\end{proof}
+
+With this result, we can immediately give a proof of Calabi's theorem.
+
+\begin{thm} Suppose $M$ is a complex curve.  Then, if $c \leq 0$, $M$ is totally geodesic, and if $c > 0$, the Einstein constant $\lambda$ is one of the numbers $c, \frac{c}{2}, \frac{c}{3}, \ldots, \frac{c}{n + 1}$, where $n + 1 = \dim \ M_c$.
+\end{thm}
+
+\begin{proof} For a fixed point on $M$ we consider the vectors $b_r = ( b^1_r, \ldots, b^n_r )$ for $r = 0,1,2, \ldots, n$.  The lemma above tells us that $b_r$ is orthogonal to $b_s$ for $r \neq s$, and that:
+%
+\begin{align*}
+| b_r |^2 = \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align*}
+%
+Since these vectors reside in an $n$ dimensional vector space, and there are $n+1$ of them, they cannot all be nonzero.  Therefore:
+%
+\begin{align*}
+0 = \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align*}
+%
+for some $0 \leq r \leq n$.  It follows immediately that $\lambda$ must be one of the numbers $c, \frac{c}{2}, \frac{c}{3}, \ldots, \frac{c}{n + 1}$.  Furthermore, if $c < 0$, then the Gauss equation of the immersion implies that $\lambda \leq c$, and in this case the only possibility is $c = \lambda$.  As we saw in lemma 2, this means that $M$ must be totally geodesic in $M_c$.
+\end{proof}
+
+\section{Chern's Theorem}
+
+We now turn to a more general situation.  Let $M$ be any complex manifold, holomorphically immersed in the space form $M_c$ so that the induced Kahler metric on $M$ is Einstein, with Einstein constant $\lambda$.  Suppose the dimension of $M$ is $n$, and the dimension of $M_c$ is $n+m$.  Let $\{ e_1, \ldots, e_{n+m} \}$ be a local unitary frame field for $TM_c^{+}$, chosen so that, when restricted to $M$, $\{ e_1, \ldots, e_n \}$ is a local unitary frame field for $\TMp$, and $\{ e_{n+1}, \ldots, e_{n+m} \}$ is a local unitary frame field for $\NMp$.  Let $\{ e^1, \ldots, e^{n+m} \}$ be the dual unitary frame field.  Again, we study the connection forms $\Theta$ and $\theta$ for $M_c$ and $M$.
+
+\begin{remark}  We make use of index conventions similar to those in the previous section.  Lower case Greek indices $\alpha, \beta, \gamma$ will have the range $1,2, \ldots, n+m$, lower case Roman indices $i,j,k,l,r,s,t$ will have the range $1,2, \ldots, n$, and the lower case Roman indices $a,b,c$ will have the range $n+1, n+2, \ldots, n+m$.  Note that repeated indices in a single term are automatically summed over their ranges, though we will occasionally drop this convention for the sake of clarity when convenient.
+
+Furthermore, every differential form in the subsequent calculation is always restricted to a form on $M$. In this context we have $e^a = 0$ for all $a$, and $\Theta^i_j = \theta^i_j$.
+
+Finally, since we are using a unitary frame field, the curvature forms satisfy the skew-hermitian properties $\bar{\Theta}^{\alpha}_{\beta} = - \Theta^{\beta}_{\alpha}$, and $\bar{\theta}^i_j = - \theta^j_i$.
+\end{remark}
+
+We begin by differentiating the equation $e^a = 0$ and using the torsion free property of the metric connection.  The result is:
+%
+\begin{align*}
+0 = d e^a = - \Theta^a_{\alpha} \wedge e^{\alpha} = - \Theta^a_i \wedge e^i
+\end{align*}
+%
+It follows that $\Theta^a_i$ is a $(1,0)$ form on $M$, so there are some locally defined functions $A^a_{ij}$ so that:
+%
+\begin{align}
+\Theta^a_i = A^a_{ij} e^j
+\end{align}
+
+\begin{lem} The second fundamental form of the immersion is locally expressed as:
+%
+\begin{align}
+B( e_i, e_j ) = A^a_{ij} e_a
+\end{align}
+%
+Consequently, the immersion is totally geodesic if and only if $A^a_{ij} = 0$ for all $a,i$ and $j$.
+%
+\end{lem}
+
+\begin{proof} We simply calculate:
+%
+\begin{align*}
+\la B(e_i, e_j), e_a \ra = \la \nablaamb_{e_i} e_j, e_a \ra = \la \Theta^{\alpha}_i (e_j) e_{\alpha}, e_a \ra = \Theta^a_i (e_j) = A^a_{ij}
+\end{align*}
+%
+Recalling that $B(e_i, \bar{e}_j) = 0$, and $B(\bar{e}_i, \bar{e}_j ) = \overline{ B(e_i, e_j ) }$, we see that the lemma immediately follows.
+%
+\end{proof}
+
+Since the second fundamental form is symmetric, an immediate consequence of the lemma above is that the symmetry condition $A^a_{ij} = A^a_{ji}$ holds for all $i,j$ and $a$.
+
+Now we consider the curvature forms $\omega$ and $\Omega$ for $M$ and $M_c$ respectively, which satisfy the usual fundamental equations.  In particular:
+%
+$$\omega^i_i = d \theta^i_i + \theta^i_k \wedge \theta^k_i$$ 
+%
+and:
+%
+$$\Omega^i_i = d \Theta^i_i + \Theta^i_{\alpha} \wedge \Theta^{\alpha}_i = d \theta^i_i + \Theta^i_{\alpha} \wedge \Theta^{\alpha}_i$$
+%
+Hence:
+%
+\begin{align*}
+\omega^i_i = \Omega^i_i - \Theta^i_a \wedge \Theta^a_i = \Omega^i_i - A^a_{ik} \bar{A}^a_{ij} e^k \wedge \bar{e}^j
+\end{align*}
+%
+Now, since the metric on $M$ is Einstein, we have:
+%
+\begin{align*}
+\omega^i_i = \frac{\lambda}{2} e^i \wedge \bar{e}^i
+\end{align*}
+%
+And since $M_c$ has constant holomorphic curvature $c$, we have:
+%
+\begin{align*}
+\Omega^i_i = \frac{(n+1)c}{4} e^i \wedge \bar{e}^i
+\end{align*}
+%
+Substituting these expressions in above yields:
+%
+\begin{align*}
+\frac{\lambda}{2} e^i \wedge \bar{e}^i = \frac{(n+1)c}{4} e^i \wedge \bar{e}^i - A^a_{ik} \bar{A}^a_{ij} e^k \wedge \bar{e}^j
+\end{align*}
+%
+So:
+%
+\begin{align*}
+A^a_{ik} \bar{A}^a_{ij} e^k \wedge \bar{e}^j = \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^i \wedge \bar{e}^i
+\end{align*}
+%
+Therefore, since the forms $e^k \wedge \bar{e}^j$ form a basis for the space of $(1,1)$ forms on $M$, we conclude that:
+%
+\begin{align}
+A^a_{ij} \bar{A}^a_{ik} = \delta^j_k \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)
+\end{align}
+
+\begin{cor}  The Einstein constant satisfies $\lambda \leq \frac{(n+1)c}{2}$, with equality if and only if $M$ is totally geodesic.  Furthermore, if $\lambda < \frac{(n+1)c}{2}$, then the linear map $\TMp \rightarrow \Hom ( \TMp, \NMp )$ defined by:
+%
+\begin{align*}
+X \mapsto ( Y \mapsto B(X, Y) )
+\end{align*}
+%
+is an injection.
+%
+\end{cor}
+
+\begin{proof} Using equation (10) with $j=k$ we get:
+%
+\begin{align*}
+0 \leq A^a_{ij} \bar{A}^a_{ij} = n \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)
+\end{align*}
+%
+So it must be the case that $\lambda \leq \frac{(n+1)c}{2}$.  Equality holds only when $A^a_{ij} = 0$ for all $a,i,j$, which by the previous lemma, is equivalent to $M$ being totally geodesic.
+
+Now, assume that $\lambda < \frac{(n+1)c}{2}$, and let $X = x_i e_i$ be a non-zero vector in $\TMp$.  We need to see that the linear map $Y \mapsto B(X,Y)$ is non-zero, so we calculate:
+%
+\begin{align*}
+\la B(X, e_i), B(X, e_i) \ra &= x_j \bar{x}_k \la B(e_i, e_j), B(e_i, e_k) \ra = x_j \bar{x}_k \delta^a_b A^a_{ij} \bar{A}^b_{ik} \\
+&= x_j \bar{x}_k A^a_{ij} \bar{A}^a_{jk} = x_j \bar{x}_k \delta^j_k \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \\
+&= x_j \bar{x}_j \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)
+\end{align*}
+%
+Which is positive when $\lambda < \frac{(n+1)c}{2}$.  Therefore, there must be some $j$ so that $B(X,e_j) \neq 0$, which completes the proof of the corollary.
+%
+\end{proof}
+
+To continue, we differentiate equation (8):
+%
+\begin{align*}
+d \Theta^a_i = d A^a_{ik} \wedge e^k + A^a_{ij} d e^j
+\end{align*}
+%
+The fundamental equation gives:
+%
+\begin{align*}
+d \Theta^a_i = \Omega^a_i - \Theta^a_{\alpha} \wedge \Theta^{\alpha}_i
+\end{align*}
+%
+And using the curvature formula for space forms, we get:
+%
+\begin{align*}
+\Omega^a_i = \frac{c}{4} e^a \wedge \bar{e}^i = 0
+\end{align*}
+%
+So:
+%
+\begin{align*}
+d \Theta^a_i &= - \Theta^a_{\alpha} \wedge \Theta^{\alpha}_i = - \Theta^a_j \wedge \Theta^j_i - \Theta^a_b \wedge \Theta^b_i = A^a_{jk} \theta^j_i \wedge e^k - A^b_{ik} \Theta^a_b \wedge e^k
+\end{align*}
+%
+On the other hand, the torsion free metric property gives:
+%
+\begin{align*}
+A^a_{ij} d e^j = - A^a_{ij} \theta^j_k \wedge e^k
+\end{align*}
+%
+Substituting all these ingredients in now yields:
+%
+\begin{align*}
+0 = \left( A^a_{jk} \theta^j_i - A^b_{ik} \Theta^a_b - d A^a_{ik} + A^a_{ij} \theta^j_k \right) \wedge e^k
+\end{align*}
+%
+Therefore, the form appearing as a coefficient of $e^k$ must be a $(1,0)$ form, and so there are some locally defined functions $B^a_{ijl}$ that satisfy:
+%
+\begin{align}
+B^a_{ijl} e^l = d A^a_{ij} + A^b_{ij} \Theta^a_b - A^a_{kj} \theta^k_i - A^a_{ik} \theta^k_j
+\end{align}
+
+\begin{lem}  The first covariant derivative of the second fundamental form has the local expression:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) = B^a_{ijl} e_a
+\end{align*}
+%
+Consequently, the second fundamental form is parellel if and only if $B^a_{ijl} = 0$ for all $a,i,j$ and $l$.
+%
+\end{lem}
+
+\begin{proof}  We use the definition of the covariant derivative to calculate:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) &= ( \nabla_{e_l} B )(e_i, e_j) \\
+&= \nabla^{\perp}_{e_l} \left( B( e_i, e_j) \right) - B( \nabla_{e_l} e_i, e_j ) - B( e_i, \nabla_{e_j} e_j ) \\
+&= \nabla^{\perp}_{e_l} \left( A^a_{ij} e_a \right) - B( \theta^k_i (e_l) e_k, e_j ) - B( e_i, \theta^k_j (e_j) e_k ) \\
+&= \left( d A^a_{ij} + A^b_{ij} \Theta^a_b - A^a_{kj} \theta^k_i - A^a_{ik} \theta^k_j \right)(e_l) e_a \\
+&= B^a_{ijl} e_a
+\end{align*}
+%
+which completes the proof.
+%
+\end{proof}
+
+\begin{cor}  The numbers $B^i_{ijl}$ are invariant with regards to all permutations of the lower three indicies.  That is, $B^a_{ijl} = B^a_{jil} = B^a_{ilj}$. 
+\end{cor}  
+%
+\begin{proof} The relation $B^a_{ijl} = B^a_{jil}$ is an easy consequence of the symmetry of $A^a_{ij}$ and equation (11). 
+
+Verifying the other symmetry relation is considerably more subtle.  By the previous lemma, it suffices to check the tensor equation:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) - \nabla B (e_i, e_l, e_j ) = 0
+\end{align*}
+%
+Fix a general point $p$ in $M$, and for the moment assume (for convenience) that the frame $\{ e_1, e_2, \ldots, e_{n+m} \}$ is parallel at $p$.  The following calculations are always evaluated at the point $p$.  We have:
+%
+\begin{align*}
+\nabla B (e_i, e_j, e_l) - \nabla B (e_i, e_l, e_j ) &= \nabla^{\perp}_{e_l}( B(e_i, e_j) ) - \nabla^{\perp}_{e_j}( B(e_i, e_l) )\\
+&= d A^a_{ij} (e_l) e_a - d A^a_{il} (e_j) e_a
+\end{align*}
+%
+Now since:
+%
+\begin{align*}
+A^a_{ij} = \Theta^a_i (e_j) = e^a( \nabla_{e_j} e_i ) = \la \nabla_{e_j} e_i, e_a \ra
+\end{align*}
+%
+compatability of the connection with the metric yields:
+%
+\begin{align*}
+d A^a_{ij} (e_l) = e_l \la \nabla_{e_j} e_i, e_a \ra = \la \nabla_{e_l} \nabla_{e_j} e_i, e_a \ra
+\end{align*}
+%
+where we have used that $\nabla_{e_l} e_{a} = 0$ at $p$.  Therefore:
+%
+\begin{align*}
+d A^a_{ij} (e_l) - d A^a_{il} (e_j) &= \la \nabla_{e_l} \nabla_{e_j} e_i, e_a \ra - \la \nabla_{e_j} \nabla_{e_l} e_i, e_a \ra \\
+&= \la R(e_l, e_j) e_i, e_a \ra \\
+&= 0
+\end{align*}
+%
+since $e_l$ and $e_j$ lie in $TM^{+}$.
+%
+\end{proof}
+
+We now want to find an orthogonality relation between the $A^a_{ij}$ and the $B^a_{ijl}$.  To begin, we differentiate equation (10):
+%
+\begin{align*}
+0 = \bar{A}^a_{ik} d A^a_{ij} + A^a_{ij} d \bar{A}^a_{ik}
+\end{align*}
+%
+To simplify these two terms we use equation (11), the results are:
+%
+\begin{align*}
+\bar{A}^a_{ik} d A^a_{ij} = \bar{A}^a_{ik} B^a_{ijl} e^l + \bar{A}^a_{ik} A^a_{il} \theta^l_j + \bar{A}^a_{ik} A^a_{lj} \theta^l_i - \bar{A}^a_{ik} A^b_{ij} \Theta^a_b
+\end{align*}
+%
+and:
+%
+\begin{align*}
+A^a_{ij} d \bar{A}^a_{ik} = A^a_{ij} \bar{B}^a_{ikl} \bar{e}^l - A^a_{ij} \bar{A}^a_{lk} \theta^i_l - A^a_{ij} \bar{A}^a_{il} \theta^k_l + A^a_{ij} \bar{A}^b_{ik} \Theta^b_a
+\end{align*}
+%
+Substituting in these two formula, we see, upon re-indexing, that two pairs of terms cancel, and we are left with:
+%
+\begin{align*}
+0 = \bar{A}^a_{ik} B^a_{ijl} e^l + A^a_{ij} \bar{B}^a_{ikl} \bar{e}^l + \bar{A}^a_{ik} A^a_{il} \theta^l_j - A^a_{ij} \bar{A}^a_{il} \theta^k_l
+\end{align*}
+%
+To deal with the last two terms here, we call upon formula (10), which yields:
+%
+\begin{align*}
+\bar{A}^a_{ik} A^a_{il} \theta^l_j - A^a_{ij} \bar{A}^a_{il} \theta^k_l &= \delta^k_l \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \theta^l_j - \delta^j_l \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \theta^k_l \\
+&= \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \theta^k_j - \theta^k_j \right) \\
+&= 0
+\end{align*}
+%
+Therefore:
+%
+\begin{align*}
+0 = \bar{A}^a_{ik} B^a_{ijl} e^l + A^a_{ij} \bar{B}^a_{ikl} \bar{e}^l
+\end{align*}
+%
+and we conclude the orthogonality relation:
+%
+\begin{align}
+\bar{A}^a_{ik} B^a_{ijl} = 0
+\end{align}
+%
+For all $k,j$ and $l$.
+
+For the next corollary, we denote by $\TMp \odot \TMp$ the space of symmetric 2-tensors on $\TMp$.  
+
+\begin{cor} The image of the linear map $\TMp \odot \TMp \rightarrow \Hom( \TMp, \NMp )$ defined by:
+%
+\begin{align*}
+X \odot Y \mapsto ( Z \mapsto( \nabla B )( X, Y, Z ) )
+\end{align*}
+%
+is orthogonal to the image of the map $\TMp \rightarrow \Hom( \TMp, \NMp )$. 
+%
+\end{cor}
+
+\begin{proof}  Let $X = x_j e_j$ and $Y = y_{rs} e_r \odot e_s$.  Then we have:
+%
+\begin{align*}
+\la B( X, e_i ), (\nabla_{e_i} B) ( Y ) \ra &= x_j \bar{y}_{rs} \la B(e_i, e_j), ( \nabla_{e_i} B )( e_r, e_s ) \ra \\
+&= x_j \bar{y}_{rs} \delta^a_b A^a_{ij} \bar{B}^b_{irs} = x_j \bar{y}_{rs} A^a_{ij} \bar{B}^a_{irs} \\
+&= 0
+\end{align*}
+%
+Which completes the proof.
+%
+\end{proof}
+
+We now want to get an expression for $B^a_{ijl} \bar{B}^a_{ijr}$.  To do so, we begin by differentiating the equation $\bar{A}^a_{ik} B^a_{ijl} e^l = 0$.  The result is:
+%
+\begin{align*}
+0 = B^a_{ijl} d \bar{A}^a_{ik} \wedge e^l + \bar{A}^a_{ik} d( B^a_{ijl} e^l ) 
+\end{align*}
+%
+Using equation (11) to substitute into the first term, and making use of the orthogonality relation (12), we get:
+%
+\begin{align*}
+B^a_{ijl} d \bar{A}^a_{ik} \wedge e^l= B^a_{ijl} \bar{B}^a_{ikr} \bar{e}^r \wedge e^l + \bar{A}^b_{ik} B^a_{ikl} \Theta^b_a \wedge e^l - \bar{A}^a_{rk} B^a_{ijl}  \theta^i_r \wedge e^l
+\end{align*}
+%
+For the second term, we differentiate equation (11) to get:
+%
+\begin{align*}
+\bar{A}^a_{ik} d( B^a_{ijl} e^l ) =& \bar{A}^a_{ik} d A^b_{ij} \wedge \Theta^a_b + \bar{A}^a_{ik} A^b_{ij} d \Theta^a_b - \bar{A}^a_{ik} d
+A^a_{rj} \wedge \theta^r_i \\
+&- \bar{A}^a_{ik} A^a_{rj} d \theta^r_i - \bar{A}^a_{ik} d A^a_{ir} \wedge \theta^r_j - \bar{A}^a_{ik} A^a_{ir} d \theta^r_j
+\end{align*}
+%
+We simplify these terms one by one, using always the orthogonality relations (11), (12), and the following remark:
+
+\begin{remark}  We take a look at the $d \Theta$ and $d \theta$ terms.  For instance, to calculate $d \Theta^a_b$, we apply the fundamental equation, and the formula for the curvature in a space form to get:
+%
+\begin{align*}
+d \Theta^a_b &= \Omega^a_b - \Theta^a_{\alpha} \wedge \Theta^{\alpha}_b \\
+&= \frac{c}{4}( \delta^a_b e^l \wedge \bar{e}^l + e^a \wedge \bar{e}^b ) - \Theta^a_l \wedge \Theta^l_b - \Theta^a_c \wedge \Theta^c_b \\
+&= \frac{c}{4} \delta^a_b e^l \wedge \bar{e}^l + A^a_{lr} \bar{A}^b_{ls} e^r \wedge \bar{e}^s - \Theta^a_c \wedge \Theta^c_b
+\end{align*}
+%
+Similar analysis yields:
+%
+\begin{align*}
+d \theta^r_i = \frac{c}{4} \delta^r_i e^l \wedge \bar{e}^l + \frac{c}{4} e^r \wedge \bar{e}^i - \theta^r_l \wedge \theta^l_i + \bar{A}^b_{rl} A^b_{is} \bar{e}^l \wedge e^s
+\end{align*}
+%
+and:
+%
+\begin{align*}
+d \theta^r_j = \frac{c}{4} \delta^r_j e^l \wedge \bar{e}^l + \frac{c}{4} e^r \wedge \bar{e}^j - \theta^r_l \wedge \theta^l_j + \bar{A}^b_{rl} A^b_{js} \bar{e}^l \wedge e^s
+\end{align*}
+%
+\end{remark}
+
+\bigskip
+
+Now, carefully simplifying each of the six terms yields:
+%
+\begin{align*}
+\bar{A}^a_{ik} d A^b_{ij} \wedge \Theta^a_b =& B^b_{ijl} \bar{A}^a_{ik} e^l \wedge \Theta^a_b - \bar{A}^a_{ik} A^c_{ij} \Theta^b_c \wedge \Theta^a_b\\
+&+ \bar{A}^a_{ik} A^b_{rj} \theta^r_i \wedge \Theta^a_b + \bar{A}^a_{ik} A^b_{ir} \theta^r_j \wedge \Theta^a_b
+\end{align*}
+%
+\begin{align*}
+\bar{A}^a_{ik} A^b_{ij} d \Theta^a_b = \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l + \bar{A}^a_{ik} \bar{A}^b_{ls} A^a_{lr} A^b_{ij} e^r \wedge \bar{e}^s - \bar{A}^a_{ik} A^b_{ij} \Theta^a_c \wedge \Theta^c_b
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} d A^a_{rj} \wedge \theta^r_i =& - \bar{A}^a_{ik} B^a_{rjl} e^l \wedge \theta^r_i + \bar{A}^a_{ik} A^b_{rj} \Theta^a_b \wedge \theta^r_i \\
+&- \bar{A}^a_{ik} A^a_{lj} \theta^l_r \wedge \theta^r_i - \bar{A}^a_{ik} A^a_{rl} \theta^l_j \wedge \theta^r_i
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} A^a_{rj} d \theta^r_i =& - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{rj} e^r \wedge \bar{e}^i \\
+&+ \bar{A}^a_{ik} A^a_{rj} \theta^r_l \wedge \theta^l_i - \bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{rj} A^b_{is} \bar{e}^l \wedge e^s
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} d A^a_{ir} \wedge \theta^r_j = \bar{A}^a_{ik} A^b_{ir} \Theta^a_b \wedge \theta^r_j - \bar{A}^a_{ik} A^a_{lr} \theta^l_i \wedge \theta^r_j - \bar{A}^a_{ik} A^a_{il} \theta^l_r \wedge \theta^r_j
+\end{align*}
+%
+\begin{align*}
+- \bar{A}^a_{ik} A^a_{ir} d \theta^r_j =& - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{ir} e^r \wedge \bar{e}^j  \\
+&+ \bar{A}^a_{ik} A^a_{ir} \theta^r_l \wedge \theta^l_j - \bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ir} A^b_{js} \bar{e}^l \wedge e^s
+\end{align*}
+
+Substituting in all these results, we see that all the terms containing either a $\theta$ or a $\Theta$ cancel, and we are left with:
+%
+\begin{align*}
+0 =& B^a_{ijl} \bar{B}^a_{ikr} \bar{e}^e \wedge e^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l - \frac{c}{4} \bar{A}^a_{ik} A^a_{rj} e^r \wedge \bar{e}^i - \frac{c}{4} \bar{A}^a_{ik} A^a_{ir} e^r \wedge \bar{e}^j \\
+&+ \bar{A}^a_{ik} \bar{A}^b_{ls} A^a_{lr} A^b_{ij} e^r \wedge \bar{e}^s + \bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ij} A^b_{is}  e^s \wedge \bar{e}^l +
+\bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ir} A^b_{js} e^s \wedge \bar{e}^l
+\end{align*}
+%
+We can simplify three of these terms further by applying formula (10):
+%
+\begin{align*}
+ - \frac{c}{4} \bar{A}^a_{ik} A^a_{ij} e^l \wedge \bar{e}^l &= - \frac{c}{4} \delta^j_k \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^l \wedge \bar{e}^l \\
+&= - \frac{c}{4} \delta^j_k \delta^r_s \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^s \wedge \bar{e}^r
+\end{align*}
+%
+\begin{align*}
+- \frac{c}{4} \bar{A}^a_{ik} A^a_{ir} e^r \wedge \bar{e}^j &= - \frac{c}{4} \delta^k_r \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^r \wedge \bar{e}^j \\
+&= - \frac{c}{4} \delta^k_r \delta^j_s \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^r \wedge \bar{e}^s \\
+&= - \frac{c}{4} \delta^k_s \delta^j_r \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) e^s \wedge \bar{e}^r
+\end{align*} 
+%
+\begin{align*}
+\bar{A}^a_{ik} \bar{A}^b_{rl} A^a_{ir} A^b_{js} e^s \wedge \bar{e}^l  &= \delta^k_r \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)  \bar{A}^b_{rl} \bar{A}^b_{js} e^s \wedge \bar{e}^l \\
+&= \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)  \bar{A}^a_{rk} \bar{A}^a_{js} e^s \wedge \bar{e}^r
+\end{align*}
+%
+We get, upon gathering like terms and changing around some of the summation indices:
+%
+\begin{align*}
+B^a_{ijs} \bar{B}^a_{ikr} e^s \wedge \bar{e}^r =& - \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \delta^j_k \delta^r_s + \delta^k_s \delta^j_r \right) e^s \wedge \bar{e}^r \\
+&+ \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \bar{A}^a_{rk} A^a_{sj} e^s \wedge \bar{e}^r + \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{ls} A^b_{ij} e^s \wedge \bar{e}^r \\
+&+ \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{lj} A^b_{is} e^s \wedge \bar{e}^r
+\end{align*}
+%
+Since the forms $e^s \wedge \bar{e}^r$ form a basis for the $(1,1)$ forms on $M$, we can isolate the coefficients in the equation above to finally get:
+%
+\begin{align}
+B^a_{ijs} \bar{B}^a_{ikr} =& - \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \delta^j_k \delta^r_s + \delta^k_s \delta^j_r \right) + \left( \frac{nc}{4} - \frac{\lambda}{2} \right)  \bar{A}^a_{rk} A^a_{sj}\\
+&+ \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{ls} A^b_{ij} + \bar{A}^a_{ik} \bar{A}^b_{lr} A^a_{lj} A^b_{is}  \notag 
+\end{align}
+
+\begin{cor}  If $\lambda < \frac{(n+1)c}{2}$ then, in fact, $\lambda \leq \frac{nc}{2}$, with equality holding if and only if the second fundamental form $B$ is parallel.
+\end{cor}
+%
+\begin{proof} For convienince, write $ K =\left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)$.  Set $k = j$ and $r = s$ in formula (13) to get:
+%
+\begin{align*}
+B^a_{ijs} \bar{B}^a_{ijs} =& -\frac{c}{4} K ( \delta^j_j \delta^r_r + \delta^r_j \delta^r_j ) + \left( K - \frac{c}{4} \right) \bar{A}^a_{sj} A^a_{sj} \\
+&+ \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sr} A^b_{ij} + \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sj} A^b_{ir}
+\end{align*}
+%
+It is easy to see that:
+%
+\begin{align*}
+-\frac{c}{4} K ( \delta^j_j \delta^r_r + \delta^r_j \delta^r_j ) = -\frac{c}{4} K n (n+1)
+\end{align*}
+%
+The second and fourth terms can be computed using formula (10):
+%
+\begin{align*}
+\left( K - \frac{c}{4} \right) \bar{A}^a_{sj} A^a_{sj} = n K \left( K - \frac{c}{4} \right)
+\end{align*}
+%
+\begin{align*}
+\bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sj} A^b_{ir} = \delta^i_s \delta^i_s K^2 = n K^2
+\end{align*}
+%
+The third term we can merely estimate, using the Cauchy-Swartz inequality.  For sake of clarity, in the estimate we temporarily drop our summation convention.  We have:
+%
+\begin{align*}
+\sum_{abijsr} \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sr} A^b_{ij} &= \sum_{ijsr} \left( \sum_{a} \bar{A}^a_{ij} A^a_{sr} \right)\left( \sum_{b} \bar{A}^b_{sr} A^b_{ij} \right) = \sum_{ijsr} \left| \sum_{a} \bar{A}^a_{ij} A^a_{sr} \right|^2 \\
+&\leq \sum_{ijrs} \left| \sum_{a} \bar{A}^a_{ij} \right|^2 \left| \sum_{b}  A^b_{sr} \right|^2 \\
+&= \sum_{ijrs} \left( \sum_{a} \bar{A}^a_{ij} A^a_{ij} \right) \left( \sum_{b}  A^b_{sr} \bar{A}^b_{sr} \right)\\
+&= n^2 K^2
+\end{align*}
+%
+Where we have used (10) in the last equality.  Putting this all together, and doing a little calculation, we get:
+%
+\begin{align*}
+B^a_{ijs} \bar{B}^a_{ijs} &\leq -\frac{c}{4} K n(n+1) + n K \left( K - \frac{c}{4} \right) + n K^2 + n^2 K^2 \\
+&= n(n+2) \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \frac{nc}{4} - \frac{\lambda}{2} \right)
+\end{align*}
+%
+Now $B^a_{ijs} \bar{B}^a_{ijs}$ and $\left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)$ are both non-negative, so it follows that $\left( \frac{nc}{4} - \frac{\lambda}{2} \right)$ must be as well.  That is, $\lambda \leq \frac{nc}{2}$.  Equality occurs if and only if $B^a_{ijs} = 0$ for every $a,i,j,s$, which by lemma 6, means that the second fundamental form $B$ is parallel.
+\end{proof}
+ 
+With the formula for $B^a_{ijk} \bar{B}^a_{irs}$ in hand we want to study the map $\TMp \odot \TMp \rightarrow \Hom( \TMp, \NMp )$ in more detail.  So let $X = x_{jk} e_j \odot e_k$ be a non-zero vector in $\TMp \odot \TMp$. Then:
+%
+\begin{align*}
+\la \nabla B (X, e_i), \nabla B(X, e_i) \ra &=  x_{jk} \bar{x}_{rs} \la \nabla B(e_j, e_k, e_i), \nabla B(e_r, e_s, e_i) \ra \\
+&= x_{jk} \bar{x}_{rs} B^a_{ijk} \bar{B}^a_{irs}
+\end{align*}
+%
+Using (13) we get that this is equal to:
+%
+\begin{align*}
+- \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)\left( \delta^j_r \delta^s_k + \delta^k_r \delta^s_j \right) x_{jk} \bar{x}_{rs} + \left( \frac{nc}{4} - \frac{\lambda}{2} \right) A^b_{rs} \bar{A}^b_{jk} x_{jk} \bar{x}_{rs} \\
++ \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} + \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lj} A^c_{mk} x_{jk} \bar{x}_{rs}
+\end{align*}
+%
+Looking at the first two of these terms, and recalling that $x_{ij} = x_{ji}$, we see that:
+%
+\begin{align*}
+- \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \delta^j_r \delta^s_k + \delta^k_r \delta^s_j \right) x_{jk} \bar{x}_{rs} &= - \frac{c}{2} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) x_{jk} \bar{x}_{jk} \\
+&= - \frac{c}{2} \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \sum_{jk} \left| x_{jk} \right|^2
+\end{align*}
+%
+For the second term we observe that:
+%
+\begin{align*}
+\left( \frac{nc}{4} - \frac{\lambda}{2} \right) A^b_{rs} \bar{A}^b_{jk} x_{jk} \bar{x}_{rs} = \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2
+\end{align*}
+%
+For the final two terms, we calculate:
+%
+\begin{align*}
+\bar{A}^b_{mr} \bar{A}^c_{ls} & A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} + \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lj} A^c_{mk} x_{jk} \bar{x}_{rs} \\ 
+&= \bar{A}^b_{mr} \bar{A}^c_{ls} A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} + \bar{A}^c_{mr} \bar{A}^b_{ls} A^c_{lj} A^b_{mk} x_{jk} \bar{x}_{rs} \\
+&=  \sum_{lmbc} \left( \sum_{rs} ( \bar{A}^b_{mr} \bar{A}^c_{ls} - \bar{A}^c_{mr} \bar{A}^b_{ls} ) \bar{x}_{rs} \right) \left( \sum_{jk} ( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} ) x_{jk} \right)\\
+&\quad +  \bar{A}^b_{mr} \bar{A}^c_{ls} A^c_{lj} A^b_{mk} x_{jk} \bar{x}_{rs} + \bar{A}^c_{mr} \bar{A}^b_{ls} A^b_{lk} A^c_{mj} x_{jk} \bar{x}_{rs} \\
+&= - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk}  \right) x_{jk} \right|^2 + 2 \delta^r_k \delta^j_s \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)^2 x_{jk} \bar{x}_{rs} \\
+&= - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} \right) x_{jk} \right|^2 + 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)^2 \sum_{jk} \left| x_{jk} \right|^2
+\end{align*}
+%
+Therefore, we have:
+%
+\begin{align*}
+\la \nabla B (X, e_i), \nabla B(X, e_i) \ra &= - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} \right) x_{jk} \right|^2 \\
+&+ \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2 \\
+&+ \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) - \frac{c}{2} \right) \sum_{jk} \left| x_{jk} \right|^2 \\
+&=  - \sum_{lmbc} \left| \sum_{jk} \left( A^b_{lk} A^c_{mj} -  A^c_{lj} A^b_{mk} \right) x_{jk} \right|^2 \\
+&+ \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2 \\
+&+ 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{jk} \left| x_{jk} \right|^2
+\end{align*}
+%
+We now have all the pieces in hand that we need to prove Chern's theorem.
+
+\begin{thm} 
+Suppose that $m=1$, then the Einstein constant $\lambda$ is either $\frac{(n+1)c}{2}$ or $\frac{nc}{2}$.  In the first case, the immersion is totally geodesic, and in the second, the second fundamental form $B$ is parallel. 
+\end{thm}
+
+\begin{proof} When $m=1$ the first term in the previous formula is easily seen to vanish, so:
+%
+\begin{align*}
+\la \nabla B (X, e_i), \nabla B(X, e_i) \ra &= \left( \frac{nc}{4} - \frac{\lambda}{2} \right) \sum_{b} \left| A^b_{jk} x_{jk} \right|^2 \\
+&+ \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) \left( 2 \left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right) - \frac{c}{2} \right) \sum_{jk} \left| x_{jk} \right|^2 \\
+\end{align*}
+If $\lambda \neq \frac{(n+1)c}{2}, \frac{nc}{2}$, then, by a previous corollary, it must be the case that $\lambda < \frac{nc}{2}$, hence the right hand side is positive.  Therefore:
+%
+$$ \la \nabla B (X, e_i), \nabla B(X, e_i) \ra > 0 $$
+%
+and hence the map $\TMp \odot \TMp \rightarrow \Hom( \TMp, \NMp )$ is injective.  We know already that the map $TM^{+} \rightarrow \Hom( TM^{+}, NM^{+} )$ is injective, and that the images of these two maps are orthogonal.  Since the dimension of $TM^{+}$ is $n$, the dimension of $\TMp \odot \TMp$ is $\frac{n(n-1)}{2}$.  The dimension of $ \Hom ( \TMp, \NMp ) $ is $ n \times 1 = n$, so we must conclude that:
+%
+$$ n + \frac{n(n-1)}{2} < n $$
+%
+which is a contradiction unless $n=1$, a case we have already studied in the previous chapter.
+\end{proof}
+
+\vfill
+
+\begin{thebibliography}{-1}
+
+\parskip 4pt
+
+\bibitem[C1] {C1} E. Calabi, {\it Isometric imbedding of complex manifolds},
+Ann. of Math. 58 (1953), 1-23.
+
+\smallskip
+
+\bibitem[C2] {C2} E. Calabi, {\it Metric Riemann surfaces},
+Contributions to the Theory of Riemann Surfaces, Ann. of Math.
+Studies, Princeton, 1953.
+
+\smallskip
+
+\bibitem[CE] {CE} J. Cheeger, D. Ebin, {\it Comparison Theorems in Riemannian Geometry}, AMS Chelsea Publishing, 2008.
+
+\smallskip
+
+\bibitem[Ch] {Ch} S. S. Chern, {\it Einstein hypersurfaces in a K\"ahlerian manifold of constant
+holomorphic curvature}, J. Differential Geometry. 1 (1967), 21-31.
+
+\smallskip
+
+\bibitem[dC] {dC} M. P. doCarmo {\it Riemannian Geometry}, Birkhauser. 1992. 
+
+\smallskip
+
+\bibitem[S] {S} B. Smyth, {\it Differential geometry of complex hypersurfaces},
+Ann. of Math. 85 (1967), 246-266.
+
+\smallskip
+
+\bibitem[T] {T} K. Tsukada, {\it Einstein K\"ahler submanifolds with codimension 2 in a complex space form},
+Math Ann. 274 (1986), 503-516.
+
+\smallskip
+
+\bibitem[Um1] {Um1} M. Umehara, {\it Einstein K\"ahler submanifolds of
+a complex linear or hyperbolic space}, T\^{o}hoku Math. Journ. 39
+(1987), 385-389.
+
+\smallskip
+
+\bibitem[Um2] {Um2} M. Umehara, {\it Diastases and real analytic functions on complex
+manifolds}, J. Math. Soc. Japan Vol. 40, No. 3 (1988), 519-539.
+
+\end{thebibliography}
+
+\bigskip
+
+\end{document}

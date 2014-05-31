@@ -1,0 +1,185 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \Mamb{ \mathcal{M} }
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+In this section we will discuss the Fubini-Study metric on the complex projective space $\CP^n$.
+
+Recall that the complex projective space $\CP^n$ can be viewed as the collection of all complex lines in $\C^{n+1}$.  From this perspective there is clearly a natural complex $n$-plane bundle $E \rightarrow \CP^n$ whose total space is:
+%
+$$ E = \{ (p,v) : p \in \CP^n, v \in p \} \subset \CP^n \times \C^{n+1} $$
+%
+The reader will find it routine to check that this is a holomorphic vector bundle.  Now take a holomorphic local section $S: \CP^n \rightarrow E$ of this bundle, and consider the locally defined closed $(1,1)$ form on $\CP^n$ defined by:
+%
+$$ \omega = i \del \delbar \log \det ( \bar{S}^{t} S ) $$
+%
+The form $\omega$ does not depend on our choice of local section, for any other local section $T$ is related to $S$ by the formula $T = S M$ where $M: \CP^n \rightarrow M_{n+1}( \C )$ is some locally defined holomorphic map.  Therefore:
+%
+\begin{align*} \omega' &= i \del \delbar \log \det ( \bar{T}^{t} T ) \\
+&= i \del \delbar \log \det( \bar{M}^t \bar{S}^t S M ) \\
+&= i \del \delbar \log ( \det( \bar{M}^t ) \det( \bar{S}^t ) \det( S ) \det ( M ) ) \\
+&= i \del \delbar( \log \det(\bar{M}^t) + \log \det(\bar{S}^t) + \log \det(S) + \log \det(M) \\
+&= i \del \delbar \log \det ( \bar{S}^{t} S ) \\
+&= \omega
+\end{align*}
+%
+since $M$ is holomorphic and $\bar{M}^t$ is antiholomorphic.  It follows that $\omega$ is a globally defined (1,1) form on $\CP^n$.
+%
+\begin{definition} The Fubini-Study metric on $\CP^n$ is given by $g(X,Y) = \omega(X,JY)$.
+\end{definition}
+%
+We now want to verify that this does define a Kahler metric on $\CP^n$.  To begin, recall that there is a transitive action of $U_{n+1}$ on $\CP^n$ which is induced from the standard action on $\C^{n+1}$.  For $A \in U_{n+1}$ we write $f_{A}: \CP^n \rightarrow \CP^n$ for this induced map.  We claim that $f_A$ preserves the Fubini-Study metric, that is, $f^{\ast}_A \omega = \omega$.  To see this, again let $S$ be a holomorphic local section of $E$, say over some open set $U$.  Then $T = A^{-1}S \circ f_A$ is another such section, this one over the open set $f_A^{-1}(U)$, and we can calculate:
+%
+\begin{align*} f^{\ast}_A \omega &= i \del \delbar f^{\ast}_A \log \det ( \bar{S}^t S ) \\
+&= i \del \delbar \log \det ( \bar{T}^t T ) \\
+&= \omega 
+\end{align*}
+%
+which is what we wanted to show.
+
+It remains only to show that $g$ is positive definite, which because of the transitive action just described, must only be done at one point.  Let's find a local expression for $g$ at the point $[1,0, \ldots, 0]$ in $\CP^n$.  As usual we consider the open neighbourhood
+%
+$$U = \{ [z_0,z_1, \ldots, z_n]: z_0 \neq 0 \} $$
+%
+which has the coordinate function (after normalization):
+%
+$$[1,z_1, \ldots, z_n] \mapsto (z_1, \ldots, z_n)$$
+%
+Clearly then, a holomorphic section over $U$ is:
+%
+$$[1,z_1, \ldots, z_n] \mapsto (1,z_1, \ldots, z_n)$$
+%
+and hence we have:
+%
+\begin{align*}
+\omega &= i \del \delbar \log( 1 + |z_1|^2 + \cdots + |z_n|^2 ) \\
+&= i \del \left( \frac{ z_i d\bar{z}_i }{ 1 + |z|^2 } \right) \\
+&= i \frac{ (1 + |z|^2 ) dz_i \wedge d \bar{z}_i - \bar{z}_j d z_j \wedge z_i d \bar{z}_i }{ (1 + |z|^2 )^2 } \\
+&= i \frac{ (1 + |z|^2)\delta^i_j - \bar{z}_i z_j }{ (1 + |z|^2)^2 } d z_i \wedge d \bar{z}_j
+\end{align*}
+%
+where we have written $|z|^2 = z_i \bar{z}_i$ for convenience.  Evaluating at $z=0$ gives us:
+%
+$$ \omega|_{z=0} = i \delta^i_j dz_i \wedge d \bar{z}_j = i dz_i \wedge d \bar{z}_i $$
+%
+and therefore:
+%
+$$ g|_{z=0} = dz_i \otimes d \bar{z}_i + d \bar{z}_i \otimes d z_i $$
+%
+Which shows that $g$ is positive definite at $z=0$.  According to our previous remark, it follows that $g$ is positive definite everywhere.
+
+We now want to continue the discussion and show that the Fubini-Study metric has constant positive holomorphic curvature.  To begin, we calculate the Christoffel symbols of $g$.  Recall that in a Kahler manifold, in a holomorphic coordinate frame field, we have:
+%
+$$\nabla_{ Z_i }{ Z_j }= \Gamma^k_{ij} Z_k \text{ and } \nabla_{ \bar{Z}_i }{ \bar{Z}_j } = \bar{ \Gamma }^k_{ij} \bar{Z}_k $$
+%
+with all the mixed covariant derivatives vanishing.  The Christoffel symbols are given by the formula:
+%
+$$ \Gamma^k_{ij} = \frac{ \del g_{jr} }{\del z_i} g^{rk} $$
+%
+We have seen that the Fubini-Study metric is given in this frame by:
+%
+$$ g_{ij} = \frac{ (1 + |z|^2)\delta^i_j - \bar{z}_i z_j }{ (1 + |z|^2)^2 } $$
+%
+and it is easy to check that:
+%
+$$g^{ij} = (1 + |z|^2)( \delta^i_j + \bar{z}_i z_j )$$
+%
+We calculate the partial derivative in the formula for the Christoffel symbol:
+%
+\begin{align*}
+\frac{ \del g_{jr} }{\del z_i} &= \frac{\del}{ \del z_i }\left( \frac{ (1 + |z|^2) \delta^j_r - \bar{z}_j z_r }{ (1 + |z|^2)^2 } \right) \\
+&= \frac{ ( \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j ) (1 + |z|^2 )^2 - 2 (1 + |z|^2 ) \bar{z}_i( (1 + |z|^2)\delta^j_r - \bar{z}_j z_r )}{ (1 + |z|^2 )^4 } \\
+&= \frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } - \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 } + \frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 }
+\end{align*}
+%
+Focusing on these three terms one by one we have, for the first:
+%
+\begin{align*}
+\frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } g^{rk} &= \frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } (1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= \frac{1}{ 1 + |z|^2 } ( \delta^j_r \delta^r_k \bar{z}_i - \delta^r_i \delta^r_k \bar{z}_j + \delta^j_r \bar{z}_r \bar{z}_i z_k - \delta^r_i \bar{z}_r \bar{z}_j w_k ) \\
+&= \frac{ \delta^j_k \bar{z}_i - \delta^i_k \bar{z}_j }{ 1 + |z|^2 }
+\end{align*}
+%
+for the second:
+%
+\begin{align*}
+- \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 }g^{rk} &= - \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 }(1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= - \frac{2 \delta^j_k \bar{z}_i + 2 \bar{z}_i \bar{z}_j z_k}{1 + |z|^2}\\
+\end{align*}
+%
+and finally, for the last:
+%
+\begin{align*}
+\frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 } g^{rk} &= \frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 } (1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= \frac{2}{(1 + |z|^2)^2}( \delta^r_k \bar{z}_i \bar{z}_j z_r + \bar{z}_i \bar{z}_j z_k z_r \bar{z}_r ) \\
+&= \frac{2}{(1 + |z|^2)^2}( \delta^r_k \bar{z}_i \bar{z}_j z_r + \bar{z}_i \bar{z}_j z_k |z|^2 ) \\
+&= \frac{2 \bar{z}_i \bar{z}_j z_k }{1 + |z|^2}
+\end{align*}
+%
+Putting these calculations all together, we find that the Christoffel symbols are given by:
+%
+$$ \Gamma^k_{ij} = - \frac{ \delta^k_i \bar{z}_j + \delta^k_j \bar{z}_i }{ 1 + |z|^2 } $$
+
+Now we move on to the curvature tensor of $\CP^n$.  Recall that in a holomorphic frame we have:
+%
+$$ R(Z_i, Z_j)Z_l = 0$$
+%
+so that we set:
+%
+$$ R( \bar{Z}_i, Z_j )Z_l = R_{ijl}^r Z_r $$
+%
+and then have the following formula:
+%
+$$ R_{ijl}^r = \frac{ \del \Gamma_{jl}^r }{ \del \bar{z}_i } $$
+%
+In the case of the Fubini-Study metric in the coordinate frame we have been using we then have:
+%
+\begin{align*}
+R_{ijl}^r &= \frac{\del}{\del \bar{z}_i }( - \frac{ \delta^k_i \bar{z}_j + \delta^k_j \bar{z}_i }{ 1 + |z|^2 } ) \\
+&= - \frac{ (\delta^r_j \delta^i_l + \delta^r_l \delta^j_i)( 1 + |z|^2 ) - z_i ( \delta^r_j \bar{z}_l + \delta^r_l \bar{z}_j ) }{ (1 + |z|^2)^2 } 
+\end{align*}
+%
+so that:
+%
+$$ R \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } = - \frac{ \delta^i_l (1 + |z|^2) - z_i \bar{z}_l }{ (1 + |z|^2)^2 } \frac{ \del }{ \del z_j } - \frac{ \delta^i_j (1 + |z|^2) - z_i \bar{z}_j }{ (1 + |z|^2)^2 } \frac{ \del }{ \del z_l } $$
+%
+For the reasons we discussed earlier we only need to calculate the holomorphic curvature at one point, so evaluating the above at $z=0$ we get:
+%
+$$ R \left. \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } \right|_{z=0} = - \frac{ \del }{ \del z_j } - \frac{ \del }{ \del z_l }$$
+%
+Therefore we have, at $z=0$:
+%
+\begin{align*} g \left( R \left( \frac{ \del }{ \del x_i }, \frac{ \del }{ \del \bar{x}_i } \right) \frac{ \del }{ \del \bar{x}_i }, \frac{ \del }{ \del x_i } \right) &= - 4 g \left( R \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_i } \right) \frac{ \del }{ \del z_i }, \frac{ \del }{ \del \bar{z}_i } \right) \\
+&= -4 g \left( - 2 \frac{ \del }{ \del z_i}, \frac{ \del }{ \del \bar{z}_i } \right) \\
+&= 8 
+\end{align*}
+%
+so the holomorphic sectional curvature is:
+%
+$$ K \left( \frac{ \del }{ \del x_i } \right) = \frac{8}{ \left\langle \frac{ \del }{ \del x_i }, \frac{ \del }{ \del \bar{x}_i } \right\rangle } = \frac{8}{4 \left\langle \frac{ \del }{ \del z_i }, \frac{ \del }{ \del \bar{z}_i } \right\rangle } = 2 $$
+%
+A similar calculation yields that $K \left( \frac{ \del }{ \del y_i } \right) = 2$, and we conclude that the Fubini-Study metric has constant holomorphic curvature equal to $2$.
+%
+\end{document}

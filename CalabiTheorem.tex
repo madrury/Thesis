@@ -1,0 +1,554 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+\newtheorem{claim}{Claim}
+\newtheorem{case}{Case}
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+
+\def \la { \left\langle }
+\def \ra { \right\rangle }
+\def \C{ \mathbb{C} }
+\def \ric{ \text{ric} }
+\def \dim{ \text{dim} }
+\def \Hom{ \text{Hom} }
+\def \nablasquig{ \tilde{\nabla} }
+\def \TMp{ TM^{+} }
+\def \TMm{ TM^{-} }
+\def \NMp{ NM^+ }
+\def \NMm{ NM^- }
+\def \TMps{ T^{*}M^{+} }
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\section{Calabi's Theorem}
+
+In this section we give a purely differential geometric proof of Calabi's theorem on one dimensional complex submanifolds of a complex space form. 
+
+First we need some setup.  Fix a one dimensional holomorphically immersed manifold $M$ in the space form $M_c$, and denote with angle brackets $\la \quad , \quad \ra$ the Hermitian metric on $M_c$, which restricts to the Hermitian metric on $M$.
+
+Let $\{e_0, e_1, e_2, \ldots , e_n\}$ be a local unitary frame field for the bundle $TM_c^{+}$, chosen so that $\{e_1, \ldots e_n\}$ is a unitary frame for the normal bundle $\NMp$, and $\{ e_0 \}$ is a unit vector in the tangent bundle $\TMp$.  Let $\{e^0, e^1, \ldots, e^n\}$ be the dual unitary frame field.  We study the connection forms $\Theta$ and $\theta$ for $M_c$ and $M$ with respect to these frames. Recall that the connection form for $M_c$ is a matrix of one forms satisfying:
+%
+$$ \nabla e_\alpha = \Theta^{\beta}_{\alpha} e_{\beta} $$
+%
+where $\nabla$ is the connection on $M_c$.  The connection form $\theta$ (which in this context is just a single one form, not a matrix of one forms) is defined analogously using the connection on $M$.  
+
+\begin{remark} 
+%
+In the subsequent calculations we make the following conventions on all indices: the lower case Greek index $\alpha$ will always have the range $0,1,2,\ldots,n$, and lower case Roman indices $i,j,k$ will always have the range $1,2,\ldots,n$.  The reader should also note that repeated indices in a single term are automatically summed over their ranges. 
+
+Furthermore, every differential form in the calculations below is always considered as a form on $M$ by pulling back through the immersion $M \rightarrow M_c$.  In this context we have, for instance, that $e^i = 0$ for all $i$, and $\Theta^0_0 = \theta$.  
+
+Finally, we remind the reader that since we are using a unitary frame field, the curvature forms satisfy the conjugation relations $\bar{\theta} = - \theta$ and $\bar{\Theta}^i_j = - \Theta^j_i$.
+%
+\end{remark}
+
+\bigskip
+
+%Let $B$ denote the second fundamental form of the immersion of $M$ in $M_c$, it is easy to see that we can take $B: \TMp \otimes \TMp \rightarrow \NMp$.  We also make frequent use of the covariant derivatives of $B$.  Let $\nabla^{\perp}$ denote the normal connection on the bundle $\NMp$, together with $\nabla$, this induces a connection:
+%$$ \nabla:  \TMps \otimes \cdots \TMps \otimes \NMp \rightarrow \TMps \otimes \TMps \otimes \cdots \TMps \otimes \NMp$$ 
+
+To begin our work, we differentiate the expression $e^i = 0$ and use the torsion-free property of the Kahler connection.  The result is:
+%
+\begin{align*}
+0 = d e^i = - \Theta^i_{\alpha} \wedge e^{\alpha} = - \Theta^i_0 \wedge e^0
+\end{align*}
+%
+It follows from the above equation that $\Theta^i_0$ is a $(1,0)$-form on $M$, and therefore there are some locally defined functions $b^i_0$ satisfying:
+%
+\begin{align}
+\Theta^i_0 = b^i_0 e^0
+\end{align}
+
+\begin{lem} The immersion $M \rightarrow M_c$ is totally geodesic if and only if $b^i_0 = 0$ for all $i$.
+\end{lem}
+
+\begin{proof} Let $B : \TMp \times \TMp \rightarrow \NMp$ be the second fundamental form of the immersion.  We have:
+%
+\begin{align*}
+\la B(e_0, e_0), e_i \ra &= \la \nablasquig_{e_0} e_0, e_i \ra = \la \Theta^{\alpha}_0 ( e_0 ) e_{\alpha}, e_i \ra \\
+&= \Theta^i_0 (e_0) = b^i_0
+\end{align*}
+%
+So $B$ vanishes exactly when $b^i_0 = 0$ for every $i$.
+%
+\end{proof}
+
+It follows from the proof above that the second fundamental form can be expressed as:
+%
+$$B(e_0, e_0) = b^i_0 e_i$$
+
+Now let $\omega$ and $\Omega$ be the curvature forms of $M$ and $M_c$ respectively.  The fundamental equations for $\omega$ and $\Omega$ are:
+%
+$$\omega =  d\theta + \theta \wedge \theta = d\theta$$
+%
+$$\Omega = d\Theta + \Theta \wedge \Theta$$
+%
+Recalling that $\Omega^0_0 = \theta$, and using (1), we get:
+%
+\begin{align*}
+\omega &= d\Theta^0_0 + \Theta^0_0 \wedge \Theta^0_0 = \Omega^0_0 - \Theta^0_i \wedge \Theta^i_0 = \Omega^0_0 - b^i_0 \bar{b}^i_0 e^0 \wedge \bar{e}^0
+\end{align*}
+%
+Now, by assumption, $M_c$ has constant holomorphic sectional curvature $c$ and $M$ is Einstein of constant $\lambda$, which in this case (dimension 1) means that $M$ has constant holomorphic sectional curvature $\lambda$.  Therefore we have [FROM SOME GOD-DAMN PROPOSITION]:
+%
+\begin{align*}
+\omega &= \frac{\lambda}{2}e^0 \wedge \bar{e}^0 \\
+\Omega^0_0 &= \frac{c}{2} e^0 \wedge \bar{e}^0
+\end{align*}
+%
+Substituting these into the above equation we get:
+%
+$$\frac{\lambda}{2}e^0 \wedge \bar{e}^0 = \frac{c}{2} e^0 \wedge \bar{e}^0- b^i_0 \bar{b}^i_0 e^0 \wedge \bar{e}^0$$
+%
+Hence, since $e^0 \wedge \bar{e}^0$ spans the space of $(1,1)$ forms on $M$,  it follows that:
+%
+\begin{align}
+b^i_0 \bar{b}^i_0 = \frac{1}{2}(c - \lambda)
+\end{align}
+
+\begin{cor} $M$ is totally geodesic if and only if $c = \lambda$.
+\end{cor}
+%
+\begin{proof} This follows immediately from equation 2 and the previous lemma.
+\end{proof}
+
+To continue, we begin by differentiating (1):
+%
+\begin{align*}
+d \Theta^i_0 = d b^i_0 \wedge e^0 + b^i_0 d e^0
+\end{align*}
+%
+Using the torsion free property of the metric again we have:
+%
+\begin{align*}
+d e^0 = - \theta \wedge e^0
+\end{align*}
+%
+Applying the fundamental equations, and the formula for the curvature in a holomorphic space form, we get:
+%
+\begin{align*}
+d \Theta^i_0 &= \Omega^i_0 - \Theta^i_{\alpha} \wedge \Theta^{\alpha}_0 \\
+&= \frac{c}{4} e^i \wedge \bar{e}^0 - \Theta^i_0 \wedge \theta - \Theta^i_j \wedge \Theta^j_0 \\
+&= b^i_0 \theta \wedge e^0 - b^j_0 \Theta^i_j \wedge e^0
+\end{align*}
+%
+Which, upon substituting into the above, gives us:
+%
+\begin{align*}
+0 = ( d b^i_0 - 2 b^i_0 \theta + b^j_0 \Theta^i_j ) \wedge e^0 
+\end{align*}
+%
+It follows from the above equation that $d^i_0 - 2 b^i_0 \theta + b^j_0 \Theta^i_j$ is a $(1,0)$ form, and hence there must be some functions $b^i_1$ so that:
+%
+\begin{align}
+b^i_1 e^0 = d b^i_0 - 2 b^i_0 \theta + b^j_0 \Theta^i_j  
+\end{align}
+
+\begin{lem} The following orthogonality relations hold:
+%
+\begin{enumerate}
+\item $b^i_1 \bar{b}^i_0 = 0$
+\item $b^i_1 \bar{b}^i_1 = \frac{3}{8}(c - \lambda)(c - 2 \lambda)$
+\end{enumerate}
+%
+\end{lem}
+
+\begin{proof} We begin by differentiating (2):
+%
+\begin{align*}
+0 = \bar{b}^i_0 d b^i_0 + b^i_0 d \bar{b}^i_0
+\end{align*}
+%
+Now (3), along with the skew-Hermitian property for the connection form, can be used to simplify the expression above:
+%
+\begin{align*}
+\bar{b}^i_0 d b^i_0 &= \bar{b}^i_0 b^i_1 e^0 + 2 \bar{b}^i_0 b^i_0 \theta - \bar{b}^i_0 b^j_0 \Theta^i_j \\
+b^i_0 d \bar{b}^i_0 &= b^i_0 \bar{b}^i_1 \bar{e}^0 - 2 \bar{b}^i_0 b^i_0 + b^i_0 \bar{b}^j_0 \Theta^j_i
+\end{align*}
+%
+Upon substituting this into the first equation,and switching the summation indices to cancel some terms, we get:
+%
+\begin{align*}
+0 = \bar{b}^i_0 b^i_1 e^0 + b^i_0 \bar{b}^i_1 \bar{e}^0
+\end{align*}
+%
+So, since $e^0$ and $\bar{e}^0$ are linearly independent, we conclude that:
+%
+\begin{align}
+b^i_1 \bar{b}^i_0 = 0
+\end{align}
+%
+Which proves part (a) of the lemma.
+
+To prove (b), we differentiate the equation $\bar{b}^i_0 b^i_1 e^0 = 0$, which is a consequence of (4) above.  This gives us:
+%
+\begin{align*}
+0 = b^i_1 d \bar{b}^i_0 \wedge e^0 + \bar{b}^i_0 d( b^i_1 e^0 )
+\end{align*}
+%
+For the first of these terms, we use (3) to substitute in for $d \bar{b}^i_0$, then simplify with (4) where appropriate:
+%
+\begin{align*}
+b^i_1 d \bar{b}^i_0 \wedge e^0 = b^i_1 \bar{b}^i_1 \bar{e}^0 \wedge e^0 + b^i_1 \bar{b}^i_0 \Theta^j_i \wedge e^0
+\end{align*}
+%
+For the second of the terms, we first differentiate equation (3) and substitute in the result:
+%
+\begin{align*}
+\bar{b}^i_0 d( b^i_1 e^0 ) = -2 \bar{b}^i_0 d b^i_0 \wedge \theta - 2 \bar{b}^i_0 b^i_0 d \theta + \bar{b}^i_0 d b^j_0 \wedge \Theta^i_j + \bar{b}^i_0 b^j_0 d \Theta^i_j
+\end{align*}
+%
+Of the four terms above, we simplify the first and third by using (3) to substitute in for the occurrences of $d b^i_0$, then apply the orthogonality relations already derived. Equation (2) and the Einstein equation $2 d \theta = \lambda e^0 \wedge \bar{e}^0$ are used to simplify the second term.  The results are:
+%
+\begin{align*}
+-2 \bar{b}^i_0 d b^i_0 \wedge \theta &= 2 \bar{b}^i_0 b^j_0 \Theta^i_j \wedge \theta \\
+-2 \bar{b}^i_0 b^i_0 d \theta &= - \frac{1}{2} \lambda ( c - \lambda ) e^0 \wedge \bar{e}^0 \\
+\bar{b}^i_0 d b^j_0 \wedge \Theta^i_j &= \bar{b}^i_0 b^j_1 e^0 \wedge \Theta^i_j + 2 \bar{b}^i_0 b^j_0  \theta \wedge \Theta^i_j - \bar{b}^i_0 b^k_0 \Theta^j_k \wedge \Theta^i_j
+\end{align*}
+%
+For the last term, we recall our formula for the curvature form in a space of constant holomorphic curvature:
+%
+\begin{align*}
+d \Theta^i_j &= \Omega^i_j - \Theta^i_{\alpha} \wedge \Theta^{\alpha}_i \\
+&= \frac{c}{4} \delta^i_j e^0 \wedge \bar{e}^0 + b^i_0 \bar{b}^j_0 e^0 \wedge \bar{e}^0 - \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+Substituting this expression in, and using the various orthogonality relations we have already obtained, we get:
+%
+\begin{align*}
+\bar{b}^i_0 b^j_0 d \Theta^i_j = \frac{1}{8} c (c- \lambda) e^0 \wedge \bar{e}^0 + \frac{1}{4} (c - \lambda)^2 e^0 \wedge \bar{e}^0 - \bar{b}^i_0 b^j_0 \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+Now we substitute these results into the first equation of the paragraph, and observe that all the terms involving a $\theta$ or a $\Theta$ cancel.  We are left with:
+%
+\begin{align*}
+0 = b^i_1 \bar{b}^i_1 \bar{e}^0 \wedge e^0 - \frac{1}{2} \lambda ( c - \lambda ) e^0 \wedge \bar{e}^0 + \frac{1}{8} c (c- \lambda) e^0 \wedge \bar{e}^0 + \frac{1}{4} (c - \lambda)^2 e^0 \wedge \bar{e}^0
+\end{align*}
+%
+A short calculation yields:
+%
+\begin{align*}
+\frac{1}{8} c (c- \lambda) e^0 \wedge \bar{e}^0 &+ \frac{1}{4} (c - \lambda)^2 e^0 \wedge \bar{e}^0 - \frac{1}{2} \lambda ( c - \lambda ) e^0 \wedge \bar{e}^0\\
+&= \frac{3}{8}(c - \lambda)(c - 2 \lambda) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+and therefore:
+%
+\begin{align}
+b^i_1 \bar{b}^i_1 = \frac{3}{8}(c - \lambda)(c - 2 \lambda)
+\end{align}
+%
+which completes the proof of (b), and hence of the lemma.
+%
+\end{proof}
+
+At this point we would like to start an inductive process based on the procedure we used to arrive at the previous lemma.  Unfortunately, to do this honestly, one more step must be worked out separately.  We spare the readers the details of this, and state the results as another lemma, as the argument differs only slightly from the actual induction step we will outline below.
+
+\begin{lem} There are locally defined functions $b^i_2$ which satisfy the relations:
+%
+\begin{align*}
+b^i_2 e^0 = d b^i_1 - 3 b^i_1 \theta + b^j_1 \Theta^i_j + \frac{3}{4}(c - 2 \lambda) b^i_0 \bar{e}^0
+\end{align*}
+%
+These functions satisfy the orthogonality relations:
+%
+\begin{enumerate}
+\item $b^i_2 \bar{b}^i_1 = b^i_2 \bar{b}^i_0 = 0$
+\item $b^i_2 \bar{b}^i_2 = \frac{3}{8} (c - \lambda)(c - 2\lambda)(c - 3 \lambda)$
+\end{enumerate}
+%
+\end{lem}
+
+\begin{proof} As stated, the proof is omitted.
+\end{proof}
+
+Now we have assembled enough facts to start an inductive procedure.  We prove the following lemma:
+
+\begin{lem} Set $b^i_{-1} = 0$. For each $r = 1,2, \ldots$ there are locally defined functions $b^i_r$ satisfying:
+%
+\begin{align}
+b^i_r e^0 = d b^i_{r-1} - (r + 1) b^i_{r-1} \theta + b^j_{r-1} \Theta^i_j + \frac{r + 1}{4} (c - r \lambda) b^i_{r-2} \bar{e}^0
+\end{align}
+%
+For $0 \leq s \leq r$ these functions satisfy the orthogonality relations:
+%
+\begin{align}
+b^i_r \bar{b}^i_s = \delta^r_s \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align}
+%
+\end{lem}
+
+\begin{proof}  The reader may easily check that we have already verified formula (6) for $r=1,2$, and formula (7) for $r,s = 0,1,2$.  So we assume, towards induction, that we have verified the formula for the cases $1,2,\ldots,r$, and work on proving them for $r+1$.  
+
+We begin by differentiating (6):
+%
+\begin{align*}
+d b^i_r \wedge e^0 + b^i_r d e^0 = &-(r+1) d b^i_{r-1} \wedge \theta - (r+1) b^i_{r-1} d \theta \\
+&+ d b^j_{r-1} \wedge \Theta^i_j + b^j_{r-1} d \Theta^i_j \\
+&+ \frac{r+1}{4} (c - r \lambda) d b^i_{r-2} \bar{e}^0 + \frac{r+1}{4} (c - r \lambda) b^i_{r - 2} d \bar{e}^0
+\end{align*} 
+%
+For the term on the left hand side, we use the torsion free metric property to get:
+%
+\begin{align*}
+b^i_r \wedge d e^0 = - b^i_r \theta \wedge e^0
+\end{align*}
+%
+To simplify the terms on the right hand side, we use the inductive assumptions and the procedures outlined in the exposition above.  The results are:
+%
+\begin{align*}
+-(r+1) d b^i_{r-1} \wedge \theta = &-(r+1) b^i_r e^0 \wedge \theta + (r+1) b^j_{r-1} \Theta^i_j \wedge \theta  \\
+&+ \frac{(r+1)^2}{4} (c - r \lambda) b^i_{r-2} \bar{e}^0 \wedge \theta 
+\end{align*}
+%
+\begin{align*}
+- (r+1) b^i_{r-1} d \theta &= - \frac{r+1}{2} \lambda b^i_{r-1} e^0 \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+d b^j_{r-1} \wedge \Theta^i_j = b^j_{r} &e^0 \wedge \Theta^i_j + (r+1) b^j_{r-1} \theta \wedge \Theta^i_j \\
+&- b^k_{r-1} \Theta^j_k \wedge \Theta^i_j - \frac{r+1}{4}(c - r \lambda) b^j_{r-2} \bar{e}^0 \wedge \Theta^i_j
+\end{align*}
+%
+\begin{align*}
+b^j_{r-1} d \Theta^i_j = \frac{c}{4} b^i_{r-1} e^0 \wedge \bar{e}^0 - b^j_{r-1} \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+\begin{align*}
+\frac{r+1}{4}(c-r \lambda) d b^i_{r-2} \wedge \bar{b}^0 = &\frac{r+1}{4} (c - r \lambda) b^i_{r-1} e^0 \wedge \bar{e}^0 \\
+&+ \frac{ (r+1)r }{4}( c - r \lambda) b^i_{r-2} \theta \wedge \bar{e}^0 \\
+&- \frac{r+1}{4} (c - r \lambda) b^j_{r-2} \Theta^i_j \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+\frac{r+1}{4} (c - r \lambda) b^i_{r-2} d \bar{e}^0 = \frac{r+1}{4} (c - r \lambda) b^i_{r-2} \theta \wedge \bar{e}^0
+\end{align*}
+%
+Substituting these results in, we see that three pairs of terms cancel, and we are left, upon gathering like terms, with:
+%
+\begin{align*}
+d b^i_r \wedge e^0 = (r &+ 2) b^i_r \theta \wedge e^0 - b^j_r \Theta^i_j \wedge e^0 \\
+&- \left( \frac{c}{4} - \frac{r+1}{2} \lambda + \frac{r+1}{4} (c - r \lambda) \right) b^i_{r-1} \bar{e}^0 \wedge e^0 \\
+&+ \left( \frac{ (r+1)r }{4} - \frac{ (r+1)^2 }{4} + \frac{r+1}{4} \right) (c - r \lambda) b^i_{r-2} \theta \wedge \bar{e}^0
+\end{align*}
+%
+A short calculation reveals that:
+%
+\begin{align*}
+\frac{c}{4} - \frac{r+1}{2} \lambda + \frac{r+1}{4} (c - r \lambda) = \frac{r+2}{4}(c - (r+1) \lambda)
+\end{align*}
+%
+and:
+%
+\begin{align*}
+\frac{ (r+1)r }{4} - \frac{ (r+1)^2 }{4} + \frac{r+1}{4} = 0
+\end{align*}
+%
+Therefore:
+%
+\begin{align*}
+0 = \left( d b^i_r - (r + 2) b^i_r \theta + b^j_r \Theta^i_j +  \frac{r+2}{4}(c - (r+1) \lambda ) b^i_{r-1} \bar{e}^0 \right) \wedge e^0
+\end{align*}
+%
+As before, we observe that the coefficient of $e^0$ above must be a (1,0) form, and hence there are some locally defined functions $b^i_{r+1}$ so that:
+%
+\begin{align*}
+b^i_{r+1} e^0 = d b^i_r - (r + 2) b^i_r \theta + b^j_r \Theta^i_j +  \frac{r+2}{4}(c - (r+1) \lambda ) b^i_{r-1} \bar{e}^0
+\end{align*}
+%
+Which completes the inductive verification of formula (6).
+
+\begin{remark}  We included lemma 3 separately from the inductive procedure to be justified in our use of formula (6) to simplify the term involving $d b^i_{r-2}$.
+\end{remark}
+%
+\bigskip
+
+We now go on to verify the orthogonality relations.  To simplify our notation, we write:
+%
+\begin{align*}
+K_r = \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align*}
+%
+Observe that these numbers satisfy the recursive relation:
+%
+\begin{align*}
+K_{r} = \frac{r+2}{4} (c - (r+1) \lambda ) K_{r-1}
+\end{align*}
+%
+Suppose now that $0 \leq s \leq r$.  We differentiate the equation $b^i_r \bar{b}^i_s = \delta^r_s K_r$, which is a consequence of (7).  The result is:
+%
+\begin{align*}
+\bar{b}^i_s d b^i_r + b^i_r d \bar{b}^i_s = 0
+\end{align*}
+%
+Using equations (6) and (7) to simplify yields the results:
+%
+\begin{align*}
+\bar{b}^i_s d b^i_r &= \bar{b}^i_s b^i_{r+1} e^0 - (r+2) \delta^r_s K_r \theta - \bar{b}^i_s b^j_r \Theta^i_j - \frac{r+2}{4} \delta^s_{r-1} K_{r-1} (c - (r+1) \lambda ) \bar{e}^0 \\
+b^i_r d \bar{b}^i_s &= b^i_r \bar{b}^i_{s+1} \bar{e}^0 + (s + 2) \delta^s_r K_r \theta + b^i_r \bar{b}^j_s \Theta^j_i - \frac{r+2}{4} \delta^r_{s-1} K_r (c-(r+1) \lambda) e^0
+\end{align*} 
+%
+We examine these two equations on a case by case basis.
+
+\begin{case} $s \neq r-1,r,r+1$
+\end{case}
+%
+The above equations yield that:
+%
+\begin{align*}
+0 &= \bar{b}^i_s b^i_{r+1} e^0 - \bar{b}^i_s b^j_r \Theta^i_j + b^i_r \bar{b}^j_s \Theta^j_i \\
+&= \bar{b}^i_s b^i_{r+1} e^0
+\end{align*}
+%
+Which proves (7) for $s = 1,2,\ldots, r-2$.
+
+\begin{case} $s = r-1$
+\end{case}
+%
+We get in this case that:
+%
+\begin{align*}
+0 &= \bar{b}^i_{r-1} b^i_{r+1} e^0 - b^j_r \bar{b}^i_{r-1} \Theta^i_j - \frac{r+2}{4} (c - (r+1) \lambda ) K_{r-1} \bar{e}^0 + K_r \bar{e}^0 + b^i_r \bar{b}^j_{r-1} \Theta^j_i \\
+&= \bar{b}^i_{r-1} b^i_{r+1} e^0
+\end{align*}
+%
+Which proves (7) for $s = r - 1$
+
+\begin{case} $s = r$
+\end{case}
+%
+We have:
+%
+\begin{align*}
+0 = b^i_{r+1} & \bar{b}^i_r e^0 - (r+2) K_r \theta - \bar{b}^i_r b^j_r \Theta^i_j \\
+&+ b^i_r \bar{b}^i_{r+1} \bar{e}^0 + (r+2) K_r \theta + b^i_r \bar{b}^j_r \Theta^j_i 
+\end{align*}
+%
+Which, upon cancelling terms becomes:
+%
+\begin{align*}
+0 = b^i_{r+1} & \bar{b}^i_r e^0 +  b^i_r \bar{b}^i_{r+1} \bar{e}^0
+\end{align*}
+%
+Which proves (7) for $s = r$.
+
+\bigskip
+
+At this point we have completed our argument, except for verifying the single relation:
+%
+\begin{align*}
+b^i_{r+1} \bar{b}^i_{r+1} = \frac{(r+3)!}{4^{r+2}} (c- \lambda) \cdots (c - (r+2) \lambda )
+\end{align*}
+%
+To get this, we differentiate the equation:
+%
+\begin{align*}
+\bar{b}^i_r b^i_{r+1} e^0 = 0
+\end{align*}
+%
+Which becomes:
+%
+\begin{align*}
+0 = b^i_{r+1} d \bar{b}^i_r \wedge e^0 + \bar{b}^i_r d( b^i_{r+1} e^0 )
+\end{align*}
+%
+To simplify the first term, we use equation (6) and the orthogonality relations we have already proved to get:
+%
+\begin{align*}
+b^i_{r+1} d \bar{b}^i_r \wedge e^0 = b^i_{r+1} \bar{b}^i_{r+1} \bar{e}^0 \wedge e^0 + b^i_{r+1} \bar{b}^j_{r} \Theta^j_i \wedge e^0
+\end{align*}
+%
+For the second term, we differentiate equation (6) (using $r+1$ instead of $r$) to get:
+%
+\begin{align*}
+\bar{b}^i_r d( b^i_{r+1} e^0 ) &= - (r+2) \bar{b}^i_r d b^i_r \wedge \theta - (r+2) \bar{b}^i_r b^i_r d \theta + \bar{b}^i_r d b^j_r \wedge \Theta^i_j + \bar{b}^i_r b^j_r d \Theta^i_j \\
+&+ \frac{r+2}{4}( c  - (r+1) \lambda ) \bar{b}^i_r d b^i_{r-1} \wedge \bar{e}^0 + \frac{r+1}{4} (c - (r+1) \lambda ) \bar{b}^i_r b^i_{r+1} d \bar{e}^0
+\end{align*}
+%
+and now simplify these terms using the usual techniques:
+%
+\begin{align*}
+- (r+2) \bar{b}^i_r d b^i_r \wedge \theta = (r+2) \bar{b}^i_r b^j_r \Theta^i_j \wedge \theta
+\end{align*}
+%
+\begin{align*}
+- (r+2) \bar{b}^i_r b^i_r d \theta = - \frac{(r+2)^2 (r+1)!}{2 \cdot 4^{r+1}} \lambda (c- \lambda) \cdots (c - (r+1) \lambda) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+\bar{b}^i_r d b^j_r \wedge \Theta^i_j = \bar{b}^i_r & b^j_{r+1} e^0 \wedge \Theta^i_j + (r+2) \bar{b}^i_r b^j_r \theta \wedge \Theta^i_j - \bar{b}^i_r b^k_r \Theta^j_k \wedge \Theta^i_j \\
+&- \frac{r+2}{4} (c - (r + 1) \lambda ) \bar{b}^i_r b^j_{r-1} \bar{e}^0 \wedge \Theta^i_j
+\end{align*}
+%
+\begin{align*}
+\bar{b}^i_r b^j_r d \Theta^i_j = \frac{c(r+2)!}{4^{r+2}} (c - \lambda) \cdots (c - (r+1) \lambda) e^0 \wedge \bar{e}^0 - \bar{b}^i_r b^j_r \Theta^i_k \wedge \Theta^k_j
+\end{align*}
+%
+\begin{align*}
+\frac{r+2}{4}( c  - (r+1) \lambda ) & \bar{b}^i_r d b^i_{r-1} \wedge \bar{e}^0 = \\
+&= \frac{ (r+2)^2 (r+1)!}{4^{r+2}} (c - \lambda) \cdots (c - (r+1) \lambda)^2 e^0 \wedge \bar{e}^0 \\
+&- \frac{r+2}{4}(c - (r+1) \lambda) \bar{b}^i_r b^j_{r-1} \Theta^i_j \wedge \bar{e}^0
+\end{align*}
+%
+\begin{align*}
+\frac{r+1}{4} (c - (r+1) \lambda ) \bar{b}^i_r b^i_{r+1} d \bar{e}^0 = 0
+\end{align*}
+%
+Substituting these results in above, cancelling, and gathering the remaining like terms, we get:
+%
+\begin{align*}
+b^i_{r+1} & \bar{b}^i_{r+1}  e^0 \wedge \bar{e}^0 = \\
+& \frac{(r+2)!}{4^{r+1}} (c- \lambda) \cdots (c - (r+1) \lambda) \left( \frac{c}{4} + \frac{r+2}{4}(c - (r+1) \lambda) - \frac{r + 2}{2} \lambda \right) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+A quick calculation shows that:
+%
+\begin{align*}
+\frac{c}{4} + \frac{r+2}{4}(c - (r+1) \lambda) - \frac{r + 2}{2} \lambda = \frac{r+3}{4}( c - (r+2) \lambda )
+\end{align*}
+%
+so we get:
+%
+\begin{align*}
+b^i_{r+1} & \bar{b}^i_{r+1}  e^0 \wedge \bar{e}^0 = \frac{(r+3)!}{4^{r+2}}(c - \lambda) \cdots (c - (r+2) \lambda) e^0 \wedge \bar{e}^0
+\end{align*}
+%
+which completes the proof of (7), and hence, of the lemma.
+%
+\end{proof}
+
+With this result, we can immediately give a proof of Calabi's theorem.
+
+\begin{thm} Suppose $M$ is a complex curve.  Then, if $c \leq 0$, $M$ is totally geodesic, and if $c > 0$, the Einstein constant $\lambda$ is one of the numbers $c, \frac{c}{2}, \frac{c}{3}, \ldots, \frac{c}{n + 1}$, where $n + 1 = \dim \ M_c$.
+\end{thm}
+
+\begin{proof} For a fixed point on $M$ we consider the vectors $b_r = ( b^1_r, \ldots, b^n_r )$ for $r = 0,1,2, \ldots, n$.  The lemma above tells us that $b_r$ is orthogonal to $b_s$ for $r \neq s$, and that:
+%
+\begin{align*}
+| b_r |^2 = \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align*}
+%
+Since these vectors reside in an $n$ dimensional vector space, and there are $n+1$ of them, they cannot all be nonzero.  Therefore:
+%
+\begin{align*}
+0 = \frac{(r + 2)!}{4^{r + 1}} (c - \lambda)(c - 2 \lambda) \cdots (c - (r+1) \lambda)
+\end{align*}
+%
+for some $0 \leq r \leq n$.  It follows immediately that $\lambda$ must be one of the numbers $c, \frac{c}{2}, \frac{c}{3}, \ldots, \frac{c}{n + 1}$.  Furthermore, if $c < 0$, then the Gauss equation of the immersion implies that $\lambda \leq c$, and in this case the only possibility is $c = \lambda$.  As we saw in lemma 2, this means that $M$ must be totally geodesic in $M_c$.
+\end{proof}
+
+\end{document}

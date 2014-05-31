@@ -1,0 +1,433 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \Mamb{ \mathcal{M} }
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+\def \thetasquig{ \tilde{\theta} }
+\def \Omegasquig{ \tilde{\Omega} }
+\def \hsquig{ \tilde{h} }
+\def \ric{ \text{ric} }
+\def \Ric{ \text{Ric} }
+\def \tr{ \text{tr} }
+\def \bldX{ \mathbf{X} }
+\def \bldZ{ \mathbf{Z} }
+\def \bldepsilon{ \mathbf{\lambda}}
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\section{ The Hermitian Metric and the Connection and Curvature Forms }
+
+In this section we take a closer look at some of the results we have already obtained, and recast them in the language of Hermitian metrics and the Cartan formalism of differential forms.
+
+\subsection{ The Hermitian Metric }
+
+Let $M$ be a Kahler manifold with metric $g$, associated 2-form $\omega$, and Riemannian connection $\nabla$.  Consider the complex valued 2-tensor on $TM$, defined by:
+%
+$$ h(X,Y) = g(X,Y) - i \omega(X,Y) $$
+%
+Since $M$ is a complex manifold, its tangent bundle is naturally a complex vector bundle, with the complex structure encoded by the automorphism $J$.  In this context $h$ is a hermitian metric, for:
+%
+\begin{align*}
+h(JX,Y) &= g(JX,Y) - i \omega( JX, Y ) \\
+&= \omega( X, Y ) + i g( X, Y ) \\
+&= i h(X,Y)
+\end{align*}
+%
+and similarly, $ h(X,JY) = - ih(X,Y) $.  In a holomorphic coordinate frame field $Z_i = \frac{1}{2}(X_i - i Y_i)$ we define the symbols of this metric by:
+%
+$$h_{ij} = h( X_i, X_j ) = h( Y_i, Y_j )$$
+%
+These are related to the $g$ symbols by:
+%
+\begin{align*}
+g_{ij} &= g( Z_i, \bar{Z}_j ) = \frac{1}{4}g( X_i - i Y_i, X_j + i Y_j ) \\
+&= \frac{1}{2}( g(X_i, X_j) - i g( Y_i, X_j ) ) \\
+&= \frac{1}{2}( g(X_i, X_j) - i \omega( X_i, X_j ) ) \\
+&= \frac{1}{2} h( X_i, X_j ) \\
+&= \frac{1}{2} h_{ij}
+\end{align*}
+%
+Therefore we have the following expressions for $g$ and the associated 2-form in a holomorphic coordinate frame field:
+%
+$$ g = \frac{ h_{ij} }{2}  d z_i \otimes d \bar{z}_j + \frac{ \bar{h}_{ij} }{2} d \bar{z}_i \otimes d z_i  $$
+%
+and:
+%
+$$ \omega = \frac{i h_{ij} }{2} d z_i \wedge d \bar{z}_j $$
+
+\begin{remark}  Note that the above expressions hold for the $h$ and $g$ symbols in any local frame field for $TM^{+}$, not just in a holomorphic coordinate frame field.  In particular, if the frame $\{ e_1, \ldots, e_n \}$ is unitary with respect to $h$, and $ \{ e^1, \ldots, e^n \} $ is its dual frame field, then the 2-form associated to the metric is given by:
+%
+$$ \omega = \frac{i}{2} e^i \wedge \bar{e}^i $$
+%
+\end{remark}
+
+ We observe now, for later use, an important property of the hermitian metric on a Kahler manifold:
+%
+\begin{prop} The Riemannian connection $\nabla$ is compatible with the hermitian metric, that is:
+%
+$$ X h( Y,Z ) = h( \nabla_X Y, Z ) + h( Y, \nabla_X Z ) $$
+%
+\end{prop}
+%
+\begin{proof}
+We simply calculate using the definition of $h$, the compatability of $\nabla$ with $g$, and the fact that $J$ is parallel:
+%
+\begin{align*}
+X h(Y,Z) &= X( g(Y,Z) - i g( JY, Z ) ) \\
+&= g( \nabla_X Y, Z ) + g( Y, \nabla_X Z ) - i g( J \nabla_X Y, Z ) - i g( JY, \nabla_X Z ) \\
+&= h( \nabla_X Y, Z ) + h( Y, \nabla_X, Z)
+\end{align*}
+%
+which is what we wanted to show.
+%
+\end{proof}
+%
+\begin{remark} Using the bundle isomorphism $\Phi : TM \rightarrow TM^{+}$ we can transfer $h$ to a hermitian metric on $TM^{+}$, which we denote by $\hsquig$. The induced connection on $TM^{+}$ is then compatible with the metric $\hsquig$.  We remind the reader that this induced connection agrees with what we obtain by extending $\nabla$ to $T_{\C}M$ complex linearly, and then restricting to $TM^{+}$.
+\end{remark}
+
+\subsection{ The Connection and Curvature Forms }
+
+We now turn our attention in another direction temporarily, and discuss a different way of organizing the information contained in the connection on a Kahler manifold.  Again, we work with a fixed holomorphic coordinate frame field $Z_i$ for $TM^{+}$. 
+
+ Define a collection of complex valued one forms on $T_{\C}M$ by:
+%
+$$ \nabla_{X} Z_j = \theta^k_j (X) Z_k $$
+%
+Sometimes we choose to think of $\theta$ as a matrix of one forms (with the top index for the rows and bottom for the columns) and sometimes as a single $M_n(\C)$ valued 1-form, depending on the context.  From this perspective the definition of $\theta$ can be abbreviated as follows: assemble the frame into a row vector $Z = (Z_i, \ldots, Z_n)$, then:
+%
+$$ \nabla Z = Z \theta $$
+%
+Because $\theta$ expresses the connection $\nabla$ in a local coordinate frame field, we call it the connection form.
+
+Comparing the definition of $\theta$ to the relations $ \nabla_{Z_i} Z_j = \Gamma_{ij}^k Z_k $ and $\nabla_{\bar{Z}_i} Z_j = 0$, we see that:
+%
+$$ \theta^k_j = \Gamma_{ij}^k d z_i $$
+%
+So $\theta$ is a $(1,0)$-form.
+
+The previous equation lets us easily derive a formula for $\theta$ in terms of $h$, for we have:
+%
+$$ \Gamma_{ij}^k = \frac{ \del g_{jl} }{ \del z_i } g^{lk} = \frac{ \del h_{jl} }{ \del z_i } h^{lk} $$
+%
+and hence:
+%
+$$ \theta^k_j = \frac{ \del h_{jl} }{ \del z_i } h^{lk} d z_i = \left( \frac{ \del h_{jl} }{ \del z_i } d z_i \right) h^{lk} = \del h_{jl} \ h^{lk} = ( \del h \ h^{-1} )_{jk} $$
+%
+which we can write as a single matrix equation:
+%
+$$ \theta = ( \del h \ h^{-1} )^{t} = (h^t)^{-1} (\del h)^{t} = \bar{h}^{-1} \ \del \bar{h} $$
+
+Now let's turn to the curvature.  In analogy with $\theta$ we define some complex bilinear objects $\Omega$ on $T_{\C}M$ by the formula:
+%
+$$ R( X, Y ) Z_k = \Omega_k^l (X, Y) Z_l $$
+%
+since $R(X,Y) = - R(Y,X)$, we see that the $\Omega$'s are complex valued 2-forms.  To relate them to our earlier work, recall that:
+%
+$$ R(Z_i, Z_j) = R( \bar{Z}_i, \bar{Z}_j ) = 0 $$
+%
+and:
+%
+$$ R( \bar{Z}_i, Z_j )Z_k = R_{ijk}^l Z_l $$
+%
+so that:
+%
+$$ \Omega_k^l = R_{ijk}^l d \bar{z}_i \wedge d z_j $$
+%
+From which we conclude that $\Omega$ is a $(1,1)$-form.
+
+Now recall the formula for the curvature symbols in a holomorphic coordinate frame field:
+%
+$$ R_{ijk}^l = \frac{ \del \Gamma_{jk}^l }{ \del \bar{z}_i } $$
+%
+Substituting this into the previous equation gives us:
+%
+$$ \Omega_k^l = \frac{ \del \Gamma_{jk}^l }{ \del \bar{z}_i } d \bar{z}_i \wedge d z_j = \delbar( \Gamma_{jk}^l d z_j ) = \delbar \theta_k^l $$
+%
+or more succinctly:
+%
+$$ \Omega = \delbar \theta $$
+%
+It will be convenient for us to complete the emerging picture and investigate $ \del \theta $.  Differentiate the formula $\theta = \bar{h}^{-1} \del \bar{h}$, and using the linear algebraic formula $\del \bar{h}^{-1} = - \bar{h}^{-1} \del \bar{h} \bar{h}^{-1}$ along the way:
+%
+\begin{align*}
+\del \theta &= \del(  \bar{h}^{-1} \del \bar{h} ) = ( \del \bar{h}^{-1} ) \wedge \del \bar{h} - \bar{h}^{-1} \del^2 \bar{h} \\
+&= - \bar{h}^{-1} (\del \bar{h}) \bar{h}^{-1} \wedge \del \bar{h}  = - \bar{h}^{-1} \del \bar{h} \wedge \bar{h}^{-1} \del \bar{h} \\
+&= - \theta \wedge \theta
+\end{align*}
+
+So we have derived the two equations:
+%
+$$ \delbar \theta = \Omega \quad \text{ and } \quad \del \theta + \theta \wedge \theta = 0 $$
+%
+Which, since $d = \del + \delbar$, can be combined in to the single:
+%
+$$ \Omega = d \theta + \theta \wedge \theta $$
+%
+We would like to remove the dependence on a holomorphic coordinate frame from these results, and in fact, this can be very easily done:
+%
+\begin{prop} Let $X_1, X_2, \ldots, X_n$ be be any local frame field for $TM^{+}$, and assemble it into a row vector $\bldX = (X_1, \ldots, X_n)$. Define connection and curvature forms with respect to this frame by $ \nabla \bldX = \bldX \thetasquig $ and $ R \bldX = \bldX \Omegasquig $.  Then:
+%
+$$ \Omegasquig = d \thetasquig + \thetasquig \wedge \thetasquig $$
+%
+\end{prop}
+
+\begin{proof}
+%
+We first choose a local holomorphic frame field $\bldZ = (Z_1, \ldots, Z_n)$ to relate the given frame to; that is, we write $\bldX = \bldZ A$ where $A$ is a locally defined change of frame function from $M$ to $GL_n (\C)$.  We write $\theta$ and $\Omega$ for the connection and curvature forms with respect to $\bldZ$, which we already know satisfy the equation:
+%
+$$ \Omega = d \theta + \theta \wedge \theta $$
+%
+We have:
+%
+\begin{align*}
+\nabla \bldX &= \nabla( \bldZ A ) = (\nabla \bldZ) A + \bldZ dA \\
+&= \bldZ \theta A + \bldZ dA \\ 
+&= \bldX A^{-1} \theta A + \bldX A^{-1} dA \\
+&= \bldX( A^{-1} \theta A + A^{-1} dA )
+\end{align*}
+%
+and
+%
+\begin{align*}
+R \bldX &= R(\bldZ A) = (R \bldZ)A \\
+&= \bldZ \Omega A \\
+&= \bldX A^{-1} \Omega A
+\end{align*}
+%
+so we conclude that:
+%
+$$ \thetasquig = A^{-1} \theta A + A^{-1} dA \quad \text{ and } \quad \Omegasquig = A^{-1} \Omega A $$
+%
+Therefore:
+%
+\begin{align*}
+%
+d \thetasquig + \thetasquig \wedge \thetasquig &= d( A^{-1} \theta A + A^{-1} dA ) + (A^{-1} \theta A + A^{-1} dA) \wedge ( A^{-1} \theta A + A^{-1} dA )\\
+%
+&= d( A^{-1} ) \wedge \theta A + A^{-1} d \theta A - A^{-1} \theta \wedge dA + d ( A^{-1} ) \wedge dA + A^{-1} \theta \wedge \theta A \\
+& \quad + A^{-1} \theta \wedge dA + A^{-1} dA \wedge A^{-1} \theta A + A^{-1} dA \wedge A^{-1} dA \\
+%
+&= - A^{-1} dA A^{-1} \wedge \theta A + A^{-1} d \theta A - A^{-1} \theta \wedge dA - A^{-1} dA A^{-1} \wedge dA \\
+& \quad + A^{-1} \theta \wedge \theta A + A^{-1} \theta \wedge dA + A^{-1} dA \wedge A^{-1} \theta A + A^{-1} dA \wedge A^{-1} dA \\
+%
+&= A^{-1} d \theta A + A^{-1} \theta \wedge \theta A \\
+&= A^{-1} \Omega A \\
+&= \Omegasquig
+%
+\end{align*}
+%
+as we wanted to show.
+%
+\end{proof}
+
+We need another formula in our subsequent work, and now is a good time to discuss it.
+
+\begin{prop} Let $\bldX = (X_1, \ldots, X_n)$ be any frame field for the bundle $TM^{+}$, and let $\bldX^{\ast} = ( X_1^{\ast}, \ldots, X_n^{\ast} )^t$ be its dual frame field (note the transpose).  Then the equation:
+%
+$$ d \bldX^{\ast} + \theta \wedge \bldX^{\ast} = 0$$
+%
+is equivalent to the connection $\nabla$ being torsion free.
+\end{prop}
+
+\begin{proof}
+%
+Let $Y$ and $Z$ be any two vector fields in $TM^{+}$.  We can write these in the given frame $X$ as:
+%
+$$ Y = \bldX( \bldX^{\ast}(Y) ) \ \text{ and } \ Z = \bldX( \bldX^{\ast}(Z) ) $$
+%
+Let's calculate the torsion of the connection using these two equations.  We have:
+%
+\begin{align*}
+\nabla_Y Z &= \nabla_Y ( \bldX( \bldX^{\ast}(Z) ) ) \\
+&= (\nabla_Y \bldX) ( \bldX^{\ast}(Z) ) + \bldX( Y( \bldX^{\ast}(Z) ) ) \\
+&= ( \bldX \theta(Y) ) ( \bldX^{\ast}(Z) ) + \bldX( Y( \bldX^{\ast}(Z) ) ) \\
+&= \bldX( \ \theta(Y) \bldX^{\ast}(Z) + Y( \bldX^{\ast}(Z)) \ )
+\end{align*}
+%
+and by switching $Y$ with $Z$:
+%
+$$ \nabla_Z Y = \bldX( \ \theta(Z) \bldX^{\ast}(Y) + Z( \bldX^{\ast}(Y)) \ ) $$
+%
+Now, using that $[Y,Z] = \bldX( \bldX^{\ast}( [Y,Z] ) )$, we can express the torsion tensor as:
+%
+\begin{align*}
+T(Y,Z) &= \nabla_Y Z - \nabla_Z Y - [Y,Z] \\
+&= \bldX( \ Y( \bldX^{\ast}(Z)) - Z( \bldX^{\ast}(Y)) - \bldX^{\ast}( [Y,Z] ) + \theta(Y) \bldX^{\ast}(Z) - \theta(Z) \bldX^{\ast}(Y) \ ) \\
+&= \bldX( \ d \bldX^{\ast}(Y,Z) + \theta \wedge \bldX^{\ast} (Y,Z) \ )
+\end{align*}
+%
+which clearly completes the proof.
+%
+\end{proof}
+
+We have defined our connection forms relative to a chosen frame for $TM^{+}$, and different choices of frames can be convenient in different situations.  We have already seen that a holomorphic coordinate frame brings about certain simplifications in the theory, for example, in such a frame $\omega$ is a $(1,0)$-form.  Let's now take a look at how things go if we use a unitary frame $e_1, e_2, \ldots, e_n$ for $TM^{+}$, in the sense that:
+%
+$$ \hsquig ( e_i, e_j ) = \delta^i_j $$
+%
+We want to look at an additional property of the connection form in such a frame; to do so, we differentiate the above equation:
+%
+\begin{align*}
+0 &= X \hsquig ( e_i, e_j ) \\
+&= \hsquig ( \nabla_X e_i, e_j ) + \hsquig ( e_i, \nabla_X e_j ) \\
+&= \hsquig ( \theta^l_i (X) e_l, e_j ) + \hsquig ( e_i, \theta^l_j (X) e_l ) \\
+&= \theta^l_i (X) \delta^l_j + \bar{\theta}^l_j (X) \delta^i_l \\
+&= \theta^j_i (X) + \bar{\theta}^i_j (X)
+\end{align*}
+%
+Which verifies the following result:
+%
+\begin{prop} If $e_1, \ldots, e_n$ is a unitary frame field for the bundle $TM^{+}$ with respect to the hermitian metric $\hsquig$, then the connection form with respect to this frame is skew-hermitian, that is $ \theta^{t} = - \bar{ \theta } $.
+\end{prop}
+
+We note at this point that propositions $3$ and $4$ actually characterize the connection forms completely, since, as we know from Riemannian geometry, there is a unique connection which is both compatible with $h$ and torsion free (this could also be verified directly).
+
+We need one more result about the curvature form of a manifold of constant holomorphic sectional curvature, which is a restatement of our previous determination of the curvature tensor of these spaces.
+
+\begin{prop}  Let $\bldepsilon = (\epsilon_1, \ldots, \epsilon_n )$ be any local frame field for the bundle $TM^{+}$, let $\bldepsilon^{\ast} = ( \epsilon^1, \ldots, \epsilon^n )^{t} $ be the dual frame field, and let $\Omega$ be the curvature form with respect to this frame.  Then $M$ has constant holomorphic sectional curvature $c$ if and only if:
+%
+$$ \Omega = \frac{c}{2} \left( - i \omega I + \frac{1}{2} \bldepsilon^{\ast} \wedge (\bar{ \bldepsilon }^{\ast})^{t} \bar{h} \right) $$
+%
+\end{prop}
+
+\begin{proof}
+Recall the definition of $\Omega$:
+%
+$$ R(X,Y) \epsilon_i = \Omega^l_i (X,Y) \epsilon_l $$
+%
+so that:
+%
+$$ \Omega^j_i (X,Y) = \epsilon^j ( R(X,Y) \epsilon_i ) $$
+
+Now, $M$ has constant holomorphic sectional curvature $c$ if and only if its curvature tensor is given by:
+%
+\begin{align*}
+R(X,Y)Z &= \frac{c}{4} (g(Y,Z)X - g(X,Z)Y - g(Y,JZ)JX  \\
+& \quad + g(X, JZ)JY + 2 g(X,JY)JZ )
+\end{align*}
+%
+so we get:
+%
+\begin{align*}
+\Omega^j_i (X,Y) &= \epsilon^j ( R(X,Y) \epsilon_i ) \\
+&= \frac{c}{4} (g(Y, \epsilon_i ) \epsilon^j(X) - g(X, \epsilon_i ) \epsilon^j(Y) - g(Y,J \epsilon_i ) \epsilon^j (JX)  \\
+& \quad + g(X, J \epsilon_i ) \epsilon^j (JY) + 2 g(X,JY)\epsilon^j( J \epsilon_i ) )
+\end{align*}
+%
+Let's take a look at the terms in this expression one by one, starting with the last.  Since $\epsilon_i \in TM^{+}$, we have:
+%
+$$ 2 g(X,JY)\epsilon^j( J \epsilon_i )= - 2 \omega( X, Y ) \epsilon^j ( i \epsilon_i ) = - 2 i \delta^i_j \omega( X, Y ) $$
+%
+which gives us the first term in our target expression for $\Omega$.  
+
+Now let's examine the term $g( Y, \epsilon_i ) \epsilon^j(X)$.  First, we write $Y$ in the given frame as:
+%
+$$ Y = \epsilon^l (Y) \epsilon_l + \bar{ \epsilon }^l (Y) \bar{ \epsilon_l } $$
+%
+and therefore:
+%
+$$ g( Y, \epsilon_i ) = g( \epsilon^l (Y) \epsilon_l + \bar{ \epsilon }^l (Y) \bar{ \epsilon_l }, \epsilon_i ) = g( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }^l (Y) $$
+%
+so the term becomes:
+%
+$$ g( Y, \epsilon_i ) \epsilon^j(X) = g( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }^l (Y) \epsilon^j(X) $$
+%
+Similarly we acquire:
+%
+$$ g(X, \epsilon_i ) \epsilon^j(Y) = g( \bar{\epsilon}_l, \epsilon_i ) \bar{ \epsilon }^l (X) \epsilon^j (Y) $$
+
+Moving on, let's now concentrate on the term $g(Y,J \epsilon_i ) \epsilon^j (JX)$.  First:
+%
+$$ g(Y,J \epsilon_i ) = - \omega( Y, \epsilon_i ) = - \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (Y) $$
+%
+so we need to examine $\epsilon^j (JX)$.  To simplify this, recall that we the complex tangent bundle splits as a direct sum of $J$-invariant subspaces: $T_{\C} M = TM^{+} \oplus TM^{-}$; so write $X = X^{+} + X^{-}$ where $X^{+} \in TM^{+}$ and $X^{-} \in TM^{-}$.  Then we have:
+%
+$$ \epsilon^j (JX) = \epsilon^j ( JX^{+} + JX^{-} ) = \epsilon^j( JX^{+} ) = \epsilon^j( i X^{+} ) = i \epsilon^j ( X^{+} ) = i \epsilon^j (X) $$
+%
+So altogether:
+%
+$$ g(Y,J \epsilon_i ) \epsilon^j (JX) = - i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (Y) \epsilon^j (X) $$
+%
+Similarly:
+%
+$$ g(X, J \epsilon_i ) \epsilon^j (JY) = - i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (X) \epsilon^j (Y) $$
+
+Putting this all together, we get:
+%
+\begin{align*}
+\Omega^j_i (X,Y) &= \epsilon^j ( R(X,Y) \epsilon_i ) \\
+%
+&= \frac{c}{4} (g( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }^l (Y) \epsilon^j(X) - g( \bar{\epsilon}_l, \epsilon_i ) \bar{ \epsilon }^l (X) \epsilon^j (Y) \\
+& \quad + i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (Y) \epsilon^j (X) - i \omega( \bar{ \epsilon }_l, \epsilon_i ) \bar{ \epsilon }_l (X) \epsilon^j (Y) - 2 i \delta^i_j \omega( X, Y )) \\
+%
+&= \frac{c}{4}( \ ( g( \epsilon_i, \bar{ \epsilon_l } ) - i \omega( \epsilon_i, \bar{ \epsilon }_l ) )( \bar{ \epsilon }^l (Y) \epsilon^j (X) - \bar{ \epsilon }^l (X) \epsilon^j (Y)) \\
+& \quad - 2 i \delta^i_j \omega( X, Y )) \\
+\end{align*}
+%
+Now:
+%
+$$ g( \epsilon_i, \bar{ \epsilon_l } ) - i \omega( \epsilon_i, \bar{ \epsilon }_l ) = g_{il} - i( i g_{il} ) = 2 g_{il} = h_{il} $$
+%
+and:
+%
+$$ \bar{ \epsilon }^l (Y) \epsilon^j (X) - \bar{ \epsilon }^l (X) \epsilon^j (Y) = \epsilon^j \wedge \bar{ \epsilon }^l (X,Y) $$
+%
+so we have shown that:
+%
+\begin{align*}
+\Omega^j_i (X,Y) &= \frac{c}{4} ( \ h_{il} \epsilon^j \wedge \bar{ \epsilon }^l (X,Y) - 2 i \delta^i_j \omega( X, Y ) \ ) \\
+&= \frac{c}{4} ( \ \epsilon^j \wedge \bar{ \epsilon }^l (X,Y) \bar{h}_{li} - 2 i \delta^i_j \omega( X, Y ) \ )
+\end{align*}
+%
+Which is exactly what we wanted.
+%
+\end{proof}
+
+Finally, we prove a result characterising Kahler-Einstein manifolds in terms of their curvature forms.
+
+\begin{prop}
+A manifold is Kahler einstein of constant $\lambda$ if and only if its curvature form in any local frame for $TM^{+}$ satisfies $ \tr \ \Omega =  - i \lambda \omega $.
+\end{prop}
+
+\begin{proof}
+We begin by proving the result in a local holomorphic coordinate frame field for $TM^{+}$.  Let $Z_i$ be such a frame field, and let $Z^i$ be its dual.  Recall that the Kahler metric is Einstein if and only if $\ric = \lambda \omega$, and in this case we have:
+%
+\begin{align*}
+\lambda \omega( Z_i, \bar{Z}_j ) &= \ric ( Z_i, \bar{Z}_j ) = i \Ric( Z_i, \bar{Z}_j ) \\
+&= i  \tr ( Z \mapsto R( Z, Z_i ) \bar{Z}_j ) \\
+&= i \bar{Z}^k ( R( \bar{Z}_k, Z_i ) \bar{Z}_j ) \\
+&= i \bar{Z}^k ( - R( \bar{Z}_j, \bar{Z}_k ) Z_i - R( Z_i, \bar{Z}_j ) \bar{Z}_k ) \\
+&= - i \bar{Z}^k ( \bar{\Omega}^k_r ( Z_i, \bar{Z}_j ) \bar{Z}_r ) \\
+&= - i \bar{\Omega}^k_k ( Z_i, \bar{Z}_j )
+\end{align*}
+%
+Taking the conjugate of both sides, and using that $\omega$ is real valued, gives the result we want.
+
+Given an arbitrary frame field $\bldX$, let $\tilde{ \Omega }$ denote the curvature form in this frame.  Let $A \in GL_n( \C )$ be the change of frame matrix from $\bldX$ to $\bldZ$, and recall that $\tilde{ \Omega } = A^{-1} \Omega A$.  We then have:
+%
+$$ \tr \tilde{ \Omega } = \tr ( A^{-1} \Omega A ) = \tr \Omega $$
+%
+which proves the result in the frame $\bldX$.
+%
+\end{proof} 
+
+
+\end{document}

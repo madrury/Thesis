@@ -1,0 +1,368 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \Mamb{ \mathcal{M} }
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+\def \disk{ \mathbb{D} }
+
+
+\begin{document}
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\section{ Kahler Manifolds with Constant Holomorphic Sectional Curvature }
+
+In this section we will discuss the various examples of simply connected Kahler manifolds of constant holomorphic sectional curvature.
+
+\subsection{Flat Kahler Manifolds}
+
+Consider the complex coordinate space $\C^n$, given a metric according to:
+%
+$$ g = d z_i \otimes d \bar{z}_i + d \bar{z}_i \otimes d z_i $$
+%
+This is clearly a $J$-invariant metric, and the associated 2-form is given by:
+%
+$$ \omega = i d z_i \wedge d \bar{z}_i $$
+%
+which can be written as:
+%
+$$ \omega = i \del \delbar |z|^2 $$
+%
+Hence $g$ is a Kahler metric arising from the global potential function $|z|^2$.  We see immediately that in the standard global coordinate system:
+%
+$$ g_{ij} = \delta^i_j \text{ and } g^{ij} = \delta^i_j $$
+%
+so:
+%
+$$ \Gamma_{ij}^k = 0 \text{ and } R_{ijk}^l = 0 $$
+%
+from which is follows that $g$ has constant holomorphic sectional curvature zero.
+
+
+\subsection{The Fubini-Study Metric}
+
+Recall that the complex projective space $\CP^n$ can be viewed as the collection of all complex lines in $\C^{n+1}$.  From this point of view there is clearly a natural complex $n$-plane bundle $E \rightarrow \CP^n$ whose total space is:
+%
+$$ E = \{ (p,v) : p \in \CP^n, v \in p \} \subset \CP^n \times \C^{n+1} $$
+%
+The reader will find it routine to check that this is a holomorphic vector bundle.  
+
+Take a holomorphic local section $S: \CP^n \rightarrow E$, and consider the locally defined, closed, $(1,1)$-form on $\CP^n$, given by:
+%
+$$ \omega = i \del \delbar \log ( S \bar{S}^{t} ) $$
+%
+In fact, the form $\omega$ does not depend on the choice of local section $S$. Any other local section $T$ is related to $S$ by the formula $T = \alpha S $, where $\alpha: \CP^n \rightarrow \C $ is some locally defined holomorphic function.  Therefore, since $\alpha$ is holomorphic, and $\bar{\alpha}$ is anti-holomorphic:
+%
+\begin{align*} \omega' &= i \del \delbar \log \det ( T \bar{T}^{t} ) \\
+&= i \del \delbar \log ( \alpha S \bar{S}^t \bar{\alpha} ) \\
+&= i \del \delbar( \log (\alpha) + \log( S \bar{S}^t ) + \log( \bar{\alpha} ) ) \\
+&= i \del \delbar \log \det ( \bar{S}^{t} S ) \\
+&= \omega
+\end{align*}
+%
+We conclude that $\omega$ is a globally defined $(1,1)$-form on $\CP^n$.
+%
+\begin{definition} The Fubini-Study metric on $\CP^n$ is given by $g(X,Y) = \omega(X,JY)$.
+\end{definition}
+%
+We now want to verify that the Fubini-Study metric is Kahler.  Note that $d \omega = 0$ by definition, so we only need to verify that $g$ is positive definite and $J$-invariant.
+
+To begin, recall that there is a transitive action of the unitary group $U_{n+1}$ on $\CP^n$; this action is induced from the standard action of the unitary group on $\C^{n+1}$.  For a given $A \in U_{n+1}$ we write $f_{A}: \CP^n \rightarrow \CP^n$ for this induced map, which is easily verified to be holomorphic.  We claim that $f_A$ preserves the Fubini-Study metric, that is, $f^{\ast}_A \omega = \omega$.  To see this, again let $S$ be a holomorphic local section of $E$, say over some open set $U$.  Then $T = ( S \circ f_A )A^{-1} $ is another such section, this one over the open set $f_A^{-1}(U)$.  Within this framework, we can calculate:
+%
+\begin{align*} f^{\ast}_A \omega &= i \del \delbar f^{\ast}_A \log \det ( S \bar{S}^t ) \\
+&= i \del \delbar \log \det ( ( S \circ f_A ) ( \bar{S}^t \circ f_A ) ) \\
+&= i \del \delbar \log ( ( ( S \circ f_A ) A^{-1} ) ( A (\bar{S}^t \circ f_A ) ) )\\
+&= i \del \delbar \log ( T \bar{T}^t ) \\
+&= \omega 
+\end{align*}
+%
+where we have used the fact that $A$ is a unitary matrix in the third line.
+
+Because of the action above is transative, holomorphic, and preserves the action of $J$, we only need to check that $g$ is positive definite and $J$-invariant at one point.  To this end, let's find a local expression for $g$ at the point $[1,0, \ldots, 0]$ in $\CP^n$.  As usual, we consider the open neighbourhood:
+%
+$$U = \{ [z_0,z_1, \ldots, z_n]: z_0 \neq 0 \} $$
+%
+which (after normalization) supports the coordinate function:
+%
+$$[1,z_1, \ldots, z_n] \mapsto (z_1, \ldots, z_n)$$
+%
+Clearly then, a holomorphic section over $U$ is:
+%
+$$[1,z_1, \ldots, z_n] \mapsto (1,z_1, \ldots, z_n)$$
+%
+and hence we have:
+%
+\begin{align*}
+\omega &= i \del \delbar \log( 1 + |z_1|^2 + \cdots + |z_n|^2 ) \\
+&= i \del \left( \frac{ z_i d\bar{z}_i }{ 1 + |z|^2 } \right) \\
+&= i \frac{ (1 + |z|^2 ) dz_i \wedge d \bar{z}_i - \bar{z}_j d z_j \wedge z_i d \bar{z}_i }{ (1 + |z|^2 )^2 } \\
+&= i \frac{ (1 + |z|^2)\delta^i_j - \bar{z}_i z_j }{ (1 + |z|^2)^2 } d z_i \wedge d \bar{z}_j
+\end{align*}
+%
+where we have used the abbreviation $|z|^2 = \sum z_i \bar{z}_i$ for convenience.  Evaluating this expression at $z=0$ gives us:
+%
+$$ \omega|_{z=0} = i \delta^i_j dz_i \wedge d \bar{z}_j = i dz_i \wedge d \bar{z}_i $$
+%
+and therefore:
+%
+$$ g|_{z=0} = dz_i \otimes d \bar{z}_i + d \bar{z}_i \otimes d z_i $$
+%
+which shows that $g$ is positive definite and $J$-invariant at $z=0$.  According to our observation above, it follows that $g$ is $J$-invariant and positive definite everywhere.
+
+Now we would like to continue the discussion and show that the Fubini-Study metric has constant holomorphic sectional curvature.  To begin, we calculate the Christoffel symbols of $g$ in the standard homogeneous coordinate system.  
+
+Recall that in a holomorphic coordinate frame field on a Kahler manifold we have:
+%
+$$\nabla_{ Z_i }{ Z_j }= \Gamma^k_{ij} Z_k \text{ and } \nabla_{ \bar{Z}_i }{ \bar{Z}_j } = \bar{ \Gamma }^k_{ij} \bar{Z}_k $$
+%
+with all the mixed covariant derivatives vanishing.  The Christoffel symbols are given by the formula:
+%
+$$ \Gamma^k_{ij} = \frac{ \del g_{jr} }{\del z_i} g^{rk} $$
+%
+We have seen that the Fubini-Study metric is given in the usual coordinate frame by:
+%
+$$ g_{ij} = \frac{ (1 + |z|^2)\delta^i_j - \bar{z}_i z_j }{ (1 + |z|^2)^2 } $$
+%
+and it is easy to check that:
+%
+$$g^{ij} = (1 + |z|^2)( \delta^i_j + \bar{z}_i z_j )$$
+%
+We begin by calculating the partial derivative that appears in the formula for the Christoffel symbols:
+%
+\begin{align*}
+\frac{ \del g_{jr} }{\del z_i} &= \frac{\del}{ \del z_i }\left( \frac{ (1 + |z|^2) \delta^j_r - \bar{z}_j z_r }{ (1 + |z|^2)^2 } \right) \\
+&= \frac{ ( \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j ) (1 + |z|^2 )^2 - 2 (1 + |z|^2 ) \bar{z}_i( (1 + |z|^2)\delta^j_r - \bar{z}_j z_r )}{ (1 + |z|^2 )^4 } \\
+&= \frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } - \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 } + \frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 }
+\end{align*}
+%
+Focusing on these three terms one by one, we have, for the first:
+%
+\begin{align*}
+\frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } g^{rk} &= \frac{ \delta^j_r \bar{z}_i - \delta^r_i \bar{z}_j }{ (1 + |z|^2)^2 } (1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= \frac{1}{ 1 + |z|^2 } ( \delta^j_r \delta^r_k \bar{z}_i - \delta^r_i \delta^r_k \bar{z}_j + \delta^j_r \bar{z}_r \bar{z}_i z_k - \delta^r_i \bar{z}_r \bar{z}_j z_k ) \\
+&= \frac{ \delta^j_k \bar{z}_i - \delta^i_k \bar{z}_j }{ 1 + |z|^2 }
+\end{align*}
+%
+for the second:
+%
+\begin{align*}
+- \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 }g^{rk} &= - \frac{ 2 \bar{z}_i \delta^j_r }{ (1 + |z|^2)^2 }(1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= - \frac{2 \delta^j_k \bar{z}_i + 2 \bar{z}_i \bar{z}_j z_k}{1 + |z|^2}\\
+\end{align*}
+%
+and finally, for the third:
+%
+\begin{align*}
+\frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 } g^{rk} &= \frac{ 2 \bar{z}_i \bar{z}_j z_r }{ (1 + |z|^2)^3 } (1 + |z|^2)( \delta^r_k + \bar{z}_r z_k ) \\
+&= \frac{2}{(1 + |z|^2)^2}( \delta^r_k \bar{z}_i \bar{z}_j z_r + \bar{z}_i \bar{z}_j z_k z_r \bar{z}_r ) \\
+&= \frac{2}{(1 + |z|^2)^2}( \delta^r_k \bar{z}_i \bar{z}_j z_r + \bar{z}_i \bar{z}_j z_k |z|^2 ) \\
+&= \frac{2}{(1 + |z|^2)^2}(1 + |z|^2)\bar{z}_i \bar{z}_j z_k  \\
+&= \frac{2 \bar{z}_i \bar{z}_j z_k }{1 + |z|^2}
+\end{align*}
+%
+Putting all these ingredients together, we find that the Christoffel symbols are given by:
+%
+$$ \Gamma^k_{ij} = - \frac{ \delta^k_i \bar{z}_j + \delta^k_j \bar{z}_i }{ 1 + |z|^2 } $$
+
+
+We move on to the curvature tensor.  Recall that in a holomorphic coordinate frame we have:
+%
+$$ R(Z_i, Z_j)Z_l = 0$$
+%
+so that the curvature symbols are defined by the equation:
+%
+$$ R( \bar{Z}_i, Z_j )Z_l = R_{ijl}^r Z_r $$
+%
+In the previous chapter we showed that the curvature symbols are given by the following formula:
+%
+$$ R_{ijl}^r = \frac{ \del \Gamma_{jl}^r }{ \del \bar{z}_i } $$
+%
+In the case of the Fubini-Study metric, in the standard homogeneous coordinate frame, then have:
+%
+\begin{align*}
+R_{ijl}^r &= \frac{\del}{\del \bar{z}_i } \left( - \frac{ \delta^k_i \bar{z}_j + \delta^k_j \bar{z}_i }{ 1 + |z|^2 } \right) \\
+&= - \frac{ (\delta^r_j \delta^i_l + \delta^r_l \delta^j_i)( 1 + |z|^2 ) - z_i ( \delta^r_j \bar{z}_l + \delta^r_l \bar{z}_j ) }{ (1 + |z|^2)^2 } 
+\end{align*}
+%
+so:
+%
+$$ R \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } = - \frac{ \delta^i_l (1 + |z|^2) - z_i \bar{z}_l }{ (1 + |z|^2)^2 } \frac{ \del }{ \del z_j } - \frac{ \delta^i_j (1 + |z|^2) - z_i \bar{z}_j }{ (1 + |z|^2)^2 } \frac{ \del }{ \del z_l } $$
+%
+Again, because $U_{n+1}$ is a transitive group of isometries of the Fubini-Study metric, we only need to calculate the holomorphic curvature at a single point.  Evaluating the above expression for the curvature at $z=0$, we get:
+%
+$$ R \left. \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } \right|_{z=0} = - \delta^i_l \frac{ \del }{ \del z_j } - \delta^i_j \frac{ \del }{ \del z_l }$$
+%
+Therefore we have:
+%
+\begin{align*} g \left( R \left( \frac{ \del }{ \del x_i }, \frac{ \del }{ \del y_i } \right) \frac{ \del }{ \del y_i }, \frac{ \del }{ \del x_i } \right) &= - 4 g \left( R \left( \frac{ \del }{ \del \bar{z}_i }, \frac{ \del }{ \del z_i } \right) \frac{ \del }{ \del z_i }, \frac{ \del }{ \del \bar{z}_i } \right) \\
+&= -4 g \left( - 2 \frac{ \del }{ \del z_i}, \frac{ \del }{ \del \bar{z}_i } \right) \\
+&= 8 
+\end{align*}
+%
+so the holomorphic sectional curvature in the $z_i$ direction is:
+%
+$$ K \left( \frac{ \del }{ \del x_i } \right) = \frac{8}{ g \left( \frac{ \del }{ \del x_i }, \frac{ \del }{ \del x_i } \right) } = \frac{8}{4 \left( \frac{ \del }{ \del z_i }, \frac{ \del }{ \del \bar{z}_i } \right) } = 2 $$
+%
+A similar calculation yields that $K \left( \frac{ \del }{ \del y_i } \right) = 2$.  We conclude that the Fubini-Study metric has constant holomorphic sectional curvature equal to $2$.
+%
+
+\subsection{The Complex Hyperbolic Space}
+
+Consider the unit disk in $\C^n$:
+%
+$$ \disk^n = \{ z \in \C^n : |z|^2 < 1 \} $$
+%
+In analogy to our procedure for the Fubini-Study metric, we define a 2-form on $\disk^n$ by:
+%
+\begin{align*}
+\omega &= - i \del \delbar \log ( 1 - |z|^2 ) \\
+&= i \frac{ (1 - |z|^2) \delta^i_j + z_j \bar{z}_i }{ (1 - |z|^2)^2 } d z_i \wedge d \bar{z}_j
+\end{align*}
+
+\begin{definition} The (complex) hyperbolic metric on $\disk^n$ is given by $g(X,Y) = \omega(JX,Y)$.
+\end{definition}
+
+In the standard global coordinate frame for $\disk^n$ the symbols for this metric are clearly:
+%
+$$ g_{ij} = \frac{ (1 - |z|^2) \delta^i_j + z_j \bar{z}_i }{ (1 - |z|^2)^2 } $$
+%
+
+Following closely our procedure for the Fubini-Study metric, we will begin by investigating the isometries of $g$.  Consider the group $U_{1,n}$ of matrices that preserve the standard indefinite bilinear form with signature $(1,n)$, that is:
+%
+$$ U_{1,n} = \{ A \in GL_{n+1}( \C ) : A I_{1,n} \bar{A}^{t} = I_{1,n} \} $$
+%
+where $I_{1,n}$ is the matrix:
+%
+$$ \left( \begin{array}{cc} -1 & 0 \\ 0 & I_n \end{array} \right) $$
+%
+We will produce a transitive action by holomorphic isometries of this group on $\disk^n$.  To accomplish this, first consider the holomorphic projections $\pi_0 : \C^{n+1} \rightarrow \C $ and $ \pi : \C^{n+1} \rightarrow \C^{n} $ given by:
+%
+$$ \pi_0 ( z_0, z ) = z_0 $$
+%
+and:
+%
+$$ \pi ( z_0, z ) = z $$
+%
+Now, let $U_{1,n}$ act on $\disk^n$ (on the right) by setting:
+%
+$$ f_A (z) = \frac{ \pi( (1,z)A ) }{ \pi_0 ( (1,z)A ) } $$
+%
+We first need to check that $f_A (z) \in \disk^n$ for all $A \in U_{1,n}$ and $z \in \disk^n$.  To see this, we simply write:
+%
+\begin{align*}
+|f_A (z)|^2 &= \frac{ |\pi( (1,z)A )|^2 - |\pi_0 ( (1,z)A )|^2 + |\pi_0 ( (1,z)A )|^2 }{ |\pi_0 ( (1,z)A )|^2 } \\
+&= \frac{ |\pi( (1,z)A )|^2 - |\pi_0 ( (1,z)A )|^2 }{ |\pi_0 ( (1,z)A )|^2 } + 1 \\
+&= \frac{ (1,z)A I_{1,n} \bar{A}^{t} (1, \bar{z})^{t} }{ \pi_0 ( (1,z)A ) } + 1 \\
+&= \frac{ (1,z) I_{1,n} (1, \bar{z} )^{t} }{ \pi_0 ( (1,z)A ) } + 1\\
+&= \frac{ |z|^2 - 1  }{ \pi_0 ( (1,z)A ) } + 1 \\
+&< 1
+\end{align*}
+%
+To check that this is actually a group action it is convenient for us to give a slightly different description of the situation.  Consider $\disk^n$ as a subset of $\CP^n$ defined by:
+%
+\begin{align*} \disk = \left\{ [z_0, z] : \frac{ |z|^2 }{ |z_0|^2 } < 1 \right\} = \left\{ [1,z] : |z|^2 < 1 \right\}
+\end{align*}
+%
+Then $U_{1,n}$ acts on this disk by $[z_0, z] \mapsto [z_0, z]A$, and the map $[z_0, z] \mapsto \frac{z}{z_0}$ sends the new action into the old one.  But the new definition clearly results in a group action, and hence the old one does as well.  We conclude that each $f_A$ is a homeomorphism, so it remains to see that each is an isometry, and that the overall action is transitive.
+
+To see that we have an action by isometries, it suffices to check that $f_A^{\ast} \omega = \omega$.  First observe that:
+%
+\begin{align*}
+(1, f_A(z) ) &= \left( 1, \frac{ \pi( (1,z)A ) }{ \pi_0 ( (1,z)A ) } \right) \\
+&= \frac{ ( \ \pi_0 ( (1,z)A ), \pi ( (1,z)A ) \ ) }{ \pi_0( (1,z)A ) } \\
+&= \frac{ (1,z)A }{ \pi_0 ( (1,z)A ) }
+\end{align*}
+%
+with a similar result holding for $( 1, \overline{ f_A (z) } )$.  Next, notice that we can express $\omega$ as:
+%
+$$ \omega = -i \del \delbar \log( \ - (1,z) I_{1,n} (1, \bar{z})^{t} \ ) $$
+%
+and using this expression we can calculate the pullback:
+%
+\begin{align*}
+f_A^{\ast} \omega &= - i \del \delbar \log ( - (1, f_A (z) ) I_{1,n} (1, \overline{ f_A (z) } )^{t} ) \\
+%
+&= -i \del \delbar \log \left( - \frac{ (1,z)A I_{1,n} \bar{A}^{t} (1, \bar{z})^{t} }{ | \pi_0 ( (1,z)A ) |^2 } \right) \\
+%
+&= - i \del \delbar \log ( - (1,z) A I_{1,n} \bar{A}^t (1, \bar{z})^{t} ) \\
+& \quad \quad + i \del \delbar \log(  \pi_0 ( (1,z)A ) )  + i \del \delbar \overline{ \log( \pi_0 ( (1,z)A ) ) } \\
+%
+&= - i \del \delbar \log ( - (1,z) I_{1,n} (1, \bar{z})^{t} ) \\
+%
+&= \omega
+\end{align*}
+%
+It follows that $f_A$ is an isometry for all $A$.
+
+Finally, we show that the action of $U_{1,n}$ is transitive.  To do this, it suffices to show that, given $z \in \disk^n$, there is an $A \in U_{1,n}$ such that $f_A (z) = 0$; this is equivalent to solving the equation $\pi( (1,z)A ) = 0$ for $A \in U_{1,n}$.  This is easy enough, take the vector $(1,z)$, normalize it, and then extend it to a basis for $\C^{n+1}$ which is orthonormal with respect to the indefinite bilinear form defined by is $I_{1,n}$.  Use this basis as the columns in a matrix $A$, which is then easily seen to lie in $U_{1,n}$.  Since $(1,z)$ is orthogonal to the last $n$ columns of the matrix, clearly $\pi ( (1,z)A^{-1} ) = 0$.
+
+All together, we have shown that there is a transitive action of holomorhpic isometries on $\disk^n$ by the matrix group $U_{1,n}$.  So, as was the case for the Fubini-Study metric, to see that $g$ is positive definite and J-invariant, it suffices to look at a single point.  We have:
+%
+$$ g_{ij}|_{z=0} = \delta^i_j$$
+%
+and so, indeed, $g$ is $J$-invariant, positive definite, and hence a Kahler metric on $\disk^n$.  This Kahler metric is called the complex hyperbolic metric.
+
+
+Now we can move on to show that $g$ has constant holomorphic sectional curvature.  TO begin, it is easy to parallel our work for the Fubini-Study metric and use the $g_{ij}$ symbols to calculate the Christoffel symbols of the hyperbolic metric:
+%
+$$ \Gamma_{ij}^k = \frac{ \delta^i_k \bar{z}_j + \delta^j_k \bar{z}_i }{ 1 - |z|^2 } $$
+%
+Continuing in the same manner, for the curvature symbols we get:
+%
+$$ R_{ijl}^r = \frac{ \del \Gamma_{jl}^r }{ \del \bar{z}_i } = \frac{ ( 1 - |z|^2 )( \delta^r_j \delta^i_l + \delta^r_l \delta^i_j ) + \delta^r_j z_i \bar{z}_l + \delta^r_l z_i \bar{z}_j }{ ( 1 - |z|^2 )^2 } $$
+%
+so that:
+%
+$$ R \left( \frac{ \del }{ \del \bar{z}_i },\frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } = \frac{ ( 1 - |z|^2 ) \delta^i_l + z_i \bar{z}_l }{ (1 - |z|^2)^2 } \frac{ \del }{ \del z_j } + \frac{ ( 1 - |z|^2 ) \delta^i_j + z_i \bar{z}_j }{ (1 - |z|^2)^2 } \frac{ \del }{ \del z_l } $$
+%
+Since we have already shown $g$ to be homogeneous, we may focus our attention at the point $z=0$, obtaining:
+%
+$$  \left. R \left( \frac{ \del }{ \del \bar{z}_i },\frac{ \del }{ \del z_j } \right) \frac{ \del }{ \del z_l } \right|_{z=0} =  \delta^i_l \frac{ \del }{ \del z_j } + \delta^i_j \frac{ \del }{ \del z_l } $$
+%
+which is exactly the negation of what we obtained for the Fubini-Study metric.  It is now immediate that the complex hyperbolic metric has constant holomorphic sectional curvature equal to $-2$.
+
+\subsection{ Summary }  
+Above, we have constructed simply connected Kahler manifolds with constant holomorphic sectional curvatures equal to $0,2$ and $-2$.  It is easy to now produce metrics of any constant holomorphic sectional curvature.  Indeed, suppose we take a Kahler metric $g$ and scale it to get another metric $\lambda g$.  Following through the various definitions and formulas, we see that the Christoffel symbols and curvature symbols in any coordinate system are left unchanged.  The only difference occurs in the last step, when calculating the holomorphic sectional curvature; upon evaluating the curvature tensor inside the metric, the numerator is scaled by $\lambda$, and the denominator by $\lambda^2$, and hence the final result is scaled by $\frac{1}{\lambda}$.
+
+Consequently, if $c > 0$, then the 2-form:
+%
+$$ \omega = i \frac{2}{c} \del \delbar \log ( 1 + |z|^2 ) $$
+%
+(in an appropriate coordinate system) defines a metric of constant holomorphic sectional curvature $c$ on $\CP^n$.  This metric is called the Fubini-Study metric of holomorphic curvature $c$, and we denote the resulting Kahler manifold by $\CP^n(c)$.  Similarly, the 2-form:
+%
+$$ \omega = - i \frac{2}{c} \del \delbar \log ( 1 - |z|^2 ) $$
+%
+defines a metric of constant holomorphic sectional curvature $-c$ on $\disk^n$, which we call the complex hyperbolic metric of holomorphic curvature $-c$, and denote the resulting Kahler manifold by $\CH^n (c)$.
+
+We now have, for every real number $c$, a simply connected complex manifold with a Kahler metric of constant holomorphic sectional curvature $c$.  Recalling from the previous chapter that such a space is unique up to isometry, we have completed the proof of the following theorem:
+
+\begin{thm} Let $M$ be a simply connected Kahler manifold of constant holomorphic sectional curvature $c$ and complex dimension $n$, then:
+%
+\begin{itemize}
+%
+\item If $c = 0$, then $M$ is isometric to $\C^n$ with its flat Kahler metric.
+\item If $c > 0$, then $M$ is isometric to $\CP^n (c)$.
+\item If $c < 0$, then $M$ is isometric to $\CH^n (c)$.
+%
+\end{itemize}
+%
+\end{thm}
+
+\end{document}
