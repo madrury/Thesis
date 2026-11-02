@@ -155,7 +155,7 @@ Moving on to the left hand side we first write:
 &= 2 g( \nabla_X (JY), Z ) + 2 g( \nabla_X Y, JZ )
 \end{align*}
 %
-and now use the Kozul formula (\cite{CE} page 2).  The results are:
+and now use the Koszul formula (\cite{CE} page 2).  The results are:
 %
 \begin{align*}
 2 g( \nabla_X (JY), Z ) &= X g( JY, Z ) + JY g( X, Z ) - Z g( X, JY ) \\
@@ -181,7 +181,7 @@ which is what we wanted to show.
 %
 The next proposition is a cornerstone of Kahler geometry:
 %
-\begin{prop} Let $M$ be a complex manifold with $g$ a $J$-invariant riemannaian metric, let $\omega$ be the 2-form associated to $g$, and let the $\nabla$ be riemannian connection of $g$.  Then the following conditions are equivalent:
+\begin{prop} Let $M$ be a complex manifold with $g$ a $J$-invariant Riemannian metric, let $\omega$ be the 2-form associated to $g$, and let the $\nabla$ be Riemannian connection of $g$.  Then the following conditions are equivalent:
 %
 \begin{enumerate}
 %
@@ -198,11 +198,11 @@ The next proposition is a cornerstone of Kahler geometry:
 \begin{proof}
 The previous proposition immediately implies that $1)$ and $2)$ are equivalent. It is also clear that $3) \Rightarrow 2)$, since $d = \del + \delbar$.
 
-We now show that $2) \Rightarrow 3)$.  Assume that $d \omega = 0$.  Now $\omega$ is a real valued 2-form on $TM$, so by the Poincare lemma there is a real valued 1-form $\alpha$, defined in a neighbourhood of any given point $p$, so that $\omega = d \alpha$.  Extending these forms complex linearly to $T_{\C}M$, we can write $\alpha = \beta + \bar{\beta}$, where $\beta$ is a $(1,0)$-form.  Now we have:
+We now show that $2) \Rightarrow 3)$.  Assume that $d \omega = 0$.  Now $\omega$ is a real valued 2-form on $TM$, so by the Poincar\'e lemma there is a real valued 1-form $\alpha$, defined in a neighbourhood of any given point $p$, so that $\omega = d \alpha$.  Extending these forms complex linearly to $T_{\C}M$, we can write $\alpha = \beta + \bar{\beta}$, where $\beta$ is a $(1,0)$-form.  Now we have:
 %
 $$\omega = d \alpha = \del \beta + \delbar \beta + \del \bar{\beta} + \delbar \bar{\beta}$$
 %
-and since $\omega$ is a $(1,1)$-form, it follows that $\del \beta = \delbar \bar{\beta} = 0$ (since $\del \beta$ is a $(2,0)$-form and $\delbar \bar{\beta}$ is a $(0,2)$-form).  It follows, from the Poincare-Grothendieck lemma, that $\beta = \del \phi$ for some smooth complex function $\phi$ defined near $p$.  Assembling all of this information gives us:
+and since $\omega$ is a $(1,1)$-form, it follows that $\del \beta = \delbar \bar{\beta} = 0$ (since $\del \beta$ is a $(2,0)$-form and $\delbar \bar{\beta}$ is a $(0,2)$-form).  It follows, from the Poincar\'e-Grothendieck lemma, that $\beta = \del \phi$ for some smooth complex function $\phi$ defined near $p$.  Assembling all of this information gives us:
 %
 $$ \omega = \delbar \beta + \del \bar{\beta} = \delbar \del \phi + \del \delbar \bar{\phi} = \del \delbar( \bar{\phi} - \phi ) $$
 %
@@ -212,7 +212,7 @@ So setting $f = i( \bar{\phi} - \phi )$ does the trick (note that $f$ so defined
 %
 Now we are prepared to make the following important definition:
 %
-\begin{definition} Let $M$ be a complex manifold with a $J$-invariant riemannian metric.  If any of the three equivelant conditions in the previous proposition are satisfied, then $M$ is called a Kahler manifold, $g$ a Kahler metric, and $\omega$ the Kahler form associated to the metric.  Further, any function $f$ which locally satisfies the condition $3)$ is called a Kahler potential for the metric.
+\begin{definition} Let $M$ be a complex manifold with a $J$-invariant Riemannian metric.  If any of the three equivalent conditions in the previous proposition are satisfied, then $M$ is called a Kahler manifold, $g$ a Kahler metric, and $\omega$ the Kahler form associated to the metric.  Further, any function $f$ which locally satisfies the condition $3)$ is called a Kahler potential for the metric.
 \end{definition}
 
 One of the great advantages of Kahler geometry over Riemannian geometry is the simplification that comes about during computations.  We now investigate how this simplification arises, and derive formulas for the Christoffel symbols of a Kahler manifold.
@@ -237,7 +237,7 @@ $$ J \nabla_{X} Z_i = \nabla_{X}(J Z_i) = \nabla_{X}( iZ_i ) = i \nabla_{X} Z_i 
 %
 so that $\nabla_{X} Z_j \in TM^{+}$.  Saying this in another way: on a Kahler manifold $M$ the subbundle $TM^{+}$ of $T_{\C} M$ is parallel with respect to the Riemannian connection of a Kahler metric.  In exactly the same way, $TM^{-}$ is also a parallel subbundle of $T_{\C}M$ .
 
-Now an important question must be addressed.  There is a canonical bundle isomorphism $\Phi: TM \rightarrow TM^{+}$ which sends the complex structure $J$ on $TM$ to multiplication by $i$ on $TM^{+}$.  This isomporphism is given by:
+Now an important question must be addressed.  There is a canonical bundle isomorphism $\Phi: TM \rightarrow TM^{+}$ which sends the complex structure $J$ on $TM$ to multiplication by $i$ on $TM^{+}$.  This isomorphism is given by:
 %
 $$ X \mapsto \frac{1}{2}( X - i JX )$$
 %
@@ -283,7 +283,7 @@ The computation involving the other mixed term is entirely analogous.
 %
 \end{proof}
 
-Now we investigate the local expression of $\nabla$ on a Kahler manifold.  Again, let $Z_i$ denote and holomorphic coordinate frame field for $M$.  Since $TM^{+}$ is a parallel subundle of $T_{\C}M$, and $\nabla_{\bar{Z}_i} Z_j = 0$, we define the (complex) Christoffel symbols $\Gamma_{ij}^k$ of $\nabla$ by:\footnote{The summation convention on repeated indices will always be in effect}
+Now we investigate the local expression of $\nabla$ on a Kahler manifold.  Again, let $Z_i$ denote and holomorphic coordinate frame field for $M$.  Since $TM^{+}$ is a parallel subbundle of $T_{\C}M$, and $\nabla_{\bar{Z}_i} Z_j = 0$, we define the (complex) Christoffel symbols $\Gamma_{ij}^k$ of $\nabla$ by:\footnote{The summation convention on repeated indices will always be in effect}
 %
 $$ \nabla_{Z_i} Z_j = \Gamma_{ij}^k Z_k $$
 %
@@ -446,7 +446,7 @@ $$ Q(X,Y,X,Y) = - 3 Q(X,JY,X,JY) = 9 Q(X, Y, X, Y) $$
 %
 It follows immediately that $Q(X,Y,Y,X) = 0$ for all $X,Y \in TM$.  
 
-To complete the argument, we cite the well known fact that an algebraic curvature tensor is completely determined by the values of $Q(X,Y,X,Y)$ (any reader who doubts this is invited to consult any textbook on Riemannian gemoetry, for example, \cite{dC}, page 94).  We immediately conclude that $Q = 0$, and hence the argument is completed.
+To complete the argument, we cite the well known fact that an algebraic curvature tensor is completely determined by the values of $Q(X,Y,X,Y)$ (any reader who doubts this is invited to consult any textbook on Riemannian geometry, for example, \cite{dC}, page 94).  We immediately conclude that $Q = 0$, and hence the argument is completed.
 %
 \end{proof}
 
@@ -549,7 +549,7 @@ Setting $G = (g_{ij})$, we have:
 %
 $$ \Gamma_{kj}^k = \Gamma_{jk}^k = \frac{ \del g_{kl} }{ \del z_j } g^{lk} = \tr \left( \frac{ \del G }{ \del z_j } G^{-1} \right) = \frac{ \del }{ \del z_j } \log \det G $$
 %
-where in the last equality we have used a classic formula from linear algebra.  Now observe that that, since $G^t = \bar{G}$, we have:
+where in the last equality we have used a classic formula from linear algebra.  Now observe that, since $G^t = \bar{G}$, we have:
 %
 $$ \det G = \det G^t = \det \bar{G} = \overline { \det G } $$
 %

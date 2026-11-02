@@ -165,7 +165,7 @@ B^a_{ijl} e^l = d A^a_{ij} + A^b_{ij} \Theta^a_b - A^a_{kj} \theta^k_i - A^a_{ik
 \nabla B (e_i, e_j, e_l) = B^a_{ijl} e_a
 \end{align*}
 %
-Consequently, the second fundamental form is parellel if and only if $B^a_{ijl} = 0$ for all $a,i,j$ and $l$.
+Consequently, the second fundamental form is parallel if and only if $B^a_{ijl} = 0$ for all $a,i,j$ and $l$.
 %
 \end{lem}
 
@@ -207,7 +207,7 @@ Now since:
 A^a_{ij} = \Theta^a_i (e_j) = e^a( \nabla_{e_j} e_i ) = \la \nabla_{e_j} e_i, e_a \ra
 \end{align*}
 %
-compatability of the connection with the metric yields:
+compatibility of the connection with the metric yields:
 %
 \begin{align*}
 d A^a_{ij} (e_l) = e_l \la \nabla_{e_j} e_i, e_a \ra = \la \nabla_{e_l} \nabla_{e_j} e_i, e_a \ra
@@ -415,7 +415,7 @@ B^a_{ijs} \bar{B}^a_{ikr} =& - \frac{c}{4} \left( \frac{(n+1)c}{4} - \frac{\lamb
 \begin{cor}  If $\lambda < \frac{(n+1)c}{2}$ then, in fact, $\lambda \leq \frac{nc}{2}$, with equality holding if and only if the second fundamental form $B$ is parallel.
 \end{cor}
 %
-\begin{proof} For convienince, write $ K =\left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)$.  Set $k = j$ and $r = s$ in formula (13) to get:
+\begin{proof} For convenience, write $ K =\left( \frac{(n+1)c}{4} - \frac{\lambda}{2} \right)$.  Set $k = j$ and $r = s$ in formula (13) to get:
 %
 \begin{align*}
 B^a_{ijs} \bar{B}^a_{ijs} =& -\frac{c}{4} K ( \delta^j_j \delta^r_r + \delta^r_j \delta^r_j ) + \left( K - \frac{c}{4} \right) \bar{A}^a_{sj} A^a_{sj} \\
@@ -438,7 +438,7 @@ The second and fourth terms can be computed using formula (10):
 \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sj} A^b_{ir} = \delta^i_s \delta^i_s K^2 = n K^2
 \end{align*}
 %
-The third term we can merely estimate, using the Cauchy-Swartz inequality.  For sake of clarity, in the estimate we temporarily drop our summation convention.  We have:
+The third term we can merely estimate, using the Cauchy-Schwarz inequality.  For sake of clarity, in the estimate we temporarily drop our summation convention.  We have:
 %
 \begin{align*}
 \sum_{abijsr} \bar{A}^a_{ij} \bar{A}^b_{sr} A^a_{sr} A^b_{ij} &= \sum_{ijsr} \left( \sum_{a} \bar{A}^a_{ij} A^a_{sr} \right)\left( \sum_{b} \bar{A}^b_{sr} A^b_{ij} \right) = \sum_{ijsr} \left| \sum_{a} \bar{A}^a_{ij} A^a_{sr} \right|^2 \\
