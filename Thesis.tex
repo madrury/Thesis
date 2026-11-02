@@ -1,0 +1,107 @@
+\documentclass[11pt]{amsart}
+\usepackage{epsfig,amsmath}
+
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{prop}[subsection]{Proposition}
+\newtheorem{obs}[subsection]{Observation}
+\newtheorem{claim}{Claim}
+\newtheorem{case}{Case}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{example}[subsection]{Example}
+
+\title{ Kahler-Einstein submanifolds of Complex Space Forms }
+\author{ Matthew Drury }
+
+% Spaces.
+\def \CP{ \mathbb{C}P }
+\def \C{ \mathbb{C} }
+\def \CH{ \mathbb{C}H }
+\def \disk{ \mathbb{D} }
+
+% Operators.
+\def \del{ \partial }
+\def \delbar{ \bar{\partial} }
+\def \Ric{ \text{Ric} }
+\def \ric{ \text{ric} }
+\def \tr{ \text{tr} }
+\def \re{ \text{Re} }
+\def \im{ \text{Im} }
+\def \Re{ \text{Re} }
+\def \Im{ \text{Im} }
+\def \dim{ \text{dim} }
+\def \Hom{ \text{Hom} }
+\def \la { \left\langle }
+\def \ra { \right\rangle }
+
+% Connections, curvature, and metrics.
+\def \Rcurv{ \mathcal{R} }
+\def \nablabar{ \bar{\nabla} }
+\def \thetasquig{ \tilde{\theta} }
+\def \Omegasquig{ \tilde{\Omega} }
+\def \hsquig{ \tilde{h} }
+
+% Bundles.
+\def \TMp{ TM^{+} }
+\def \TMm{ TM^{-} }
+\def \NMp{ NM^+ }
+\def \NMm{ NM^- }
+\def \TMps{ T^{\ast}M^{+} }
+
+% Structures on the ambient manifold.
+\def \Mamb{ \tilde{M} }
+\def \Ramb{ \tilde{R} }
+\def \Jamb{ \tilde{J} }
+\def \gamb{ \tilde{g} }
+\def \omegaamb{ \tilde{\omega} }
+\def \nablaamb{ \tilde{\nabla} }
+\def \nablasquig{ \tilde{\nabla} }
+\def \Kamb{ \tilde{K} }
+
+% Bold frames.
+\def \blde{ \mathbf{e} }
+\def \bldX{ \mathbf{X} }
+\def \bldZ{ \mathbf{Z} }
+\def \bldepsilon{ \mathbf{\lambda} }
+
+\begin{document}
+
+\maketitle
+
+\parskip 6pt
+\parindent 0pt
+\baselineskip 14pt
+
+\begin{quote}
+\textbf{Note.}
+This is an incomplete PhD thesis in Mathematics. It was written between 2010
+and 2011 at Indiana University under the advisement of Ji-Ping Sha.
+
+The thesis contains an exposition on the basics of complex differential
+geometry, focusing on the method of moving frames. It then uses that framework
+to derive Calabi's and Chern's curvature restrictions on Kahler-Einstein
+submanifolds of complex space forms. It includes a novel formula for the third
+covariant derivative of the second fundamental form.
+\end{quote}
+
+\input{chapters/Introduction}
+\input{chapters/KahlerBackground}
+\input{chapters/ConstantHC}
+\input{chapters/Hermitian}
+\input{chapters/MoreFS}
+\input{chapters/KahlerSubmanifolds}
+\input{chapters/SubmanifoldsOfFS}
+\input{chapters/CalabiTheorem}
+\input{chapters/ChernTheorem}
+
+\vfill
+
+\input{bibliography}
+
+\bigskip
+
+\end{document}

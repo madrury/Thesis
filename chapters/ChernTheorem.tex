@@ -1,35 +1,3 @@
-\documentclass[11pt]{amsart}
-\usepackage{epsfig,amsmath}
-
-\newtheorem{thm}[subsection]{Theorem}
-\newtheorem{lem}[subsection]{Lemma}
-\newtheorem{cor}[subsection]{Corollary}
-\newtheorem{prop}[subsection]{Proposition}
-\newtheorem{obs}[subsection]{Observation}
-
-\def \la { \left\langle }
-\def \ra { \right\rangle }
-\def \C{ \mathbb{C} }
-\def \ric{ \text{ric} }
-\def \dim{ \text{dim} }
-\def \Hom{ \text{Hom} }
-\def \nablaamb{ \tilde{\nabla} }
-\def \TMp{ TM^{+} }
-\def \TMm{ TM^{-} }
-\def \NMp{ NM^+ }
-\def \NMm{ NM^- }
-\def \TMps{ T^{*}M^{+} }
-
-\theoremstyle{definition}
-\newtheorem{definition}[subsection]{Definition}
-\newtheorem{remark}[subsection]{Remark}
-
-\begin{document}
-
-\parskip 6pt
-\parindent 0pt
-\baselineskip 14pt
-
 \section{Chern's Theorem}
 
 We now turn to a more general situation.  Let $M$ be any complex manifold, holomorphically immersed in the space form $M_c$ so that the induced Kahler metric on $M$ is Einstein, with Einstein constant $\lambda$.  Suppose the dimension of $M$ is $n$, and the dimension of $M_c$ is $n+m$.  Let $\{ e_1, \ldots, e_{n+m} \}$ be a local unitary frame field for $TM_c^{+}$, chosen so that, when restricted to $M$, $\{ e_1, \ldots, e_n \}$ is a local unitary frame field for $\TMp$, and $\{ e_{n+1}, \ldots, e_{n+m} \}$ is a local unitary frame field for $\NMp$.  Let $\{ e^1, \ldots, e^{n+m} \}$ be the dual unitary frame field.  Again, we study the connection forms $\Theta$ and $\theta$ for $M_c$ and $M$.
@@ -560,5 +528,3 @@ $$ n + \frac{n(n-1)}{2} < n $$
 %
 which is a contradiction unless $n=1$, a case we have already studied in the previous chapter.
 \end{proof}
-
-\end{document}

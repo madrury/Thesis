@@ -1,39 +1,3 @@
-\documentclass[11pt]{amsart}
-\usepackage{epsfig,amsmath}
-
-\newtheorem{thm}[subsection]{Theorem}
-\newtheorem{lem}[subsection]{Lemma}
-\newtheorem{cor}[subsection]{Corollary}
-\newtheorem{prop}[subsection]{Proposition}
-\newtheorem{obs}[subsection]{Observation}
-\newtheorem{claim}{Claim}
-\newtheorem{case}{Case}
-
-\theoremstyle{definition}
-\newtheorem{remark}{Remark}
-
-\theoremstyle{definition}
-\newtheorem{definition}[subsection]{Definition}
-
-\def \la { \left\langle }
-\def \ra { \right\rangle }
-\def \C{ \mathbb{C} }
-\def \ric{ \text{ric} }
-\def \dim{ \text{dim} }
-\def \Hom{ \text{Hom} }
-\def \nablasquig{ \tilde{\nabla} }
-\def \TMp{ TM^{+} }
-\def \TMm{ TM^{-} }
-\def \NMp{ NM^+ }
-\def \NMm{ NM^- }
-\def \TMps{ T^{*}M^{+} }
-
-\begin{document}
-
-\parskip 6pt
-\parindent 0pt
-\baselineskip 14pt
-
 \section{Calabi's Theorem}
 
 In this section we give a purely differential geometric proof of Calabi's theorem on one dimensional complex submanifolds of a complex space form. 
@@ -103,7 +67,7 @@ Recalling that $\Omega^0_0 = \theta$, and using (1), we get:
 \omega &= d\Theta^0_0 + \Theta^0_0 \wedge \Theta^0_0 = \Omega^0_0 - \Theta^0_i \wedge \Theta^i_0 = \Omega^0_0 - b^i_0 \bar{b}^i_0 e^0 \wedge \bar{e}^0
 \end{align*}
 %
-Now, by assumption, $M_c$ has constant holomorphic sectional curvature $c$ and $M$ is Einstein of constant $\lambda$, which in this case (dimension 1) means that $M$ has constant holomorphic sectional curvature $\lambda$.  Therefore we have [FROM SOME GOD-DAMN PROPOSITION]:
+Now, by assumption, $M_c$ has constant holomorphic sectional curvature $c$ and $M$ is Einstein of constant $\lambda$, which in this case (dimension 1) means that $M$ has constant holomorphic sectional curvature $\lambda$.  Therefore we have:
 %
 \begin{align*}
 \omega &= \frac{\lambda}{2}e^0 \wedge \bar{e}^0 \\
@@ -550,5 +514,3 @@ Since these vectors reside in an $n$ dimensional vector space, and there are $n+
 %
 for some $0 \leq r \leq n$.  It follows immediately that $\lambda$ must be one of the numbers $c, \frac{c}{2}, \frac{c}{3}, \ldots, \frac{c}{n + 1}$.  Furthermore, if $c < 0$, then the Gauss equation of the immersion implies that $\lambda \leq c$, and in this case the only possibility is $c = \lambda$.  As we saw in lemma 2, this means that $M$ must be totally geodesic in $M_c$.
 \end{proof}
-
-\end{document}
